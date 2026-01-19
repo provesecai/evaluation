@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "resourceTypes": ["analyst", "neteng", "id_admin"],
+  "capacity": [
+    { "resource": "analyst",  "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "neteng",   "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "id_admin", "fromBucket": 0, "toBucket": 12, "R": 0 },
+    { "resource": "id_admin", "fromBucket": 12, "toBucket": 72, "R": 1 }
+  ],
+  "notes": "Setting B: limited staffing early; identity admin unavailable during first 2 hours (buckets 0-11)."
+}
+
+

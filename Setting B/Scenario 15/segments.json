@@ -1,0 +1,13 @@
+{
+  "segments": [
+    { "segmentId": "S_GW_DMZ", "name": "Gateway/DMZ Tier", "type": "dmz" },
+    { "segmentId": "S_C2", "name": "C2 Tier", "type": "mission" },
+    { "segmentId": "S_ID", "name": "Identity Tier", "type": "core" },
+    { "segmentId": "S_MDATA", "name": "Mission Data Tier", "type": "mission" },
+    { "segmentId": "S_LOG", "name": "Logistics Tier", "type": "mission" },
+    { "segmentId": "S_ADMIN", "name": "Admin Tier", "type": "admin" },
+    { "segmentId": "S_USER", "name": "User/Workstations", "type": "user" },
+    { "segmentId": "S_MGMT", "name": "Management/OOB", "type": "mgmt" },
+    { "segmentId": "S_SENSOR", "name": "Sensors/SIEM", "type": "security" }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "devices": [
+    { "deviceId": "D01", "name": "C2_App_1", "segmentId": "S_C2", "role": "c2_app", "dataTypes": ["DT_OPORD"] },
+    { "deviceId": "D02", "name": "C2_App_2", "segmentId": "S_C2", "role": "c2_app", "dataTypes": ["DT_OPORD"] },
+    { "deviceId": "D03", "name": "C2_DB", "segmentId": "S_C2", "role": "db", "dataTypes": ["DT_OPORD", "DT_INTEL"] },
+
+    { "deviceId": "D04", "name": "IDP_1", "segmentId": "S_ID", "role": "idp", "dataTypes": ["DT_KEYS"] },
+    { "deviceId": "D05", "name": "IDP_2", "segmentId": "S_ID", "role": "idp", "dataTypes": ["DT_KEYS"] },
+    { "deviceId": "D06", "name": "AD_DC_1", "segmentId": "S_ID", "role": "directory", "dataTypes": ["DT_KEYS"] },
+    { "deviceId": "D07", "name": "AD_DC_2", "segmentId": "S_ID", "role": "directory", "dataTypes": ["DT_KEYS"] },
+
+    { "deviceId": "D08", "name": "GW_Firewall", "segmentId": "S_GW_DMZ", "role": "firewall", "dataTypes": [] },
+    { "deviceId": "D09", "name": "GW_Proxy", "segmentId": "S_GW_DMZ", "role": "proxy", "dataTypes": [] },
+    { "deviceId": "D10", "name": "DMZ_JumpHost", "segmentId": "S_GW_DMZ", "role": "jump_host", "dataTypes": [] },
+    { "deviceId": "D11", "name": "External_GW_Service", "segmentId": "S_GW_DMZ", "role": "gateway_service", "dataTypes": [] },
+
+    { "deviceId": "D12", "name": "MissionData_API", "segmentId": "S_MDATA", "role": "mission_api", "dataTypes": ["DT_INTEL"] },
+    { "deviceId": "D13", "name": "MissionData_Store", "segmentId": "S_MDATA", "role": "data_store", "dataTypes": ["DT_INTEL"] },
+    { "deviceId": "D14", "name": "Crypto_KeyVault", "segmentId": "S_MDATA", "role": "key_vault", "dataTypes": ["DT_KEYS"] },
+
+    { "deviceId": "D15", "name": "Logistics_App", "segmentId": "S_LOG", "role": "logistics_app", "dataTypes": ["DT_LOGPLAN"] },
+    { "deviceId": "D16", "name": "Logistics_DB", "segmentId": "S_LOG", "role": "db", "dataTypes": ["DT_LOGPLAN"] },
+
+    { "deviceId": "D17", "name": "Admin_Bastion", "segmentId": "S_ADMIN", "role": "bastion", "dataTypes": [] },
+    { "deviceId": "D18", "name": "Patch_Server", "segmentId": "S_ADMIN", "role": "patch", "dataTypes": [] },
+    { "deviceId": "D19", "name": "Backup_Controller", "segmentId": "S_ADMIN", "role": "backup", "dataTypes": [] },
+    { "deviceId": "D20", "name": "PrivAccessMgmt", "segmentId": "S_ADMIN", "role": "pam", "dataTypes": ["DT_KEYS"] },
+
+    { "deviceId": "D21", "name": "Mgmt_Controller", "segmentId": "S_MGMT", "role": "mgmt", "dataTypes": [] },
+    { "deviceId": "D22", "name": "Switch_Core", "segmentId": "S_MGMT", "role": "switch", "dataTypes": [] },
+    { "deviceId": "D23", "name": "Router_Core", "segmentId": "S_MGMT", "role": "router", "dataTypes": [] },
+
+    { "deviceId": "D24", "name": "SIEM", "segmentId": "S_SENSOR", "role": "siem", "dataTypes": [] },
+    { "deviceId": "D25", "name": "EDR_Manager", "segmentId": "S_SENSOR", "role": "edr", "dataTypes": [] },
+    { "deviceId": "D26", "name": "NetSensor_1", "segmentId": "S_SENSOR", "role": "sensor", "dataTypes": [] },
+    { "deviceId": "D27", "name": "NetSensor_2", "segmentId": "S_SENSOR", "role": "sensor", "dataTypes": [] },
+
+    { "deviceId": "D28", "name": "User_WS_01", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D29", "name": "User_WS_02", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D30", "name": "User_WS_03", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D31", "name": "User_WS_04", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D32", "name": "User_WS_05", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D33", "name": "User_WS_06", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D34", "name": "User_WS_07", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+    { "deviceId": "D35", "name": "User_WS_08", "segmentId": "S_USER", "role": "workstation", "dataTypes": [] },
+
+    { "deviceId": "D36", "name": "FileShare", "segmentId": "S_MDATA", "role": "fileshare", "dataTypes": ["DT_INTEL"] },
+    { "deviceId": "D37", "name": "EmailRelay", "segmentId": "S_GW_DMZ", "role": "mail", "dataTypes": [] },
+    { "deviceId": "D38", "name": "VulnScanner", "segmentId": "S_SENSOR", "role": "scanner", "dataTypes": [] },
+    { "deviceId": "D39", "name": "OpsDashboard", "segmentId": "S_C2", "role": "ops_ui", "dataTypes": ["DT_OPORD"] },
+    { "deviceId": "D40", "name": "TimeSync", "segmentId": "S_MGMT", "role": "ntp", "dataTypes": [] }
+  ]
+}

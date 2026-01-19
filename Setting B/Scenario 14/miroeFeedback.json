@@ -1,0 +1,46 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "status": "INFEASIBLE",
+  "summary": "Infeasible due to id_admin capacity bottleneck: three mandatory reset_credentials actions share overlapping tight windows and cannot be scheduled sequentially.",
+  "conflictSet": [
+    {
+      "type": "resource_capacity",
+      "resource": "id_admin",
+      "capacity": 1,
+      "notes": "Only one id_admin is available at any time bucket."
+    },
+    {
+      "type": "time_window",
+      "targets": [
+        "(D05,reset_credentials)",
+        "(D06,reset_credentials)",
+        "(D07,reset_credentials)"
+      ],
+      "window": { "EST": 0, "LFT": 3 },
+      "durationBucketsEach": 2,
+      "notes": "Total required id_admin time is 6 buckets, but the joint window allows at most 3 buckets."
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "relax_time_windows",
+      "description": "Widen LFTs for non-mission-critical identity resets to allow sequential execution while preserving mission availability windows.",
+      "edits": [
+        { "file": "plannerOutput.json", "path": "timeWindows[(D06,reset_credentials)]", "newEST": 0, "newLFT": 6 },
+        { "file": "plannerOutput.json", "path": "timeWindows[(D05,reset_credentials)]", "newEST": 0, "newLFT": 6 },
+        { "file": "plannerOutput.json", "path": "timeWindows[(D07,reset_credentials)]", "newEST": 0, "newLFT": 6 }
+      ],
+      "missionImpact": "Low: identity hardening remains early but is spread across the first hour instead of 30 minutes."
+    },
+    {
+      "rank": 2,
+      "repairType": "defer_or_drop_optional",
+      "description": "If mission requires strict early windows, keep two mandatory resets and demote the third (lowest reward) to optional.",
+      "edits": [
+        { "file": "mandatory.json", "path": "mandatory[(D06,reset_credentials)]", "newX": 0 }
+      ],
+      "missionImpact": "Medium: reduces immediate identity coverage; should be operator-approved."
+    }
+  ]
+}

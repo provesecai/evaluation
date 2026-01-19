@@ -1,0 +1,51 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "nodes": [
+    { "id": "D01", "name": "C2_App_1", "role": "c2_app" },
+    { "id": "D02", "name": "C2_App_2", "role": "c2_app" },
+    { "id": "D03", "name": "C2_DB", "role": "c2_db" },
+    { "id": "D04", "name": "OpsDashboard", "role": "ops_dashboard" },
+
+    { "id": "D05", "name": "IdP_1", "role": "identity" },
+    { "id": "D06", "name": "IdP_2", "role": "identity" },
+    { "id": "D07", "name": "AD_DC", "role": "directory" },
+    { "id": "D08", "name": "DNS_DHCP", "role": "infra" },
+    { "id": "D09", "name": "KeyVault", "role": "key_store" },
+
+    { "id": "D10", "name": "Gateway_1", "role": "gateway" },
+    { "id": "D11", "name": "Gateway_2", "role": "gateway" },
+    { "id": "D12", "name": "JumpHost", "role": "jump_host" },
+    { "id": "D13", "name": "VPN_Concentrator", "role": "vpn" },
+
+    { "id": "D14", "name": "MissionData_API", "role": "mission_data_api" },
+    { "id": "D15", "name": "MissionData_DB", "role": "mission_data_db" },
+    { "id": "D16", "name": "FileShare_1", "role": "fileshare" },
+
+    { "id": "D17", "name": "SIEM", "role": "monitoring" },
+    { "id": "D18", "name": "EDR_Manager", "role": "monitoring" },
+
+    { "id": "D19", "name": "Workstation_01", "role": "user_host" },
+    { "id": "D20", "name": "Workstation_02", "role": "user_host" },
+    { "id": "D21", "name": "Workstation_03", "role": "user_host" },
+    { "id": "D22", "name": "Workstation_04", "role": "user_host" },
+    { "id": "D23", "name": "Admin_Laptop", "role": "admin_host" },
+    { "id": "D24", "name": "PKI_CA", "role": "pki" },
+    { "id": "D25", "name": "C2_Operator_Terminal", "role": "operator_terminal" }
+  ],
+  "edges": [
+    { "src": "D13", "dst": "D10", "gamma": 0.7, "notes": "VPN->Gateway" },
+    { "src": "D10", "dst": "D12", "gamma": 0.8, "notes": "Gateway->JumpHost (MFA)" },
+    { "src": "D12", "dst": "D05", "gamma": 0.9, "notes": "JumpHost->Identity tier" },
+
+    { "src": "D05", "dst": "D07", "gamma": 0.8, "notes": "IdP->Directory sync" },
+    { "src": "D07", "dst": "D08", "gamma": 1.0, "notes": "Directory->DNS/DHCP" },
+    { "src": "D09", "dst": "D05", "gamma": 1.1, "notes": "KeyVault->IdP secrets" },
+    { "src": "D24", "dst": "D09", "gamma": 1.1, "notes": "PKI->KeyVault" },
+
+    { "src": "D10", "dst": "D14", "gamma": 0.8, "notes": "Gateway->MissionData API" },
+    { "src": "D14", "dst": "D15", "gamma": 0.9, "notes": "API->MissionData DB" },
+
+    { "src": "D17", "dst": "D18", "gamma": 1.2, "notes": "SIEM->EDR" },
+    { "src": "D18", "dst": "D19", "gamma": 1.0, "notes": "EDR->Host" }
+  ]
+}

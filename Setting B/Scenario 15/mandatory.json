@@ -1,0 +1,13 @@
+{
+  "mandatory": [
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_disconnect" },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity" },
+    { "targetType": "device", "targetId": "D06", "actionId": "lockdown_identity" },
+    { "targetType": "device", "targetId": "D20", "actionId": "lockdown_identity" },
+
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials" },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials" },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials" }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "beta": {
+    "beta_pol": 0.35,
+    "beta_mission": 0.40,
+    "beta_threat": 0.25
+  }
+}

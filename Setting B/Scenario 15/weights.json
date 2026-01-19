@@ -1,0 +1,13 @@
+{
+  "segmentIsolationPenalties": [
+    { "segmentId": "S_GW_DMZ", "lambda": 9.0 },
+    { "segmentId": "S_C2", "lambda": 10.0 },
+    { "segmentId": "S_ID", "lambda": 8.0 },
+    { "segmentId": "S_MDATA", "lambda": 7.0 },
+    { "segmentId": "S_LOG", "lambda": 6.0 },
+    { "segmentId": "S_ADMIN", "lambda": 5.0 },
+    { "segmentId": "S_USER", "lambda": 3.5 },
+    { "segmentId": "S_MGMT", "lambda": 6.0 },
+    { "segmentId": "S_SENSOR", "lambda": 4.0 }
+  ]
+}

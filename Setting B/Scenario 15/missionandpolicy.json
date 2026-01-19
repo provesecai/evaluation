@@ -1,0 +1,20 @@
+{
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID"],
+    "T_avail": [
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 12 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2", "deviceIds": ["D01","D02","D03","D39"] },
+      { "serviceId": "SV_GW", "deviceIds": ["D08","D09","D11"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D04","D05","D06","D07","D20"] }
+    ],
+    "interpretation": "Disruptive actions affecting required-service devices must not start before the service's min-availability time unless authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Avoid destructive or high-disruption actions on devices hosting protected data unless required for containment."
+  }
+}

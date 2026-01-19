@@ -1,0 +1,17 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "actions": [
+    { "id": "segment_disconnect", "category": "containment", "targetType": "segment", "durationBuckets": 2, "resources": { "neteng": 1 } },
+    { "id": "segment_reconnect",  "category": "recovery",    "targetType": "segment", "durationBuckets": 2, "resources": { "neteng": 1 } },
+
+    { "id": "contain_host",       "category": "containment", "targetType": "device",  "durationBuckets": 2, "resources": { "analyst": 1 } },
+    { "id": "eradicate_host",     "category": "eradication", "targetType": "device",  "durationBuckets": 4, "resources": { "analyst": 1 } },
+    { "id": "recover_host",       "category": "recovery",    "targetType": "device",  "durationBuckets": 4, "resources": { "analyst": 1 } },
+
+    { "id": "increase_monitoring","category": "containment", "targetType": "device",  "durationBuckets": 1, "resources": { "analyst": 1 } },
+
+    { "id": "lockdown_identity",  "category": "containment", "targetType": "device",  "durationBuckets": 1, "resources": { "analyst": 1 } },
+
+    { "id": "reset_credentials",  "category": "eradication", "targetType": "device",  "durationBuckets": 2, "resources": { "id_admin": 1 } }
+  ]
+}

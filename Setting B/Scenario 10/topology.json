@@ -1,0 +1,297 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "nodes": [
+    {
+      "id": "D01",
+      "name": "C2_App_1",
+      "role": "c2_app"
+    },
+    {
+      "id": "D02",
+      "name": "C2_App_2",
+      "role": "c2_app"
+    },
+    {
+      "id": "D03",
+      "name": "C2_DB",
+      "role": "c2_db"
+    },
+
+    {
+      "id": "D04",
+      "name": "IdP_1",
+      "role": "identity"
+    },
+    {
+      "id": "D05",
+      "name": "IdP_2",
+      "role": "identity"
+    },
+    {
+      "id": "D06",
+      "name": "AD_DC",
+      "role": "directory"
+    },
+
+    {
+      "id": "D07",
+      "name": "Gateway_1",
+      "role": "gateway"
+    },
+    {
+      "id": "D08",
+      "name": "Gateway_2",
+      "role": "gateway"
+    },
+    {
+      "id": "D09",
+      "name": "JumpHost",
+      "role": "jump_host"
+    },
+
+    {
+      "id": "D10",
+      "name": "MissionData_API",
+      "role": "mission_data_api"
+    },
+    {
+      "id": "D11",
+      "name": "MissionData_DB",
+      "role": "mission_data_db"
+    },
+
+    {
+      "id": "D12",
+      "name": "Logistics_App",
+      "role": "logistics"
+    },
+    {
+      "id": "D13",
+      "name": "Logistics_DB",
+      "role": "logistics_db"
+    },
+
+    {
+      "id": "D14",
+      "name": "SIEM",
+      "role": "monitoring"
+    },
+    {
+      "id": "D15",
+      "name": "EDR_Manager",
+      "role": "monitoring"
+    },
+
+    {
+      "id": "D16",
+      "name": "Mail_Server",
+      "role": "messaging"
+    },
+    {
+      "id": "D17",
+      "name": "Web_Portal",
+      "role": "portal"
+    },
+
+    {
+      "id": "D18",
+      "name": "Workstation_01",
+      "role": "user_host"
+    },
+    {
+      "id": "D19",
+      "name": "Workstation_02",
+      "role": "user_host"
+    },
+    {
+      "id": "D20",
+      "name": "Workstation_03",
+      "role": "user_host"
+    },
+    {
+      "id": "D21",
+      "name": "Workstation_04",
+      "role": "user_host"
+    },
+    {
+      "id": "D22",
+      "name": "Workstation_05",
+      "role": "user_host"
+    },
+    {
+      "id": "D23",
+      "name": "Workstation_06",
+      "role": "user_host"
+    },
+    {
+      "id": "D24",
+      "name": "Workstation_07",
+      "role": "user_host"
+    },
+    {
+      "id": "D25",
+      "name": "Workstation_08",
+      "role": "user_host"
+    },
+
+    {
+      "id": "D26",
+      "name": "FileShare_1",
+      "role": "fileshare"
+    },
+    {
+      "id": "D27",
+      "name": "Backup_Server",
+      "role": "backup"
+    },
+    {
+      "id": "D28",
+      "name": "Patch_Server",
+      "role": "patching"
+    },
+
+    {
+      "id": "D29",
+      "name": "Admin_Laptop",
+      "role": "admin_host"
+    },
+    {
+      "id": "D30",
+      "name": "VPN_Concentrator",
+      "role": "vpn"
+    },
+    {
+      "id": "D31",
+      "name": "DNS_DHCP",
+      "role": "infra"
+    },
+    {
+      "id": "D32",
+      "name": "NTP",
+      "role": "infra"
+    }
+  ],
+  "edges": [
+    {
+      "src": "D30",
+      "dst": "D07",
+      "gamma": 0.6,
+      "notes": "VPN->GW; guarded, monitored"
+    },
+    {
+      "src": "D07",
+      "dst": "D09",
+      "gamma": 0.7,
+      "notes": "GW->JumpHost; MFA required"
+    },
+    {
+      "src": "D09",
+      "dst": "D04",
+      "gamma": 0.8,
+      "notes": "JumpHost->IdP; privileged path"
+    },
+    {
+      "src": "D09",
+      "dst": "D01",
+      "gamma": 0.9,
+      "notes": "JumpHost->C2 tier; restricted"
+    },
+
+    {
+      "src": "D04",
+      "dst": "D06",
+      "gamma": 0.7,
+      "notes": "IdP->Directory sync"
+    },
+    {
+      "src": "D06",
+      "dst": "D31",
+      "gamma": 1.0,
+      "notes": "Directory->DNS/DHCP"
+    },
+
+    {
+      "src": "D01",
+      "dst": "D03",
+      "gamma": 0.9,
+      "notes": "C2 app->C2 DB"
+    },
+    {
+      "src": "D02",
+      "dst": "D03",
+      "gamma": 0.9,
+      "notes": "C2 app->C2 DB"
+    },
+
+    {
+      "src": "D07",
+      "dst": "D10",
+      "gamma": 0.8,
+      "notes": "GW->Mission data API"
+    },
+    {
+      "src": "D10",
+      "dst": "D11",
+      "gamma": 0.8,
+      "notes": "API->Mission data DB"
+    },
+
+    {
+      "src": "D07",
+      "dst": "D12",
+      "gamma": 0.9,
+      "notes": "GW->Logistics app"
+    },
+    {
+      "src": "D12",
+      "dst": "D13",
+      "gamma": 0.9,
+      "notes": "Logistics app->DB"
+    },
+
+    {
+      "src": "D18",
+      "dst": "D16",
+      "gamma": 0.6,
+      "notes": "User->Mail"
+    },
+    {
+      "src": "D18",
+      "dst": "D17",
+      "gamma": 0.6,
+      "notes": "User->Portal"
+    },
+    {
+      "src": "D18",
+      "dst": "D07",
+      "gamma": 0.5,
+      "notes": "User->GW (possible lateral path if creds stolen)"
+    },
+
+    {
+      "src": "D14",
+      "dst": "D15",
+      "gamma": 1.2,
+      "notes": "SIEM->EDR manager (management plane)"
+    },
+    {
+      "src": "D15",
+      "dst": "D18",
+      "gamma": 0.9,
+      "notes": "EDR->Host telemetry/control"
+    },
+
+    {
+      "src": "D27",
+      "dst": "D26",
+      "gamma": 1.0,
+      "notes": "Backup->Fileshare"
+    },
+    {
+      "src": "D28",
+      "dst": "D18",
+      "gamma": 1.1,
+      "notes": "Patch->Host"
+    }
+  ]
+}

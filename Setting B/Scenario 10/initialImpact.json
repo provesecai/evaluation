@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "impactedDevices": [
+    { "deviceId": "D07", "health": 0.35, "notes": "Gateway foothold suspected; degraded trust" },
+    { "deviceId": "D18", "health": 0.50, "notes": "User endpoint; possible credential theft" }
+  ],
+  "I0": ["D07", "D18"]
+}
+

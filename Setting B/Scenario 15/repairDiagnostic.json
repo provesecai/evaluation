@@ -1,0 +1,88 @@
+{
+  "scenarioId": "SC15",
+  "status": "infeasible_in_strict_mode",
+  "conflictSummary": "Early workload exceeds K_IR_TEAM capacity due to overlapping mandatory identity actions plus fixed gateway disconnect deadline.",
+  "conflictItems": [
+    {
+      "type": "segmentDirective",
+      "segmentId": "S_GW_DMZ",
+      "field": "disconnect.fixedFinishBucket",
+      "value": 2,
+      "note": "Hard pin consumes early capacity and reduces scheduling flexibility."
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D04",
+      "actionId": "lockdown_identity",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D06",
+      "actionId": "lockdown_identity",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D20",
+      "actionId": "lockdown_identity",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D06",
+      "actionId": "reset_credentials",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D07",
+      "actionId": "reset_credentials",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory",
+      "targetType": "device",
+      "targetId": "D20",
+      "actionId": "reset_credentials",
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "resourceCap",
+      "resourceId": "K_IR_TEAM",
+      "fromBucket": 0,
+      "toBucket": 11,
+      "cap": 1,
+      "note": "Only one team available in the first 2 hours."
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "relax_noncritical_window",
+      "description": "Move one non-critical credential reset later to reduce early peak.",
+      "edit": { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials", "newEST": 6, "newLFT": 18 },
+      "missionImpact": "low"
+    },
+    {
+      "rank": 2,
+      "repairType": "soften_pin",
+      "description": "Replace fixed disconnect finish with latest-finish bound (keep urgency but allow flexibility).",
+      "edit": { "segmentId": "S_GW_DMZ", "field": "disconnect.fixedFinishBucket", "newValue": null, "newLFT": 3 },
+      "missionImpact": "low"
+    },
+    {
+      "rank": 3,
+      "repairType": "widen_window",
+      "description": "Widen one lockdown window by 1 bucket (10 minutes).",
+      "edit": { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "newEST": 0, "newLFT": 7 },
+      "missionImpact": "low"
+    }
+  ],
+  "recommendedRepairSet": [1, 2]
+}

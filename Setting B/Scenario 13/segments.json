@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "segments": [
+    { "id": "S0_C2",   "name": "C2_Tier",         "deviceIds": ["D01","D02","D03","D04"] },
+    { "id": "S1_ID",   "name": "Identity_Tier",   "deviceIds": ["D05","D06","D07","D08","D31","D32"] },
+    { "id": "S2_GW",   "name": "Gateway_Tier",    "deviceIds": ["D09","D10","D11","D12"] },
+    { "id": "S3_MDAT", "name": "Mission_Data",    "deviceIds": ["D15","D16","D17"] },
+    { "id": "S4_UAV",  "name": "UAV_Telemetry",   "deviceIds": ["D13","D14"] },
+    { "id": "S5_LOG",  "name": "Logistics",       "deviceIds": ["D18","D19"] },
+    { "id": "S6_USER", "name": "User_and_SOC",    "deviceIds": ["D20","D21","D22","D23","D24","D25","D26","D27","D28","D29","D30"] }
+  ]
+}

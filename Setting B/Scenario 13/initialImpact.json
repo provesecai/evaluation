@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "impactedDevices": [
+    { "deviceId": "D15", "health": 0.30, "notes": "MissionData DB degraded (ransomware-like impact)" },
+    { "deviceId": "D17", "health": 0.40, "notes": "FileShare shows encryption activity" }
+  ],
+  "I0": ["D15", "D17"]
+}
+

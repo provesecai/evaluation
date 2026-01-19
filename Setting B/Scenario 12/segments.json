@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SC12_SETTING_B_DUAL_NETENG_DEADLINE_CONFLICT",
+  "segments": [
+    { "id": "S0_C2",   "name": "C2_Tier",        "deviceIds": ["D01","D02","D03","D36"] },
+    { "id": "S1_ID",   "name": "Identity_Tier",  "deviceIds": ["D04","D05","D06","D29","D30","D33","D34"] },
+    { "id": "S2_GW",   "name": "Gateway_Tier",   "deviceIds": ["D07","D08","D09","D10","D32"] },
+    { "id": "S3_MDAT", "name": "Mission_Data",   "deviceIds": ["D11","D12","D26","D27"] },
+    { "id": "S4_UAV",  "name": "UAV_Telemetry",  "deviceIds": ["D13","D14","D35"] },
+    { "id": "S5_LOG",  "name": "Logistics",      "deviceIds": ["D15","D16"] },
+    { "id": "S6_SOC",  "name": "SOC_Monitoring", "deviceIds": ["D17","D18"] },
+    { "id": "S7_USER", "name": "User_Services",  "deviceIds": ["D19","D20","D21","D22","D23","D24","D25","D31","D28"] }
+  ]
+}
+

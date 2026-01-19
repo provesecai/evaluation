@@ -1,0 +1,28 @@
+{
+  "scenarioId": "SC12_SETTING_B_DUAL_NETENG_DEADLINE_CONFLICT",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_UAVTEL"],
+    "T_avail": [
+      { "serviceId": "SV_C2",     "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW",     "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_UAVTEL", "minAvailabilityUntilBucket": 20 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2",     "deviceIds": ["D01","D02","D03","D36"] },
+      { "serviceId": "SV_GW",     "deviceIds": ["D07","D08"] },
+      { "serviceId": "SV_UAVTEL", "deviceIds": ["D13","D14","D35"] }
+    ],
+    "interpretation": "Disruptive actions affecting required service devices are delayed until after min-availability times unless explicitly authorised. Containment actions (e.g., ACL blocks, monitoring uplift) may be allowed earlier."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "deviceDataTypes": [
+      { "deviceId": "D03", "dataTypes": ["DT_OPORD","DT_KEYS"] },
+      { "deviceId": "D12", "dataTypes": ["DT_INTEL"] },
+      { "deviceId": "D34", "dataTypes": ["DT_KEYS"] }
+    ],
+    "notes": "Prefer non-destructive containment and identity hardening on protected-data hosts unless required for containment."
+  }
+}
+
+

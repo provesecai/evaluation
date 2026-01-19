@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "services": [
+    { "id": "SV_C2",        "name": "CommandAndControl",   "deviceIds": ["D01","D02","D03","D04"] },
+    { "id": "SV_GW",        "name": "GatewayConnectivity", "deviceIds": ["D09","D10"] },
+    { "id": "SV_ID",        "name": "IdentityAuth",        "deviceIds": ["D05","D06","D07"] },
+    { "id": "SV_UAVTEL",    "name": "UAVTelemetry",        "deviceIds": ["D13","D14"] },
+    { "id": "SV_MDATA",     "name": "MissionData",         "deviceIds": ["D15","D16","D17"] },
+    { "id": "SV_LOGISTICS", "name": "LogisticsPlanning",   "deviceIds": ["D18","D19"] }
+  ]
+}
+

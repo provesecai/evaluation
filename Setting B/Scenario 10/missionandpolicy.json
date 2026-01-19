@@ -1,0 +1,25 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW"],
+    "T_avail": [
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2", "deviceIds": ["D01","D02","D03"] },
+      { "serviceId": "SV_GW", "deviceIds": ["D07","D08"] }
+    ],
+    "interpretation": "Disruptive actions affecting required service devices are delayed until after the service's minimum availability time unless explicitly authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "deviceDataTypes": [
+      { "deviceId": "D03", "dataTypes": ["DT_OPORD","DT_KEYS"] },
+      { "deviceId": "D11", "dataTypes": ["DT_INTEL"] },
+      { "deviceId": "D06", "dataTypes": ["DT_KEYS"] }
+    ],
+    "notes": "Prefer containment/identity hardening over disruptive recovery on protected-data hosts unless needed for containment."
+  }
+}
+

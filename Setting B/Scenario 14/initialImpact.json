@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "impactedDevices": [
+    { "deviceId": "D23", "health": 0.55, "notes": "Admin laptop shows credential theft indicators" },
+    { "deviceId": "D19", "health": 0.75, "notes": "User host suspicious tokens observed" }
+  ],
+  "I0": ["D23", "D19"]
+}

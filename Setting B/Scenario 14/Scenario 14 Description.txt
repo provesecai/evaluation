@@ -1,0 +1,6 @@
+Scenario 14 (Setting B): "Credential-theft -> mandatory resets overload (id_admin bottleneck)"
+
+First produced SRO was infeasible: 
+
+Each reset_credentials takes 2 buckets and uses 1 id_admin.
+All three are forced into EST=0, LFT=3, which gives a max of 3 buckets to finish them; but sequentially they need 6 buckets with one id_admin → impossible.

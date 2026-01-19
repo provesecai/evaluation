@@ -1,0 +1,15 @@
+{
+  "actions": [
+    { "actionId": "contain_host", "category": "containment", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } },
+    { "actionId": "eradicate_host", "category": "eradication", "durationBuckets": 4, "resourceDemand": { "K_IR_TEAM": 1 } },
+    { "actionId": "recover_host", "category": "recovery", "durationBuckets": 6, "resourceDemand": { "K_IR_TEAM": 1 } },
+
+    { "actionId": "lockdown_identity", "category": "identity", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } },
+    { "actionId": "reset_credentials", "category": "identity", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } },
+
+    { "actionId": "increase_monitoring", "category": "monitoring", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } },
+
+    { "actionId": "segment_disconnect", "category": "segmentation", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } },
+    { "actionId": "segment_reconnect", "category": "segmentation", "durationBuckets": 2, "resourceDemand": { "K_IR_TEAM": 1 } }
+  ]
+}

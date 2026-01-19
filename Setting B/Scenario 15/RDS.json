@@ -1,0 +1,93 @@
+{
+  "scenarioId": "SC15",
+  "setting": "B_infeasible_then_repair",
+  "enabledActions": [
+    { "targetType": "device", "targetId": "D10", "actionId": "contain_host", "E": 1 },
+    { "targetType": "device", "targetId": "D10", "actionId": "eradicate_host", "E": 1 },
+    { "targetType": "device", "targetId": "D10", "actionId": "recover_host", "E": 1 },
+
+    { "targetType": "device", "targetId": "D09", "actionId": "contain_host", "E": 1 },
+    { "targetType": "device", "targetId": "D09", "actionId": "eradicate_host", "E": 1 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "E": 1 },
+    { "targetType": "device", "targetId": "D06", "actionId": "lockdown_identity", "E": 1 },
+    { "targetType": "device", "targetId": "D20", "actionId": "lockdown_identity", "E": 1 },
+
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials", "E": 1 },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials", "E": 1 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "E": 1 },
+
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_disconnect", "E": 1 },
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_reconnect", "E": 1 },
+
+    { "targetType": "device", "targetId": "D24", "actionId": "increase_monitoring", "E": 1 }
+  ],
+
+  "timeWindows": [
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_disconnect", "EST": 0, "LFT": 2 },
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_reconnect", "EST": 6, "LFT": 18 },
+
+    { "targetType": "device", "targetId": "D10", "actionId": "contain_host", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D10", "actionId": "eradicate_host", "EST": 2, "LFT": 18 },
+    { "targetType": "device", "targetId": "D10", "actionId": "recover_host", "EST": 18, "LFT": 48 },
+
+    { "targetType": "device", "targetId": "D09", "actionId": "contain_host", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D09", "actionId": "eradicate_host", "EST": 2, "LFT": 18 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D06", "actionId": "lockdown_identity", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D20", "actionId": "lockdown_identity", "EST": 0, "LFT": 6 },
+
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "EST": 0, "LFT": 6 },
+
+    { "targetType": "device", "targetId": "D24", "actionId": "increase_monitoring", "EST": 0, "LFT": 12 }
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId": "S_GW_DMZ",
+      "disconnect": {
+        "fixedFinishBucket": 2,
+        "rationale": "Gateway-adjacent foothold; contain spread quickly."
+      },
+      "reconnect": {
+        "earliestBucket": 6,
+        "latestBucket": 18,
+        "rationale": "Restore access after initial containment/verification."
+      },
+      "maxIsolationBuckets": 18
+    }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId": "D10", "alpha": 0.85 },
+    { "deviceId": "D09", "alpha": 0.75 },
+    { "deviceId": "D04", "alpha": 0.70 },
+    { "deviceId": "D06", "alpha": 0.80 },
+    { "deviceId": "D20", "alpha": 0.78 },
+    { "deviceId": "D01", "alpha": 0.90 },
+    { "deviceId": "D03", "alpha": 0.92 },
+    { "deviceId": "D08", "alpha": 0.88 }
+  ],
+
+  "actionRewards": [
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_disconnect", "reward": 9.0 },
+    { "targetType": "segment", "targetId": "S_GW_DMZ", "actionId": "segment_reconnect", "reward": 4.0 },
+
+    { "targetType": "device", "targetId": "D10", "actionId": "contain_host", "reward": 8.0 },
+    { "targetType": "device", "targetId": "D10", "actionId": "eradicate_host", "reward": 8.5 },
+    { "targetType": "device", "targetId": "D10", "actionId": "recover_host", "reward": 6.0 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "reward": 7.5 },
+    { "targetType": "device", "targetId": "D06", "actionId": "lockdown_identity", "reward": 8.0 },
+    { "targetType": "device", "targetId": "D20", "actionId": "lockdown_identity", "reward": 8.0 },
+
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials", "reward": 7.0 },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials", "reward": 6.5 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "reward": 7.2 },
+
+    { "targetType": "device", "targetId": "D24", "actionId": "increase_monitoring", "reward": 6.0 }
+  ]
+}

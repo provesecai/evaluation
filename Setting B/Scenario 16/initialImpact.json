@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC16",
+  "initialImpactedSet": ["D09", "D28"],
+  "deviceHealth": [
+    { "deviceId": "D09", "health": 0.45, "notes": "Suspected credential theft + admin jump exposure." },
+    { "deviceId": "D28", "health": 0.55, "notes": "Proxy foothold adjacent to gateway tier." },
+    { "deviceId": "D04", "health": 0.80, "notes": "No confirmed compromise; elevated risk via jump path." },
+    { "deviceId": "D01", "health": 0.85, "notes": "Mission tier; must remain available under policy." }
+  ]
+}

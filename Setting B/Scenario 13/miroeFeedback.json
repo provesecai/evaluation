@@ -1,0 +1,45 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "status": "INFEASIBLE",
+  "summary": "Infeasible due to precedence chain (contain->eradicate->recover) and a too-tight LFT on recover_host, which also blocks segment_reconnect via precedence.",
+  "conflictSet": [
+    {
+      "type": "precedence",
+      "before": "(D15,eradicate_host)",
+      "after": "(D15,recover_host)",
+      "notes": "recover_host cannot start before eradicate_host finishes."
+    },
+    {
+      "type": "time_window",
+      "target": "(D15,recover_host)",
+      "window": { "EST": 6, "LFT": 10 },
+      "durationBuckets": 6,
+      "notes": "Even with earliest possible start (after eradication), finish exceeds LFT."
+    },
+    {
+      "type": "precedence",
+      "before": "(D15,recover_host)",
+      "after": "(S3_MDAT,segment_reconnect)",
+      "notes": "segment_reconnect gated on completion of recovery."
+    },
+    {
+      "type": "time_window",
+      "target": "(S3_MDAT,segment_reconnect)",
+      "window": { "EST": 6, "LFT": 12 },
+      "durationBuckets": 2,
+      "notes": "Reconnect deadline becomes impossible once recovery shifts later."
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "relax_time_windows",
+      "description": "Widen non-mission-critical LFT bounds to match the minimum feasible completion implied by precedence and durations.",
+      "edits": [
+        { "file": "plannerOutput.json", "path": "timeWindows[(D15,recover_host)]", "newEST": 8, "newLFT": 16 },
+        { "file": "plannerOutput.json", "path": "timeWindows[(S3_MDAT,segment_reconnect)]", "newEST": 14, "newLFT": 18 }
+      ],
+      "missionImpact": "Low/medium: mission-data restoration is delayed but required services availability guarantees remain unchanged."
+    }
+  ]
+}

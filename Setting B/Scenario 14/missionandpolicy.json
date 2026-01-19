@@ -1,0 +1,23 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW"],
+    "T_avail": [
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2", "deviceIds": ["D01","D02","D03","D04","D25"] },
+      { "serviceId": "SV_GW", "deviceIds": ["D10","D11"] }
+    ],
+    "interpretation": "Disruptive actions affecting required service devices/segments are delayed until after their min-availability times unless explicitly authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_KEYS"],
+    "deviceDataTypes": [
+      { "deviceId": "D03", "dataTypes": ["DT_OPORD"] },
+      { "deviceId": "D09", "dataTypes": ["DT_KEYS"] }
+    ],
+    "notes": "Avoid disruptive actions on protected-data hosts unless required for containment."
+  }
+}

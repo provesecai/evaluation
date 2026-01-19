@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "segments": [
+    { "id": "S0_C2",   "name": "C2_Tier",        "deviceIds": ["D01","D02","D03","D04","D25"] },
+    { "id": "S1_ID",   "name": "Identity_Tier",  "deviceIds": ["D05","D06","D07","D08","D09","D24"] },
+    { "id": "S2_GW",   "name": "Gateway_Tier",   "deviceIds": ["D10","D11","D12","D13"] },
+    { "id": "S3_MDAT", "name": "Mission_Data",   "deviceIds": ["D14","D15","D16"] },
+    { "id": "S4_SOC",  "name": "SOC_and_User",   "deviceIds": ["D17","D18","D19","D20","D21","D22","D23"] }
+  ]
+}

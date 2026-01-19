@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "resourceTypes": ["analyst", "neteng", "id_admin"],
+  "capacity": [
+    { "resource": "analyst",  "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "neteng",   "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "id_admin", "fromBucket": 0, "toBucket": 72, "R": 1 }
+  ],
+  "notes": "Setting B: single-team staffing; feasibility depends on precedence + time-window consistency."
+}
+

@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "criticality": [
+    { "serviceId": "SV_C2",        "c": 10 },
+    { "serviceId": "SV_GW",        "c": 9 },
+    { "serviceId": "SV_UAVTEL",    "c": 8 },
+    { "serviceId": "SV_ID",        "c": 8 },
+    { "serviceId": "SV_MDATA",     "c": 7 },
+    { "serviceId": "SV_LOGISTICS", "c": 6 }
+  ]
+}
+

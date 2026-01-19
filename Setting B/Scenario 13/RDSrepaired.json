@@ -1,0 +1,70 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "setting": "B",
+  "bucketMinutes": 10,
+  "notes": "Repaired after MIROE diagnostic: widen recover/reconnect windows to respect precedence and minimum feasible completion times.",
+
+  "enabledActions": [
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_disconnect", "E": 1 },
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_reconnect",  "E": 1 },
+
+    { "targetType": "device",  "targetId": "D15", "actionId": "contain_host",          "E": 1 },
+    { "targetType": "device",  "targetId": "D15", "actionId": "eradicate_host",        "E": 1 },
+    { "targetType": "device",  "targetId": "D15", "actionId": "recover_host",          "E": 1 },
+
+    { "targetType": "device",  "targetId": "D21", "actionId": "increase_monitoring",   "E": 1 },
+    { "targetType": "device",  "targetId": "D05", "actionId": "lockdown_identity",     "E": 1 }
+  ],
+
+  "timeWindows": [
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_disconnect", "EST": 0, "LFT": 2 },
+
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_reconnect",  "EST": 14, "LFT": 18 },
+
+    { "targetType": "device",  "targetId": "D15", "actionId": "contain_host",          "EST": 0, "LFT": 2 },
+    { "targetType": "device",  "targetId": "D15", "actionId": "eradicate_host",        "EST": 2, "LFT": 8 },
+
+    { "targetType": "device",  "targetId": "D15", "actionId": "recover_host",          "EST": 8, "LFT": 16 },
+
+    { "targetType": "device",  "targetId": "D21", "actionId": "increase_monitoring",   "EST": 0, "LFT": 6 },
+    { "targetType": "device",  "targetId": "D05", "actionId": "lockdown_identity",     "EST": 0, "LFT": 6 }
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId": "S3_MDAT",
+      "disconnect": {
+        "fixedFinishBucket": 2,
+        "rationale": "Contain spread fast."
+      },
+      "reconnect": {
+        "earliestBucket": 14,
+        "latestBucket": 18,
+        "rationale": "Reconnect after recovery completes."
+      },
+      "maxIsolationBuckets": 18
+    }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId": "D15", "alpha": 0.95 },
+    { "deviceId": "D17", "alpha": 0.70 },
+    { "deviceId": "D05", "alpha": 0.75 }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId": "S3_MDAT", "lambda": 8.0 }
+  ],
+
+  "actionRewards": [
+    { "targetType":"device",  "targetId":"D15", "actionId":"contain_host",        "reward": 8.5 },
+    { "targetType":"device",  "targetId":"D15", "actionId":"eradicate_host",      "reward": 8.0 },
+    { "targetType":"device",  "targetId":"D15", "actionId":"recover_host",        "reward": 9.0 },
+
+    { "targetType":"segment", "targetId":"S3_MDAT", "actionId":"segment_disconnect", "reward": 8.0 },
+    { "targetType":"segment", "targetId":"S3_MDAT", "actionId":"segment_reconnect",  "reward": 6.0 },
+
+    { "targetType":"device",  "targetId":"D21", "actionId":"increase_monitoring", "reward": 5.5 },
+    { "targetType":"device",  "targetId":"D05", "actionId":"lockdown_identity",   "reward": 7.0 }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_UAVTEL"],
+    "T_avail": [
+      { "serviceId": "SV_C2",     "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW",     "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_UAVTEL", "minAvailabilityUntilBucket": 20 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2",     "deviceIds": ["D01","D02","D03","D04"] },
+      { "serviceId": "SV_GW",     "deviceIds": ["D09","D10"] },
+      { "serviceId": "SV_UAVTEL", "deviceIds": ["D13","D14"] }
+    ],
+    "interpretation": "For required services, disruptive actions on their supporting devices/segments are delayed until after min-availability times unless explicitly authorised. Non-disruptive containment may be allowed earlier."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "deviceDataTypes": [
+      { "deviceId": "D03", "dataTypes": ["DT_OPORD","DT_KEYS"] },
+      { "deviceId": "D15", "dataTypes": ["DT_INTEL"] },
+      { "deviceId": "D32", "dataTypes": ["DT_KEYS"] }
+    ],
+    "notes": "Prefer containment/monitoring and staged recovery on protected-data hosts; avoid destructive actions unless required for containment."
+  }
+}

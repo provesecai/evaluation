@@ -1,0 +1,24 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "precedence": [
+    {
+      "before": { "targetType": "device", "targetId": "D15", "actionId": "contain_host" },
+      "after":  { "targetType": "device", "targetId": "D15", "actionId": "eradicate_host" }
+    },
+    {
+      "before": { "targetType": "device", "targetId": "D15", "actionId": "eradicate_host" },
+      "after":  { "targetType": "device", "targetId": "D15", "actionId": "recover_host" }
+    },
+
+    {
+      "before": { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_disconnect" },
+      "after":  { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_reconnect" }
+    },
+
+    {
+      "before": { "targetType": "device", "targetId": "D15", "actionId": "recover_host" },
+      "after":  { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_reconnect" }
+    }
+  ]
+}
+

@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "services": [
+    { "id": "SV_C2",    "name": "CommandAndControl",   "deviceIds": ["D01","D02","D03","D04","D25"] },
+    { "id": "SV_GW",    "name": "GatewayConnectivity", "deviceIds": ["D10","D11"] },
+    { "id": "SV_ID",    "name": "IdentityAuth",        "deviceIds": ["D05","D06","D07"] },
+    { "id": "SV_MDATA", "name": "MissionData",         "deviceIds": ["D14","D15","D16"] }
+  ]
+}

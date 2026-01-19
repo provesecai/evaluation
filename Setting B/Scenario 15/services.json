@@ -1,0 +1,10 @@
+{
+  "services": [
+    { "serviceId": "SV_C2", "name": "Command-and-Control", "deviceIds": ["D01","D02","D03","D39"] },
+    { "serviceId": "SV_GW", "name": "Gateway Connectivity", "deviceIds": ["D08","D09","D11"] },
+    { "serviceId": "SV_ID", "name": "Identity & Access", "deviceIds": ["D04","D05","D06","D07","D20"] },
+    { "serviceId": "SV_MDATA", "name": "Mission Data Dissemination", "deviceIds": ["D12","D13","D14","D36"] },
+    { "serviceId": "SV_LOG", "name": "Logistics Planning", "deviceIds": ["D15","D16"] },
+    { "serviceId": "SV_SECOPS", "name": "Security Monitoring", "deviceIds": ["D24","D25","D26","D27"] }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC16",
+  "timeBuckets": 72,
+  "resources": [
+    { "resourceType": "RESPONDER_TEAM", "capacityPerBucket": 1 },
+    { "resourceType": "ID_ADMIN", "capacityPerBucket": 1 },
+    { "resourceType": "NETOPS", "capacityPerBucket": 1 },
+    { "resourceType": "SOC_ANALYST", "capacityPerBucket": 1 }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "scenarioId": "SC16",
+  "status": "infeasible",
+  "rootCauseSummary": "Early mandatory identity actions exceed ID_ADMIN capacity within tight windows; combined with early segment isolation window creates an unschedulable peak workload.",
+  "conflictingRdsEntries": [
+    { "type": "mandatory", "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity" },
+    { "type": "mandatory", "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity" },
+    { "type": "mandatory", "targetType": "device", "targetId": "D33", "actionId": "lockdown_identity" },
+    { "type": "mandatory", "targetType": "device", "targetId": "D18", "actionId": "reset_credentials" },
+    { "type": "mandatory", "targetType": "device", "targetId": "D19", "actionId": "reset_credentials" },
+    { "type": "mandatory", "targetType": "device", "targetId": "D20", "actionId": "reset_credentials" },
+    { "type": "timeWindow", "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "EST": 0, "LFT": 3 },
+    { "type": "timeWindow", "targetType": "device", "targetId": "D18", "actionId": "reset_credentials", "EST": 0, "LFT": 3 },
+    { "type": "timeWindow", "targetType": "segment", "targetId": "S1", "actionId": "segment_disconnect", "EST": 0, "LFT": 2 },
+    { "type": "resource", "resourceType": "ID_ADMIN", "capacityPerBucket": 1 }
+  ],
+  "suggestedRepairsRanked": [
+    {
+      "rank": 1,
+      "description": "Widen non-critical credential reset windows to reduce early contention while keeping gateway isolation deadline.",
+      "patch": [
+        { "op": "replace", "path": "/timeWindows/reset_credentials/D19/LFT", "value": 8 },
+        { "op": "replace", "path": "/timeWindows/reset_credentials/D20/LFT", "value": 8 }
+      ]
+    },
+    {
+      "rank": 2,
+      "description": "Relax one identity lockdown from mandatory to optional (keep enabled) and prioritise others.",
+      "patch": [
+        { "op": "remove", "path": "/mandatoryActions/device/D05/lockdown_identity" }
+      ]
+    },
+    {
+      "rank": 3,
+      "description": "If still infeasible, widen one lockdown window slightly (mission-safe) without changing SV_C2 or SV_GW availability guarantees.",
+      "patch": [
+        { "op": "replace", "path": "/timeWindows/lockdown_identity/D05/LFT", "value": 6 }
+      ]
+    }
+  ],
+  "selectedRepair": { "rank": 1 }
+}

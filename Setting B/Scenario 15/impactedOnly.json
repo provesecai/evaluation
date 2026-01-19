@@ -1,0 +1,4 @@
+{
+  "impactedOnly": false,
+  "notes": "Allow actions on impacted and high-risk adjacent assets (e.g., gateway and identity tiers)."
+}

@@ -1,0 +1,87 @@
+{
+  "scenarioId": "SC16",
+  "mode": "strict",
+  "timeBuckets": 72,
+
+  "enabledActions": [
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_disconnect", "E": 1 },
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_reconnect", "E": 1 },
+
+    { "targetType": "device", "targetId": "D09", "actionId": "contain_host", "E": 1 },
+    { "targetType": "device", "targetId": "D09", "actionId": "eradicate_host", "E": 1 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "E": 1 },
+    { "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity", "E": 1 },
+    { "targetType": "device", "targetId": "D33", "actionId": "lockdown_identity", "E": 1 },
+
+    { "targetType": "device", "targetId": "D18", "actionId": "reset_credentials", "E": 1 },
+    { "targetType": "device", "targetId": "D19", "actionId": "reset_credentials", "E": 1 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "E": 1 },
+
+    { "targetType": "device", "targetId": "D37", "actionId": "increase_monitoring", "E": 1 }
+  ],
+
+  "mandatoryActions": [
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_disconnect" },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity" },
+    { "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity" },
+    { "targetType": "device", "targetId": "D33", "actionId": "lockdown_identity" },
+
+    { "targetType": "device", "targetId": "D18", "actionId": "reset_credentials" },
+    { "targetType": "device", "targetId": "D19", "actionId": "reset_credentials" },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials" }
+  ],
+
+  "timeWindows": [
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_disconnect", "EST": 0, "LFT": 2 },
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_reconnect", "EST": 6, "LFT": 18 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity", "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D33", "actionId": "lockdown_identity", "EST": 0, "LFT": 3 },
+
+    { "targetType": "device", "targetId": "D18", "actionId": "reset_credentials", "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D19", "actionId": "reset_credentials", "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "EST": 0, "LFT": 3 },
+
+    { "targetType": "device", "targetId": "D09", "actionId": "contain_host", "EST": 0, "LFT": 8 },
+    { "targetType": "device", "targetId": "D09", "actionId": "eradicate_host", "EST": 2, "LFT": 18 },
+
+    { "targetType": "device", "targetId": "D37", "actionId": "increase_monitoring", "EST": 0, "LFT": 12 }
+  ],
+
+  "deviceUrgencyWeights": [
+    { "deviceId": "D07", "alpha": 0.85 },
+    { "deviceId": "D09", "alpha": 0.90 },
+    { "deviceId": "D04", "alpha": 0.75 },
+    { "deviceId": "D05", "alpha": 0.70 },
+    { "deviceId": "D33", "alpha": 0.80 },
+    { "deviceId": "D01", "alpha": 0.95 },
+    { "deviceId": "D03", "alpha": 0.92 }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId": "S1", "lambda": 8.0 },
+    { "segmentId": "S2", "lambda": 10.0 },
+    { "segmentId": "S3", "lambda": 7.5 }
+  ],
+
+  "actionRewards": [
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_disconnect", "reward": 8.5 },
+    { "targetType": "segment", "targetId": "S1", "actionId": "segment_reconnect", "reward": 4.0 },
+
+    { "targetType": "device", "targetId": "D04", "actionId": "lockdown_identity", "reward": 8.0 },
+    { "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity", "reward": 7.5 },
+    { "targetType": "device", "targetId": "D33", "actionId": "lockdown_identity", "reward": 8.5 },
+
+    { "targetType": "device", "targetId": "D18", "actionId": "reset_credentials", "reward": 6.5 },
+    { "targetType": "device", "targetId": "D19", "actionId": "reset_credentials", "reward": 6.0 },
+    { "targetType": "device", "targetId": "D20", "actionId": "reset_credentials", "reward": 5.5 },
+
+    { "targetType": "device", "targetId": "D09", "actionId": "contain_host", "reward": 7.5 },
+    { "targetType": "device", "targetId": "D09", "actionId": "eradicate_host", "reward": 8.5 },
+
+    { "targetType": "device", "targetId": "D37", "actionId": "increase_monitoring", "reward": 6.0 }
+  ]
+}

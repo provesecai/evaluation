@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC12_SETTING_B_DUAL_NETENG_DEADLINE_CONFLICT",
+  "impactedDevices": [
+    { "deviceId": "D09", "health": 0.45, "notes": "JumpHost suspected compromised; staging point" },
+    { "deviceId": "D11", "health": 0.55, "notes": "MissionData API shows anomalous token use" }
+  ],
+  "I0": ["D09", "D11"]
+}
+
+

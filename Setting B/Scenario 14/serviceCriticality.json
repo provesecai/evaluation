@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "criticality": [
+    { "serviceId": "SV_C2",    "c": 10 },
+    { "serviceId": "SV_GW",    "c": 9 },
+    { "serviceId": "SV_ID",    "c": 9 },
+    { "serviceId": "SV_MDATA", "c": 7 }
+  ]
+}

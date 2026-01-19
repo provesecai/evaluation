@@ -1,0 +1,3 @@
+
+RDS infeasibility:
+Contain (2 buckets) → Eradicate (6) → Recover (6). With precedence, recover can only start after eradicate finishes (earliest finish at bucket 8), so recover earliest finish is 14, but LFT(recover)=10 (and reconnect depends on recover and has LFT=12). Contradiction.

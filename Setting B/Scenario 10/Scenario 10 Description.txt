@@ -1,0 +1,6 @@
+Why it is infeasible 
+reset_credentials requires id_admin=1, but resources.json sets id_admin=0 for buckets 0–11.
+
+Yet mandatory.json requires two credential resets in the early phase (EST 0, LFT 6).
+
+So MIROE in Strict Mode will correctly return INFEASIBLE.

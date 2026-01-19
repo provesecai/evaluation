@@ -1,0 +1,51 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "status": "INFEASIBLE",
+  "summary": "Infeasible due to mandatory identity resets scheduled in a window where id_admin capacity is zero.",
+  "conflictSet": [
+    {
+      "type": "resource_cap",
+      "resource": "id_admin",
+      "period": { "fromBucket": 0, "toBucket": 11 },
+      "capacity": 0,
+      "evidence": "resources.json id_admin=0 in first 2 hours"
+    },
+    {
+      "type": "mandatory_action",
+      "targetType": "device",
+      "targetId": "D18",
+      "actionId": "reset_credentials",
+      "required": 1,
+      "window": { "EST": 0, "LFT": 6 }
+    },
+    {
+      "type": "mandatory_action",
+      "targetType": "device",
+      "targetId": "D19",
+      "actionId": "reset_credentials",
+      "required": 1,
+      "window": { "EST": 0, "LFT": 6 }
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "shift_time_window",
+      "description": "Delay credential resets until id_admin becomes available (bucket 12).",
+      "edits": [
+        { "file": "plannerOutput.json", "path": "timeWindows[(D18,reset_credentials)]", "newEST": 12, "newLFT": 18 },
+        { "file": "plannerOutput.json", "path": "timeWindows[(D19,reset_credentials)]", "newEST": 12, "newLFT": 18 }
+      ],
+      "missionImpact": "Low (does not violate service availability guarantees; preserves early containment)."
+    },
+    {
+      "rank": 2,
+      "repairType": "demote_action",
+      "description": "Keep only one reset mandatory in the early phase; keep the second as admissible/optional.",
+      "edits": [
+        { "file": "mandatory.json", "action": "(D19,reset_credentials)", "change": "remove_from_mandatory" }
+      ],
+      "missionImpact": "Medium (reduces identity hardening coverage early)."
+    }
+  ]
+}

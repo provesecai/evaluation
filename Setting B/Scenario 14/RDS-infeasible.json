@@ -1,0 +1,55 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "setting": "B",
+  "bucketMinutes": 10,
+  "notes": "Infeasibility class: id_admin overload. Three mandatory credential resets share a tight time window, but only one id_admin is available.",
+
+  "enabledActions": [
+    { "targetType": "device",  "targetId": "D23", "actionId": "contain_host",        "E": 1 },
+    { "targetType": "device",  "targetId": "D23", "actionId": "eradicate_host",      "E": 1 },
+    { "targetType": "device",  "targetId": "D23", "actionId": "recover_host",        "E": 1 },
+
+    { "targetType": "device",  "targetId": "D05", "actionId": "reset_credentials",   "E": 1 },
+    { "targetType": "device",  "targetId": "D06", "actionId": "reset_credentials",   "E": 1 },
+    { "targetType": "device",  "targetId": "D07", "actionId": "reset_credentials",   "E": 1 },
+
+    { "targetType": "device",  "targetId": "D17", "actionId": "increase_monitoring", "E": 1 },
+    { "targetType": "device",  "targetId": "D05", "actionId": "lockdown_identity",   "E": 1 }
+  ],
+
+  "timeWindows": [
+    { "targetType": "device", "targetId": "D23", "actionId": "contain_host",        "EST": 0, "LFT": 2 },
+    { "targetType": "device", "targetId": "D23", "actionId": "eradicate_host",      "EST": 2, "LFT": 10 },
+    { "targetType": "device", "targetId": "D23", "actionId": "recover_host",        "EST": 10, "LFT": 20 },
+
+    { "targetType": "device", "targetId": "D05", "actionId": "reset_credentials",   "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials",   "EST": 0, "LFT": 3 },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials",   "EST": 0, "LFT": 3 },
+
+    { "targetType": "device", "targetId": "D17", "actionId": "increase_monitoring", "EST": 0, "LFT": 6 },
+    { "targetType": "device", "targetId": "D05", "actionId": "lockdown_identity",   "EST": 0, "LFT": 6 }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId": "D23", "alpha": 0.85, "notes": "Admin host suspected credential theft." },
+    { "deviceId": "D05", "alpha": 0.80, "notes": "Identity tier hardening prevents propagation." },
+    { "deviceId": "D07", "alpha": 0.75, "notes": "Directory compromise risk." }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId": "S1_ID", "lambda": 7.5, "notes": "Identity isolation disrupts auth; penalise prolonged isolation." }
+  ],
+
+  "actionRewards": [
+    { "targetType":"device", "targetId":"D23", "actionId":"contain_host",        "reward": 7.5 },
+    { "targetType":"device", "targetId":"D23", "actionId":"eradicate_host",      "reward": 7.0 },
+    { "targetType":"device", "targetId":"D23", "actionId":"recover_host",        "reward": 6.0 },
+
+    { "targetType":"device", "targetId":"D05", "actionId":"reset_credentials",  "reward": 8.5 },
+    { "targetType":"device", "targetId":"D06", "actionId":"reset_credentials",  "reward": 8.0 },
+    { "targetType":"device", "targetId":"D07", "actionId":"reset_credentials",  "reward": 8.5 },
+
+    { "targetType":"device", "targetId":"D05", "actionId":"lockdown_identity",  "reward": 7.5 },
+    { "targetType":"device", "targetId":"D17", "actionId":"increase_monitoring","reward": 5.5 }
+  ]
+}

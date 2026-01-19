@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC16",
+  "services": [
+    { "serviceId": "SV_C2", "name": "CommandAndControl", "deviceIds": ["D01","D02","D03","D32","D36"], "segmentIds": ["S2"] },
+    { "serviceId": "SV_GW", "name": "GatewayConnectivity", "deviceIds": ["D07","D08","D28","D29"], "segmentIds": ["S1"] },
+    { "serviceId": "SV_ID", "name": "IdentityAndAuth", "deviceIds": ["D04","D05","D33"], "segmentIds": ["S3"] },
+    { "serviceId": "SV_INTEL", "name": "IntelDissemination", "deviceIds": ["D10","D11","D12"], "segmentIds": ["S4"] },
+    { "serviceId": "SV_LOG", "name": "LogisticsPlanning", "deviceIds": ["D13","D14","D38"], "segmentIds": ["S5"] },
+    { "serviceId": "SV_SOC", "name": "SecurityOperations", "deviceIds": ["D15","D16","D17","D30","D37"], "segmentIds": ["S6"] }
+  ]
+}

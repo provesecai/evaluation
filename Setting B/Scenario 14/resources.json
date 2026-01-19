@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "resourceTypes": ["analyst", "neteng", "id_admin"],
+  "capacity": [
+    { "resource": "analyst",  "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "neteng",   "fromBucket": 0, "toBucket": 72, "R": 1 },
+    { "resource": "id_admin", "fromBucket": 0, "toBucket": 72, "R": 1 }
+  ],
+  "notes": "Setting B: one responder of each type. Infeasibility arises from tight overlapping mandatory identity actions."
+}

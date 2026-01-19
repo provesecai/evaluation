@@ -1,0 +1,9 @@
+{
+  "resourceTypes": [
+    { "resourceId": "K_IR_TEAM", "name": "IR Responder Team" }
+  ],
+  "capacity": [
+    { "resourceId": "K_IR_TEAM", "fromBucket": 0, "toBucket": 11, "cap": 1 },
+    { "resourceId": "K_IR_TEAM", "fromBucket": 12, "toBucket": 71, "cap": 2 }
+  ]
+}

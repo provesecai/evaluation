@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SC12_SETTING_B_DUAL_NETENG_DEADLINE_CONFLICT",
+  "services": [
+    { "id": "SV_C2",        "name": "CommandAndControl",   "deviceIds": ["D01","D02","D03","D36"] },
+    { "id": "SV_GW",        "name": "GatewayConnectivity", "deviceIds": ["D07","D08"] },
+    { "id": "SV_ID",        "name": "IdentityAuth",        "deviceIds": ["D04","D05","D06"] },
+    { "id": "SV_MDATA",     "name": "MissionData",         "deviceIds": ["D11","D12","D26"] },
+    { "id": "SV_UAVTEL",    "name": "UAVTelemetry",        "deviceIds": ["D13","D14","D35"] },
+    { "id": "SV_LOGISTICS", "name": "LogisticsPlanning",   "deviceIds": ["D15","D16"] }
+  ]
+}
+
+
+

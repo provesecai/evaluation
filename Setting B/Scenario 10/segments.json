@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "segments": [
+    { "id": "S0_C2",    "name": "C2_Tier",          "deviceIds": ["D01","D02","D03"] },
+    { "id": "S1_ID",    "name": "Identity_Tier",    "deviceIds": ["D04","D05","D06","D31","D32"] },
+    { "id": "S2_GW",    "name": "Gateway_Tier",     "deviceIds": ["D07","D08","D09","D30"] },
+    { "id": "S3_DATA",  "name": "Mission_Data",     "deviceIds": ["D10","D11"] },
+    { "id": "S4_LOG",   "name": "Logistics",        "deviceIds": ["D12","D13"] },
+    { "id": "S5_SOC",   "name": "Monitoring_SOC",   "deviceIds": ["D14","D15"] },
+    { "id": "S6_USERS", "name": "User_Endpoints",   "deviceIds": ["D16","D17","D18","D19","D20","D21","D22","D23","D24","D25","D26","D27","D28","D29"] }
+  ]
+}
+

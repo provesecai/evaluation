@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "mandatory": [
+    { "targetType": "device", "targetId": "D23", "actionId": "contain_host",      "x": 1 },
+    { "targetType": "device", "targetId": "D23", "actionId": "eradicate_host",    "x": 1 },
+    { "targetType": "device", "targetId": "D23", "actionId": "recover_host",      "x": 1 },
+
+    { "targetType": "device", "targetId": "D05", "actionId": "reset_credentials", "x": 1 },
+    { "targetType": "device", "targetId": "D06", "actionId": "reset_credentials", "x": 1 },
+    { "targetType": "device", "targetId": "D07", "actionId": "reset_credentials", "x": 1 }
+  ],
+  "notes": "These mandated resets reflect conservative identity containment after suspected credential compromise."
+}

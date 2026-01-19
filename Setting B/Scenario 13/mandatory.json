@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "mandatory": [
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_disconnect", "x": 1, "rationale": "Contain spread in mission-data enclave." },
+    { "targetType": "segment", "targetId": "S3_MDAT", "actionId": "segment_reconnect",  "x": 1, "rationale": "Restore mission data dissemination within the planning horizon." },
+
+    { "targetType": "device", "targetId": "D15", "actionId": "contain_host",   "x": 1, "rationale": "Stop ongoing encryption/abuse." },
+    { "targetType": "device", "targetId": "D15", "actionId": "eradicate_host", "x": 1, "rationale": "Remove malware/artifacts before recovery." },
+    { "targetType": "device", "targetId": "D15", "actionId": "recover_host",   "x": 1, "rationale": "Restore mission data service state." }
+  ]
+}
+

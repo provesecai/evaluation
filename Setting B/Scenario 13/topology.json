@@ -1,0 +1,64 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "nodes": [
+    { "id": "D01", "name": "C2_App_1", "role": "c2_app" },
+    { "id": "D02", "name": "C2_App_2", "role": "c2_app" },
+    { "id": "D03", "name": "C2_DB", "role": "c2_db" },
+    { "id": "D04", "name": "OpsDashboard", "role": "ops_dashboard" },
+
+    { "id": "D05", "name": "IdP_1", "role": "identity" },
+    { "id": "D06", "name": "IdP_2", "role": "identity" },
+    { "id": "D07", "name": "AD_DC", "role": "directory" },
+    { "id": "D08", "name": "DNS_DHCP", "role": "infra" },
+
+    { "id": "D09", "name": "Gateway_1", "role": "gateway" },
+    { "id": "D10", "name": "Gateway_2", "role": "gateway" },
+    { "id": "D11", "name": "JumpHost", "role": "jump_host" },
+    { "id": "D12", "name": "VPN_Concentrator", "role": "vpn" },
+
+    { "id": "D13", "name": "Telemetry_Broker", "role": "telemetry" },
+    { "id": "D14", "name": "Telemetry_DB", "role": "telemetry_db" },
+    { "id": "D15", "name": "MissionData_DB", "role": "mission_data_db" },
+    { "id": "D16", "name": "MissionData_API", "role": "mission_data_api" },
+    { "id": "D17", "name": "FileShare_1", "role": "fileshare" },
+
+    { "id": "D18", "name": "Logistics_App", "role": "logistics" },
+    { "id": "D19", "name": "Logistics_DB", "role": "logistics_db" },
+    { "id": "D20", "name": "Patch_Server", "role": "patching" },
+
+    { "id": "D21", "name": "SIEM", "role": "monitoring" },
+    { "id": "D22", "name": "EDR_Manager", "role": "monitoring" },
+
+    { "id": "D23", "name": "Mail_Server", "role": "messaging" },
+    { "id": "D24", "name": "Web_Portal", "role": "portal" },
+
+    { "id": "D25", "name": "Workstation_01", "role": "user_host" },
+    { "id": "D26", "name": "Workstation_02", "role": "user_host" },
+    { "id": "D27", "name": "Workstation_03", "role": "user_host" },
+    { "id": "D28", "name": "Workstation_04", "role": "user_host" },
+    { "id": "D29", "name": "Workstation_05", "role": "user_host" },
+    { "id": "D30", "name": "Admin_Laptop", "role": "admin_host" },
+    { "id": "D31", "name": "PKI_CA", "role": "pki" },
+    { "id": "D32", "name": "KeyVault", "role": "key_store" }
+  ],
+  "edges": [
+    { "src": "D12", "dst": "D09", "gamma": 0.7, "notes": "VPN->GW (guarded entry)" },
+    { "src": "D09", "dst": "D11", "gamma": 0.8, "notes": "GW->JumpHost (MFA/jump)" },
+    { "src": "D11", "dst": "D05", "gamma": 0.9, "notes": "JumpHost->Identity tier" },
+
+    { "src": "D09", "dst": "D16", "gamma": 0.8, "notes": "GW->MissionData API" },
+    { "src": "D16", "dst": "D15", "gamma": 0.8, "notes": "API->MissionData DB" },
+
+    { "src": "D09", "dst": "D13", "gamma": 0.8, "notes": "GW->Telemetry broker" },
+    { "src": "D13", "dst": "D14", "gamma": 0.8, "notes": "Broker->Telemetry DB" },
+
+    { "src": "D05", "dst": "D07", "gamma": 0.8, "notes": "IdP->Directory sync" },
+    { "src": "D07", "dst": "D08", "gamma": 1.0, "notes": "Directory->DNS/DHCP" },
+
+    { "src": "D21", "dst": "D22", "gamma": 1.2, "notes": "SIEM->EDR" },
+    { "src": "D22", "dst": "D25", "gamma": 1.0, "notes": "EDR->host control" },
+
+    { "src": "D31", "dst": "D32", "gamma": 1.1, "notes": "PKI->KeyVault" },
+    { "src": "D32", "dst": "D05", "gamma": 1.1, "notes": "KeyVault->IdP secrets" }
+  ]
+}

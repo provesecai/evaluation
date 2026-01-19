@@ -1,0 +1,10 @@
+{
+  "I0": [
+    { "deviceId": "D10", "health": 0.35, "notes": "Foothold on DMZ jump host" },
+    { "deviceId": "D09", "health": 0.55, "notes": "Suspicious proxy behaviour, possible pivot point" }
+  ],
+  "observations": {
+    "attackerPosture": "lateral_movement_gateway_adjacent",
+    "confidence": 0.7
+  }
+}
