@@ -1,0 +1,21 @@
+{
+  "scenarioId": "SC17",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID"],
+    "T_avail": [
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 12 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2", "deviceIds": ["D01","D02","D03","D04"] },
+      { "serviceId": "SV_GW", "deviceIds": ["D08","D09"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D05","D06","D07"] }
+    ],
+    "interpretation": "Disruptive actions affecting required-service devices are delayed until after the service's min-availability time unless explicitly authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD","DT_INTEL","DT_KEYS"],
+    "notes": "Avoid destructive/disruptive actions on devices hosting protected data unless required for containment."
+  }
+}

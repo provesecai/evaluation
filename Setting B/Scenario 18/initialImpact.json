@@ -1,0 +1,26 @@
+{
+  "scenarioId": "SC18",
+  "incidentType": "gateway_adjacent_foothold_lateral_movement",
+  "I0": [
+    "D19",
+    "D28",
+    "D05"
+  ],
+  "deviceHealth": [
+    {
+      "deviceId": "D19",
+      "health": 0.45,
+      "note": "DMZ jump host compromised; used to pivot toward gateway."
+    },
+    {
+      "deviceId": "D28",
+      "health": 0.6,
+      "note": "User endpoint initial victim; credentials harvested."
+    },
+    {
+      "deviceId": "D05",
+      "health": 0.55,
+      "note": "Identity provider under suspicious activity; token abuse suspected."
+    }
+  ]
+}

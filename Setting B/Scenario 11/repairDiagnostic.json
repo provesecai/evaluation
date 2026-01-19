@@ -1,0 +1,27 @@
+{
+  "scenarioId": "SC11",
+  "status": "infeasible",
+  "rootCauseSummary": "Segment directives conflict: reconnect earliest at bucket 12 cannot satisfy maxIsolationBuckets=8 given fixed disconnect finish at bucket 2 (isolation would be >=10).",
+  "conflictingRdsEntries": [
+    { "type": "segmentDirective", "segmentId": "S4", "field": "disconnect.fixedFinishBucket", "value": 2 },
+    { "type": "segmentDirective", "segmentId": "S4", "field": "reconnect.earliestBucket", "value": 12 },
+    { "type": "segmentDirective", "segmentId": "S4", "field": "maxIsolationBuckets", "value": 8 }
+  ],
+  "suggestedRepairsRanked": [
+    {
+      "rank": 1,
+      "description": "Increase maxIsolationBuckets to be compatible with earliest reconnect while keeping conservative reconnection delay.",
+      "patch": [
+        { "op": "replace", "path": "/segmentDirectives/S4/maxIsolationBuckets", "value": 12 }
+      ]
+    },
+    {
+      "rank": 2,
+      "description": "Allow earlier reconnect (mission-safe only if verification can be accelerated).",
+      "patch": [
+        { "op": "replace", "path": "/segmentDirectives/S4/reconnect/earliestBucket", "value": 10 }
+      ]
+    }
+  ],
+  "selectedRepair": { "rank": 1 }
+}

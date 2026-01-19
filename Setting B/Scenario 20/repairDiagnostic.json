@@ -1,0 +1,49 @@
+{
+  "scenarioId": "SC20",
+  "mode": "diagnostic_repair",
+  "status": "infeasible",
+  "summary": "Early workload peak under 1-team capacity conflicts with multiple mandatory actions and tight LFTs; segment directive timing also too rigid.",
+  "conflictItems": [
+    {
+      "type": "resource_capacity",
+      "resourceId": "R_ANALYST",
+      "buckets": [0,1,2],
+      "capacity": 1,
+      "reason": ">=4 mandatory actions overlap within buckets 0-2."
+    },
+    {
+      "type": "time_window_tightness",
+      "targets": [
+        {"targetType":"device","targetId":"D06","actionId":"reset_credentials","EST":0,"LFT":2},
+        {"targetType":"device","targetId":"D28","actionId":"reset_credentials","EST":0,"LFT":2},
+        {"targetType":"device","targetId":"D04","actionId":"lockdown_identity","EST":0,"LFT":2}
+      ],
+      "reason": "All must finish early, but share the same team with containment and segment disconnect."
+    },
+    {
+      "type": "segment_directive_rigidity",
+      "segmentId": "S3_DATA",
+      "disconnectFixedFinishBucket": 1,
+      "reconnectEarliestBucket": 10,
+      "maxIsolationBuckets": 10,
+      "reason": "Pinned disconnect finish + tight reconnect window reduces feasible slack."
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "edits": [
+        {"op":"relax_LFT","targetType":"device","targetId":"D28","actionId":"reset_credentials","deltaBuckets": 1, "newLFT": 3},
+        {"op":"relax_reconnect_pin","segmentId":"S3_DATA","field":"latestBucket","deltaBuckets": 2, "newLatestBucket": 14}
+      ],
+      "intent": "Preserve mission availability; only relax non-critical identity reset timing and widen reconnect window."
+    },
+    {
+      "rank": 2,
+      "edits": [
+        {"op":"drop_optional","targetType":"device","targetId":"D25","actionId":"increase_monitoring"}
+      ],
+      "intent": "If still infeasible, drop optional monitoring uplift to free early capacity."
+    }
+  ]
+}

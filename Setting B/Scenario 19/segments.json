@@ -1,0 +1,15 @@
+{
+  "scenarioId": "SC19",
+  "segments": [
+    {"segmentId":"S0_C2","name":"C2_Tier","type":"vlan","notes":"Mission C2 services"},
+    {"segmentId":"S1_GW","name":"Guarded_Gateway","type":"vlan","notes":"External ingress/egress; tightly controlled"},
+    {"segmentId":"S2_ID","name":"Identity_Tier","type":"vlan","notes":"AD/IdP/MFA/jump services"},
+    {"segmentId":"S3_DATA","name":"Mission_Data","type":"vlan","notes":"OPORD/INTEL stores and dissemination"},
+    {"segmentId":"S4_LOG","name":"Logistics_Planning","type":"vlan","notes":"Planning tools and databases"},
+    {"segmentId":"S5_MGMT","name":"Management","type":"vlan","notes":"Admin workstations, management plane"},
+    {"segmentId":"S6_APP","name":"Mission_Apps","type":"vlan","notes":"Application tier"},
+    {"segmentId":"S7_SENS","name":"Sensors","type":"vlan","notes":"Telemetry/sensor collectors"},
+    {"segmentId":"S8_USER","name":"User_Workstations","type":"vlan","notes":"Operator endpoints"},
+    {"segmentId":"S9_BACK","name":"Backup_Recovery","type":"vlan","notes":"Backup vault and recovery tooling"}
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "scenarioId": "SC17",
+  "setting": "B_infeasible_then_repair",
+  "bucketMinutes": 10,
+  "enabledActions": [
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_disconnect","E":1},
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_reconnect","E":1},
+
+    {"targetType":"device","targetId":"D11","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D11","actionId":"eradicate_host","E":1},
+    {"targetType":"device","targetId":"D11","actionId":"recover_from_backup","E":1},
+
+    {"targetType":"device","targetId":"D20","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D20","actionId":"eradicate_host","E":1},
+
+    {"targetType":"device","targetId":"D05","actionId":"lockdown_identity","E":1},
+    {"targetType":"device","targetId":"D20","actionId":"reset_credentials","E":1},
+    {"targetType":"device","targetId":"D41","actionId":"reset_credentials","E":1},
+
+    {"targetType":"device","targetId":"D17","actionId":"increase_monitoring","E":1}
+  ],
+
+  "timeWindows": [
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_disconnect","EST":0,"LFT":2},
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_reconnect","EST":10,"LFT":18},
+
+    {"targetType":"device","targetId":"D11","actionId":"contain_host","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D11","actionId":"eradicate_host","EST":2,"LFT":10},
+    {"targetType":"device","targetId":"D11","actionId":"recover_from_backup","EST":12,"LFT":30},
+
+    {"targetType":"device","targetId":"D20","actionId":"contain_host","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D20","actionId":"eradicate_host","EST":2,"LFT":10},
+
+    {"targetType":"device","targetId":"D05","actionId":"lockdown_identity","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D20","actionId":"reset_credentials","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D41","actionId":"reset_credentials","EST":0,"LFT":2},
+
+    {"targetType":"device","targetId":"D17","actionId":"increase_monitoring","EST":0,"LFT":6}
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId":"S2_DATA",
+      "disconnect": {"fixedFinishBucket":2, "rationale":"Stop ransomware spread and data movement quickly."},
+      "reconnect": {"earliestBucket":10, "latestBucket":18, "rationale":"Delay reconnect until verification + restore staging."},
+      "maxIsolationBuckets": 8,
+      "rationale":"Conservative: restrict mission-data isolation length."
+    }
+  ],
+
+  "deviceUrgency": [
+    {"deviceId":"D11","alpha":1.00},
+    {"deviceId":"D20","alpha":0.85},
+    {"deviceId":"D05","alpha":0.80},
+    {"deviceId":"D17","alpha":0.55}
+  ],
+
+  "segmentIsolationPenalties": [
+    {"segmentId":"S2_DATA","lambda":7.5},
+    {"segmentId":"S0_C2","lambda":10.0},
+    {"segmentId":"S5_GW","lambda":9.5}
+  ],
+
+  "actionRewards": [
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_disconnect","reward":9.0},
+    {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_reconnect","reward":6.0},
+
+    {"targetType":"device","targetId":"D11","actionId":"contain_host","reward":8.5},
+    {"targetType":"device","targetId":"D11","actionId":"eradicate_host","reward":8.0},
+    {"targetType":"device","targetId":"D11","actionId":"recover_from_backup","reward":9.0},
+
+    {"targetType":"device","targetId":"D20","actionId":"contain_host","reward":8.0},
+    {"targetType":"device","targetId":"D20","actionId":"eradicate_host","reward":7.5},
+
+    {"targetType":"device","targetId":"D05","actionId":"lockdown_identity","reward":8.0},
+    {"targetType":"device","targetId":"D20","actionId":"reset_credentials","reward":7.0},
+    {"targetType":"device","targetId":"D41","actionId":"reset_credentials","reward":6.5},
+
+    {"targetType":"device","targetId":"D17","actionId":"increase_monitoring","reward":6.0}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SC19",
+  "actions": [
+    {"actionId":"contain_host","category":"containment","defaultDurationBuckets":2,"resourceDemands":{"resp":1}},
+    {"actionId":"eradicate_host","category":"eradication","defaultDurationBuckets":4,"resourceDemands":{"resp":1,"forensics":1}},
+    {"actionId":"recover_host","category":"recovery","defaultDurationBuckets":6,"resourceDemands":{"resp":1}},
+
+    {"actionId":"lockdown_identity","category":"identity","defaultDurationBuckets":2,"resourceDemands":{"resp":1}},
+    {"actionId":"reset_credentials","category":"identity","defaultDurationBuckets":1,"resourceDemands":{"resp":1}},
+
+    {"actionId":"increase_monitoring","category":"monitoring","defaultDurationBuckets":1,"resourceDemands":{"resp":1}},
+
+    {"actionId":"segment_disconnect","category":"network","defaultDurationBuckets":1,"resourceDemands":{"resp":1}},
+    {"actionId":"segment_reconnect","category":"network","defaultDurationBuckets":1,"resourceDemands":{"resp":1}}
+  ]
+}

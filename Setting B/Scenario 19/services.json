@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC19",
+  "services": [
+    {"serviceId":"SV_C2","name":"Command_and_Control","deviceIds":["D01","D02","D03","D04"],"segmentIds":["S0_C2","S6_APP"]},
+    {"serviceId":"SV_GW","name":"Gateway_Connectivity","deviceIds":["D07","D08"],"segmentIds":["S1_GW"]},
+    {"serviceId":"SV_ID","name":"Identity_and_Access","deviceIds":["D11","D12","D13","D14"],"segmentIds":["S2_ID","S5_MGMT"]},
+    {"serviceId":"SV_DATA","name":"Mission_Data_Dissemination","deviceIds":["D21","D22","D23","D24"],"segmentIds":["S3_DATA","S6_APP"]},
+    {"serviceId":"SV_LOG","name":"Logistics_Planning","deviceIds":["D31","D32","D33"],"segmentIds":["S4_LOG","S6_APP"]},
+    {"serviceId":"SV_SENS","name":"Sensor_Telemetry","deviceIds":["D41","D42"],"segmentIds":["S7_SENS"]}
+  ]
+}

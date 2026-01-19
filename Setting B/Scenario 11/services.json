@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC11",
+  "services": [
+    { "serviceId": "SV_C2",    "name": "CommandAndControl",     "deviceIds": ["D01","D02","D03","D04","D05"], "segmentIds": ["S2"] },
+    { "serviceId": "SV_GW",    "name": "GatewayConnectivity",   "deviceIds": ["D06","D07","D08","D09"],       "segmentIds": ["S1","S10"] },
+    { "serviceId": "SV_ID",    "name": "IdentityAndAuth",       "deviceIds": ["D11","D12","D13","D14"],       "segmentIds": ["S3"] },
+    { "serviceId": "SV_INTEL", "name": "IntelDissemination",    "deviceIds": ["D16","D17","D18","D19"],       "segmentIds": ["S4"] },
+    { "serviceId": "SV_LOG",   "name": "LogisticsPlanning",     "deviceIds": ["D20","D21","D22"],               "segmentIds": ["S5"] },
+    { "serviceId": "SV_SOC",   "name": "SecurityOperations",    "deviceIds": ["D23","D24","D25","D26","D39"], "segmentIds": ["S6"] },
+    { "serviceId": "SV_EDGE",  "name": "FieldComms",            "deviceIds": ["D33","D34","D35","D36"],       "segmentIds": ["S8","S10"] }
+  ]
+}

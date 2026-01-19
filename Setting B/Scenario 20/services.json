@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SC20",
+  "services": [
+    {"id":"SV_C2","name":"CommandAndControl","deviceIds":["D01","D02","D03","D44"],"segmentIds":["S0_C2"]},
+    {"id":"SV_ID","name":"IdentityAuth","deviceIds":["D04","D05","D06"],"segmentIds":["S1_ID"]},
+    {"id":"SV_GW","name":"GuardedGateway","deviceIds":["D07","D08","D09"],"segmentIds":["S2_GW"]},
+    {"id":"SV_DATA","name":"MissionData","deviceIds":["D10","D11","D12","D13","D14","D41"],"segmentIds":["S3_DATA"]},
+    {"id":"SV_LOG","name":"LogisticsPlanning","deviceIds":["D15","D16","D17","D40"],"segmentIds":["S4_LOG"]},
+    {"id":"SV_OPS","name":"OpsSupport","deviceIds":["D18","D19","D20","D39"],"segmentIds":["S5_OPS"]},
+    {"id":"SV_SENS","name":"SensorFeeds","deviceIds":["D21","D22","D23","D42"],"segmentIds":["S6_SENS"]},
+    {"id":"SV_MGMT","name":"SecurityMonitoring","deviceIds":["D24","D25","D26","D27","D43"],"segmentIds":["S7_MGMT"]}
+  ]
+}

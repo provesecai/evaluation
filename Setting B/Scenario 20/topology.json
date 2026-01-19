@@ -1,0 +1,83 @@
+{
+  "scenarioId": "SC20",
+  "graph": {
+    "devices": [
+      {"id":"D01","name":"C2_App_1","role":"c2_app","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"]},
+      {"id":"D02","name":"C2_App_2","role":"c2_app","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"]},
+      {"id":"D03","name":"C2_DB","role":"db","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD","DT_KEYS"]},
+
+      {"id":"D04","name":"IdP_1","role":"idp","segmentId":"S1_ID","os":"Windows","dataTypes":["DT_KEYS"]},
+      {"id":"D05","name":"IdP_2","role":"idp","segmentId":"S1_ID","os":"Windows","dataTypes":["DT_KEYS"]},
+      {"id":"D06","name":"PKI_CA","role":"pki","segmentId":"S1_ID","os":"Windows","dataTypes":["DT_KEYS"]},
+
+      {"id":"D07","name":"Gateway_A","role":"gateway","segmentId":"S2_GW","os":"Appliance","dataTypes":[]},
+      {"id":"D08","name":"Gateway_B","role":"gateway","segmentId":"S2_GW","os":"Appliance","dataTypes":[]},
+      {"id":"D09","name":"JumpHost","role":"jump_host","segmentId":"S2_GW","os":"Linux","dataTypes":[]},
+
+      {"id":"D10","name":"Mission_File_1","role":"file_server","segmentId":"S3_DATA","os":"Windows","dataTypes":["DT_INTEL","DT_OPORD"]},
+      {"id":"D11","name":"Mission_File_2","role":"file_server","segmentId":"S3_DATA","os":"Windows","dataTypes":["DT_INTEL"]},
+      {"id":"D12","name":"Mission_DB_1","role":"db","segmentId":"S3_DATA","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"]},
+      {"id":"D13","name":"Data_API_1","role":"api","segmentId":"S3_DATA","os":"Linux","dataTypes":[]},
+      {"id":"D14","name":"Backup_Repo","role":"backup","segmentId":"S3_DATA","os":"Linux","dataTypes":["DT_OPORD"]},
+
+      {"id":"D15","name":"Logistics_App_1","role":"logistics_app","segmentId":"S4_LOG","os":"Windows","dataTypes":[]},
+      {"id":"D16","name":"Logistics_DB","role":"db","segmentId":"S4_LOG","os":"Linux","dataTypes":["DT_OPORD"]},
+      {"id":"D17","name":"Supply_Adapter","role":"adapter","segmentId":"S4_LOG","os":"Linux","dataTypes":[]},
+
+      {"id":"D18","name":"Ops_Planner","role":"ops_app","segmentId":"S5_OPS","os":"Linux","dataTypes":[]},
+      {"id":"D19","name":"Ops_DB","role":"db","segmentId":"S5_OPS","os":"Linux","dataTypes":["DT_OPORD"]},
+      {"id":"D20","name":"Ops_Web","role":"web","segmentId":"S5_OPS","os":"Linux","dataTypes":[]},
+
+      {"id":"D21","name":"Sensor_Collector_1","role":"collector","segmentId":"S6_SENS","os":"Linux","dataTypes":[]},
+      {"id":"D22","name":"Sensor_Collector_2","role":"collector","segmentId":"S6_SENS","os":"Linux","dataTypes":[]},
+      {"id":"D23","name":"Sensor_Broker","role":"broker","segmentId":"S6_SENS","os":"Linux","dataTypes":[]},
+
+      {"id":"D24","name":"SIEM","role":"siem","segmentId":"S7_MGMT","os":"Linux","dataTypes":[]},
+      {"id":"D25","name":"EDR_Manager","role":"edr","segmentId":"S7_MGMT","os":"Linux","dataTypes":[]},
+      {"id":"D26","name":"NMS","role":"nms","segmentId":"S7_MGMT","os":"Linux","dataTypes":[]},
+      {"id":"D27","name":"Mgmt_Jump","role":"jump_host","segmentId":"S7_MGMT","os":"Linux","dataTypes":[]},
+
+      {"id":"D28","name":"WS_01","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D29","name":"WS_02","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D30","name":"WS_03","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D31","name":"WS_04","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D32","name":"WS_05","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D33","name":"WS_06","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D34","name":"WS_07","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D35","name":"WS_08","role":"workstation","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+
+      {"id":"D36","name":"DMZ_Web","role":"web","segmentId":"S9_DMZ","os":"Linux","dataTypes":[]},
+      {"id":"D37","name":"DMZ_API","role":"api","segmentId":"S9_DMZ","os":"Linux","dataTypes":[]},
+      {"id":"D38","name":"Mail_Relay","role":"mail","segmentId":"S9_DMZ","os":"Linux","dataTypes":[]},
+
+      {"id":"D39","name":"Aux_App_1","role":"aux","segmentId":"S5_OPS","os":"Linux","dataTypes":[]},
+      {"id":"D40","name":"Aux_App_2","role":"aux","segmentId":"S4_LOG","os":"Linux","dataTypes":[]},
+      {"id":"D41","name":"Aux_App_3","role":"aux","segmentId":"S3_DATA","os":"Linux","dataTypes":[]},
+      {"id":"D42","name":"Aux_App_4","role":"aux","segmentId":"S6_SENS","os":"Linux","dataTypes":[]},
+      {"id":"D43","name":"Aux_App_5","role":"aux","segmentId":"S7_MGMT","os":"Linux","dataTypes":[]},
+      {"id":"D44","name":"Aux_App_6","role":"aux","segmentId":"S0_C2","os":"Linux","dataTypes":[]},
+      {"id":"D45","name":"Aux_App_7","role":"aux","segmentId":"S8_USER","os":"Windows","dataTypes":[]},
+      {"id":"D46","name":"Aux_App_8","role":"aux","segmentId":"S9_DMZ","os":"Linux","dataTypes":[]}
+    ],
+    "edges": [
+      {"from":"D07","to":"D36","gamma":1.0,"notes":"Gateway->DMZ"},
+      {"from":"D07","to":"D01","gamma":2.0,"notes":"Gateway->C2"},
+      {"from":"D07","to":"D10","gamma":1.5,"notes":"Gateway->Data"},
+      {"from":"D09","to":"D27","gamma":2.5,"notes":"Jump paths"},
+
+      {"from":"D04","to":"D28","gamma":1.2,"notes":"IdP->User auth"},
+      {"from":"D04","to":"D15","gamma":1.3,"notes":"IdP->Logistics"},
+      {"from":"D04","to":"D18","gamma":1.3,"notes":"IdP->Ops"},
+
+      {"from":"D10","to":"D13","gamma":0.9,"notes":"File->API"},
+      {"from":"D12","to":"D13","gamma":0.9,"notes":"DB->API"},
+      {"from":"D13","to":"D01","gamma":1.6,"notes":"Data API->C2"},
+      {"from":"D16","to":"D15","gamma":0.8,"notes":"Log DB->App"},
+      {"from":"D19","to":"D18","gamma":0.8,"notes":"Ops DB->Planner"},
+
+      {"from":"D24","to":"D25","gamma":0.7,"notes":"SIEM->EDR"},
+      {"from":"D25","to":"D28","gamma":1.1,"notes":"EDR mgmt"},
+      {"from":"D25","to":"D10","gamma":1.1,"notes":"EDR mgmt"}
+    ]
+  }
+}

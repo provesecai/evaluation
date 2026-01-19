@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SC17",
+  "incidentType": "disruptive_malware_ransomware_like",
+  "I0": ["D20","D11","D22"],
+  "deviceHealth": [
+    {"deviceId":"D20","health":0.35,"note":"Compromised jump host; used for lateral movement."},
+    {"deviceId":"D11","health":0.25,"note":"Mission data repository encrypted / disrupted."},
+    {"deviceId":"D22","health":0.50,"note":"User endpoint initial victim."}
+  ]
+}

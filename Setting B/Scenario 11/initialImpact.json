@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC11",
+  "initialImpactedSet": ["D18", "D15"],
+  "deviceHealth": [
+    { "deviceId": "D18", "health": 0.30, "notes": "Ransomware-like disruption on secure file share." },
+    { "deviceId": "D15", "health": 0.55, "notes": "Time sync anomalies; suspected persistence/abuse." },
+    { "deviceId": "D16", "health": 0.80, "notes": "Intel repo at elevated risk via data tier." }
+  ]
+}

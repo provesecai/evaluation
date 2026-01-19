@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC19",
+  "bucketMinutes": 10,
+  "initialImpactedSet": ["D07","D12"],
+  "deviceHealth": [
+    {"deviceId":"D07","health":0.35,"notes":"Gateway node shows suspicious process + beaconing."},
+    {"deviceId":"D12","health":0.45,"notes":"Privileged admin workstation; signs of credential theft."},
+    {"deviceId":"D11","health":0.80,"notes":"AD DS healthy but at risk."},
+    {"deviceId":"D14","health":0.75,"notes":"IdP/MFA relay; elevated auth failures."},
+    {"deviceId":"D01","health":0.95,"notes":"C2 primary."}
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "scenarioId": "SC11",
+  "graph": {
+    "devices": [
+      { "id": "D01", "name": "C2_App_1", "role": "c2_app", "segmentId": "S2", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+      { "id": "D02", "name": "C2_App_2", "role": "c2_app", "segmentId": "S2", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+      { "id": "D03", "name": "C2_DB", "role": "c2_db", "segmentId": "S2", "os": "Linux", "dataTypes": ["DT_OPORD","DT_INTEL"] },
+      { "id": "D04", "name": "C2_API", "role": "c2_api", "segmentId": "S2", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+      { "id": "D05", "name": "C2_Comms_Relay", "role": "comms", "segmentId": "S2", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D06", "name": "Gateway_FW", "role": "gateway", "segmentId": "S1", "os": "ApplianceOS", "dataTypes": [] },
+      { "id": "D07", "name": "VPN_Concentrator", "role": "gateway", "segmentId": "S1", "os": "ApplianceOS", "dataTypes": [] },
+      { "id": "D08", "name": "AppProxy_1", "role": "proxy", "segmentId": "S1", "os": "Linux", "dataTypes": [] },
+      { "id": "D09", "name": "AppProxy_2", "role": "proxy", "segmentId": "S1", "os": "Linux", "dataTypes": [] },
+      { "id": "D10", "name": "JumpHost_Admin", "role": "jump_host", "segmentId": "S1", "os": "WindowsServer", "dataTypes": [] },
+
+      { "id": "D11", "name": "IdP_AD_1", "role": "idp", "segmentId": "S3", "os": "WindowsServer", "dataTypes": ["DT_KEYS"] },
+      { "id": "D12", "name": "IdP_AD_2", "role": "idp", "segmentId": "S3", "os": "WindowsServer", "dataTypes": ["DT_KEYS"] },
+      { "id": "D13", "name": "KeyVault_HSM", "role": "key_vault", "segmentId": "S3", "os": "ApplianceOS", "dataTypes": ["DT_KEYS"] },
+      { "id": "D14", "name": "DNS_DHCP", "role": "infra", "segmentId": "S3", "os": "Linux", "dataTypes": [] },
+      { "id": "D15", "name": "NTP_Time", "role": "infra", "segmentId": "S3", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D16", "name": "Intel_Repo", "role": "data_repo", "segmentId": "S4", "os": "Linux", "dataTypes": ["DT_INTEL"] },
+      { "id": "D17", "name": "Intel_DB", "role": "intel_db", "segmentId": "S4", "os": "Linux", "dataTypes": ["DT_INTEL"] },
+      { "id": "D18", "name": "Secure_FileShare", "role": "file_server", "segmentId": "S4", "os": "WindowsServer", "dataTypes": ["DT_INTEL","DT_OPORD"] },
+      { "id": "D19", "name": "Data_API", "role": "data_api", "segmentId": "S4", "os": "Linux", "dataTypes": ["DT_INTEL"] },
+
+      { "id": "D20", "name": "Logistics_App", "role": "log_app", "segmentId": "S5", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+      { "id": "D21", "name": "Logistics_DB", "role": "log_db", "segmentId": "S5", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+      { "id": "D22", "name": "Ops_Planning_App", "role": "planning", "segmentId": "S5", "os": "Linux", "dataTypes": ["DT_OPORD"] },
+
+      { "id": "D23", "name": "SOC_SIEM", "role": "siem", "segmentId": "S6", "os": "Linux", "dataTypes": [] },
+      { "id": "D24", "name": "EDR_Manager", "role": "edr_mgr", "segmentId": "S6", "os": "WindowsServer", "dataTypes": [] },
+      { "id": "D25", "name": "NetMgmt", "role": "net_mgmt", "segmentId": "S6", "os": "Linux", "dataTypes": [] },
+      { "id": "D26", "name": "IR_Ticketing", "role": "ticketing", "segmentId": "S6", "os": "Linux", "dataTypes": [] },
+      { "id": "D27", "name": "Backup_Server", "role": "backup", "segmentId": "S6", "os": "Linux", "dataTypes": ["DT_INTEL"] },
+      { "id": "D28", "name": "Recovery_Staging", "role": "recovery", "segmentId": "S6", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D29", "name": "Ops_WS_1", "role": "operator_ws", "segmentId": "S7", "os": "Windows", "dataTypes": [] },
+      { "id": "D30", "name": "Ops_WS_2", "role": "operator_ws", "segmentId": "S7", "os": "Windows", "dataTypes": [] },
+      { "id": "D31", "name": "Analyst_WS_1", "role": "analyst_ws", "segmentId": "S7", "os": "Windows", "dataTypes": [] },
+      { "id": "D32", "name": "Analyst_WS_2", "role": "analyst_ws", "segmentId": "S7", "os": "Windows", "dataTypes": [] },
+
+      { "id": "D33", "name": "Field_Relay_1", "role": "relay", "segmentId": "S8", "os": "Linux", "dataTypes": [] },
+      { "id": "D34", "name": "Field_Relay_2", "role": "relay", "segmentId": "S8", "os": "Linux", "dataTypes": [] },
+      { "id": "D35", "name": "Field_Node_1", "role": "field_node", "segmentId": "S8", "os": "Linux", "dataTypes": [] },
+      { "id": "D36", "name": "Field_Node_2", "role": "field_node", "segmentId": "S8", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D37", "name": "Mail_Gateway", "role": "mail", "segmentId": "S9", "os": "Linux", "dataTypes": [] },
+      { "id": "D38", "name": "Web_Portal", "role": "portal", "segmentId": "S9", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D39", "name": "Sensor_Collector", "role": "sensor", "segmentId": "S6", "os": "Linux", "dataTypes": [] },
+
+      { "id": "D40", "name": "Remote_Mgmt_Node", "role": "mgmt_edge", "segmentId": "S10", "os": "Linux", "dataTypes": [] },
+      { "id": "D41", "name": "Satellite_Link", "role": "sat_link", "segmentId": "S10", "os": "ApplianceOS", "dataTypes": [] },
+      { "id": "D42", "name": "Tactical_Router", "role": "router", "segmentId": "S10", "os": "ApplianceOS", "dataTypes": [] },
+      { "id": "D43", "name": "Edge_Cache", "role": "cache", "segmentId": "S10", "os": "Linux", "dataTypes": [] },
+      { "id": "D44", "name": "Edge_Sensor_GW", "role": "sensor_gw", "segmentId": "S10", "os": "Linux", "dataTypes": [] }
+    ],
+    "edges": [
+      { "u": "D06", "w": "D08", "gamma": 1.0 },
+      { "u": "D06", "w": "D09", "gamma": 1.2 },
+      { "u": "D08", "w": "D10", "gamma": 2.0 },
+      { "u": "D09", "w": "D10", "gamma": 2.0 },
+
+      { "u": "D10", "w": "D11", "gamma": 3.2 },
+      { "u": "D10", "w": "D12", "gamma": 3.2 },
+      { "u": "D11", "w": "D13", "gamma": 3.6 },
+
+      { "u": "D11", "w": "D01", "gamma": 3.0 },
+      { "u": "D11", "w": "D02", "gamma": 3.0 },
+      { "u": "D11", "w": "D04", "gamma": 3.0 },
+      { "u": "D12", "w": "D03", "gamma": 3.0 },
+      { "u": "D05", "w": "D01", "gamma": 1.8 },
+
+      { "u": "D06", "w": "D01", "gamma": 4.0 },
+      { "u": "D06", "w": "D20", "gamma": 4.2 },
+      { "u": "D06", "w": "D16", "gamma": 4.4 },
+
+      { "u": "D16", "w": "D17", "gamma": 1.3 },
+      { "u": "D18", "w": "D16", "gamma": 2.2 },
+      { "u": "D19", "w": "D17", "gamma": 1.8 },
+
+      { "u": "D20", "w": "D21", "gamma": 1.2 },
+      { "u": "D22", "w": "D21", "gamma": 1.5 },
+
+      { "u": "D23", "w": "D24", "gamma": 2.0 },
+      { "u": "D24", "w": "D29", "gamma": 2.6 },
+      { "u": "D24", "w": "D30", "gamma": 2.6 },
+      { "u": "D24", "w": "D31", "gamma": 2.6 },
+      { "u": "D24", "w": "D32", "gamma": 2.6 },
+
+      { "u": "D07", "w": "D33", "gamma": 1.5 },
+      { "u": "D33", "w": "D35", "gamma": 2.0 },
+      { "u": "D34", "w": "D36", "gamma": 2.0 },
+      { "u": "D07", "w": "D34", "gamma": 1.5 },
+
+      { "u": "D37", "w": "D11", "gamma": 2.8 },
+      { "u": "D38", "w": "D16", "gamma": 3.0 },
+
+      { "u": "D27", "w": "D16", "gamma": 3.5 },
+      { "u": "D27", "w": "D17", "gamma": 3.5 },
+      { "u": "D28", "w": "D18", "gamma": 3.0 },
+
+      { "u": "D42", "w": "D06", "gamma": 3.8 },
+      { "u": "D41", "w": "D42", "gamma": 1.4 },
+      { "u": "D40", "w": "D42", "gamma": 1.6 },
+      { "u": "D42", "w": "D43", "gamma": 2.0 },
+      { "u": "D43", "w": "D44", "gamma": 2.2 },
+
+      { "u": "D25", "w": "D06", "gamma": 3.5 },
+      { "u": "D25", "w": "D11", "gamma": 3.0 },
+      { "u": "D25", "w": "D23", "gamma": 2.5 }
+    ]
+  }
+}

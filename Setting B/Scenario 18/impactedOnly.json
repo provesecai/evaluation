@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SC18",
+  "impactedOnly": true,
+  "notes": "When true, MIROE only considers host-level actions on devices in I0 plus explicitly mission-critical devices selected by SRO."
+}

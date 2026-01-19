@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SC19",
+  "precedence": [
+    {"before":{"targetType":"device","actionId":"contain_host"},"after":{"targetType":"device","actionId":"eradicate_host"},"notes":"Contain before eradicate"},
+    {"before":{"targetType":"device","actionId":"eradicate_host"},"after":{"targetType":"device","actionId":"recover_host"},"notes":"Eradicate before recover"},
+
+    {"before":{"targetType":"segment","actionId":"segment_disconnect"},"after":{"targetType":"segment","actionId":"segment_reconnect"},"notes":"Disconnect before reconnect"}
+  ]
+}

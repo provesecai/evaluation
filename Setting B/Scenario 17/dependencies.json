@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SC17",
+  "precedence": [
+    {"before": {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_disconnect"}, "after": {"targetType":"segment","targetId":"S2_DATA","actionId":"segment_reconnect"}},
+
+    {"before": {"targetType":"device","targetId":"D11","actionId":"contain_host"}, "after": {"targetType":"device","targetId":"D11","actionId":"eradicate_host"}},
+    {"before": {"targetType":"device","targetId":"D11","actionId":"eradicate_host"}, "after": {"targetType":"device","targetId":"D11","actionId":"recover_from_backup"}},
+
+    {"before": {"targetType":"device","targetId":"D20","actionId":"contain_host"}, "after": {"targetType":"device","targetId":"D20","actionId":"eradicate_host"}},
+
+    {"before": {"targetType":"device","targetId":"D05","actionId":"lockdown_identity"}, "after": {"targetType":"device","targetId":"D20","actionId":"reset_credentials"}}
+  ]
+}

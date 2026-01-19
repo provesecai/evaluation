@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SC20",
+  "actions": [
+    {"id":"contain_host","name":"Contain host","target":"device","durationBuckets":2,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+    {"id":"eradicate_host","name":"Eradicate host","target":"device","durationBuckets":4,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+    {"id":"recover_from_backup","name":"Recover from backup","target":"device","durationBuckets":6,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+
+    {"id":"lockdown_identity","name":"Identity lockdown","target":"device","durationBuckets":2,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+    {"id":"reset_credentials","name":"Reset credentials","target":"device","durationBuckets":2,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+
+    {"id":"segment_disconnect","name":"Disconnect segment","target":"segment","durationBuckets":1,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+    {"id":"segment_reconnect","name":"Reconnect segment","target":"segment","durationBuckets":1,"resources":[{"resourceId":"R_ANALYST","amount":1}]},
+
+    {"id":"increase_monitoring","name":"Increase monitoring","target":"device","durationBuckets":3,"resources":[{"resourceId":"R_ANALYST","amount":1}]}
+  ]
+}

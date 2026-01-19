@@ -1,0 +1,33 @@
+{
+  "scenarioId": "SC18",
+  "criticality": [
+    {
+      "serviceId": "SV_C2",
+      "c": 10
+    },
+    {
+      "serviceId": "SV_GW",
+      "c": 9
+    },
+    {
+      "serviceId": "SV_ID",
+      "c": 8
+    },
+    {
+      "serviceId": "SV_DATA",
+      "c": 7
+    },
+    {
+      "serviceId": "SV_LOG",
+      "c": 6
+    },
+    {
+      "serviceId": "SV_MON",
+      "c": 5
+    },
+    {
+      "serviceId": "SV_DMZ",
+      "c": 4
+    }
+  ]
+}

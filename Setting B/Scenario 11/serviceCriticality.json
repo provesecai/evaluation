@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SC11",
+  "criticality": [
+    { "serviceId": "SV_C2",    "c": 10.0 },
+    { "serviceId": "SV_GW",    "c": 8.5 },
+    { "serviceId": "SV_ID",    "c": 7.5 },
+    { "serviceId": "SV_INTEL", "c": 6.5 },
+    { "serviceId": "SV_LOG",   "c": 6.0 },
+    { "serviceId": "SV_SOC",   "c": 5.5 },
+    { "serviceId": "SV_EDGE",  "c": 6.8 }
+  ]
+}

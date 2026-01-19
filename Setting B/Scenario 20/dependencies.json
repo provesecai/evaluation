@@ -1,0 +1,15 @@
+{
+  "scenarioId": "SC20",
+  "precedence": [
+    {"before":{"targetType":"device","targetId":"D10","actionId":"contain_host"},"after":{"targetType":"device","targetId":"D10","actionId":"eradicate_host"}},
+    {"before":{"targetType":"device","targetId":"D10","actionId":"eradicate_host"},"after":{"targetType":"device","targetId":"D10","actionId":"recover_from_backup"}},
+
+    {"before":{"targetType":"device","targetId":"D12","actionId":"contain_host"},"after":{"targetType":"device","targetId":"D12","actionId":"eradicate_host"}},
+    {"before":{"targetType":"device","targetId":"D12","actionId":"eradicate_host"},"after":{"targetType":"device","targetId":"D12","actionId":"recover_from_backup"}},
+
+    {"before":{"targetType":"device","targetId":"D15","actionId":"contain_host"},"after":{"targetType":"device","targetId":"D15","actionId":"eradicate_host"}},
+    {"before":{"targetType":"device","targetId":"D15","actionId":"eradicate_host"},"after":{"targetType":"device","targetId":"D15","actionId":"recover_from_backup"}},
+
+    {"before":{"targetType":"segment","targetId":"S3_DATA","actionId":"segment_disconnect"},"after":{"targetType":"segment","targetId":"S3_DATA","actionId":"segment_reconnect"}}
+  ]
+}

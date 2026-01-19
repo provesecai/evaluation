@@ -1,0 +1,35 @@
+{
+  "scenarioId": "SC19",
+  "mode": "StrictMode",
+  "status": "INFEASIBLE",
+  "summary": "Early pinned gateway isolation (finish by bucket 1) and four mandatory credential resets within buckets 0-3 conflict with responder capacity (1 team) and precedence/timing constraints.",
+  "conflictSet": [
+    {"type":"segmentDirective","segmentId":"S1_GW","field":"disconnect.fixedFinishBucket","value":1},
+    {"type":"mandatory","targetType":"device","targetId":"D12","actionId":"lockdown_identity"},
+    {"type":"mandatory","targetType":"device","targetId":"D12","actionId":"reset_credentials"},
+    {"type":"mandatory","targetType":"device","targetId":"D11","actionId":"reset_credentials"},
+    {"type":"mandatory","targetType":"device","targetId":"D13","actionId":"reset_credentials"},
+    {"type":"mandatory","targetType":"device","targetId":"D14","actionId":"reset_credentials"},
+    {"type":"resourceCap","resourceId":"resp","buckets":[0,1,2,3,4,5],"cap":1}
+  ],
+  "suggestedRepairs": [
+    {
+      "rank": 1,
+      "intent": "Minimal non-mission-critical relaxation",
+      "edits": [
+        {"op":"replace","path":"segmentDirectives[S1_GW].disconnect.fixedFinishBucket","from":1,"to":2},
+        {"op":"replace","path":"timeWindows(D11,reset_credentials).LFT","from":3,"to":5},
+        {"op":"replace","path":"timeWindows(D13,reset_credentials).LFT","from":3,"to":5}
+      ],
+      "rationale": "Keeps early gateway isolation (still within 20 minutes) while spreading non-critical credential resets over a slightly wider window to fit 1 team capacity. Mission availability windows unchanged."
+    },
+    {
+      "rank": 2,
+      "intent": "Reduce early mandatory load",
+      "edits": [
+        {"op":"replace","path":"mandatory(D14,reset_credentials)","from":1,"to":0}
+      ],
+      "rationale": "Demote one reset to optional if strict staffing remains a bottleneck."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "scenarioId": "SC18",
+  "mode": "diagnostic_repair",
+  "status": "infeasible",
+  "summary": "Strict Mode infeasible due to an early workload peak: multiple mandatory identity actions share the same tight LFT (bucket 4) while only one responder team is available in the first 2 hours.",
+  "conflictSet": [
+    {
+      "type": "resourceCap",
+      "resourceId": "R_RESP",
+      "fromBucket": 0,
+      "toBucket": 12,
+      "capacity": 1
+    },
+    {
+      "type": "mandatory",
+      "items": [
+        {
+          "targetType": "segment",
+          "targetId": "S4_DMZ",
+          "actionId": "segment_disconnect"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D19",
+          "actionId": "contain_host"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D05",
+          "actionId": "lockdown_identity"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D06",
+          "actionId": "reset_credentials"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D07",
+          "actionId": "reset_credentials"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D33",
+          "actionId": "reset_credentials"
+        }
+      ]
+    },
+    {
+      "type": "timeWindow",
+      "field": "LFT",
+      "value": 4,
+      "targets": [
+        {
+          "targetType": "device",
+          "targetId": "D06",
+          "actionId": "reset_credentials"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D07",
+          "actionId": "reset_credentials"
+        },
+        {
+          "targetType": "device",
+          "targetId": "D33",
+          "actionId": "reset_credentials"
+        }
+      ]
+    }
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "relax_LFT",
+      "edit": {
+        "targets": [
+          {
+            "targetType": "device",
+            "targetId": "D07",
+            "actionId": "reset_credentials",
+            "newLFT": 10
+          },
+          {
+            "targetType": "device",
+            "targetId": "D33",
+            "actionId": "reset_credentials",
+            "newLFT": 10
+          }
+        ]
+      },
+      "rationale": "Minimal mission-safe relaxation: keep gateway/mission constraints unchanged while spreading non-critical resets over a longer window."
+    },
+    {
+      "rank": 2,
+      "repairType": "relax_LFT",
+      "edit": {
+        "targets": [
+          {
+            "targetType": "device",
+            "targetId": "D06",
+            "actionId": "reset_credentials",
+            "newLFT": 8
+          }
+        ]
+      },
+      "rationale": "Secondary option if still infeasible: slightly widen remaining reset window."
+    }
+  ]
+}

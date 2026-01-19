@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC20",
+  "incidentType": "ransomware_like_disruption",
+  "I0": ["D10","D12","D15"],
+  "deviceHealth": [
+    {"deviceId":"D10","health":0.25,"notes":"Encrypted file shares; spread indicators."},
+    {"deviceId":"D12","health":0.35,"notes":"DB performance degraded; suspected encryption attempts."},
+    {"deviceId":"D15","health":0.45,"notes":"Logistics app partially unavailable."},
+    {"deviceId":"D28","health":0.70,"notes":"User endpoint shows suspicious activity."}
+  ]
+}

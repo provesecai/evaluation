@@ -1,0 +1,104 @@
+{
+  "scenarioId": "SC20",
+  "setting": "B_infeasible_then_repair",
+  "bucketMinutes": 10,
+  "notes": "Initial RDS intentionally conservative; expected to be infeasible under early staffing limits.",
+
+  "enabledActions": [
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_disconnect","E":1},
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_reconnect","E":1},
+
+    {"targetType":"device","targetId":"D10","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D10","actionId":"eradicate_host","E":1},
+    {"targetType":"device","targetId":"D10","actionId":"recover_from_backup","E":1},
+
+    {"targetType":"device","targetId":"D12","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D12","actionId":"eradicate_host","E":1},
+    {"targetType":"device","targetId":"D12","actionId":"recover_from_backup","E":1},
+
+    {"targetType":"device","targetId":"D15","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D15","actionId":"eradicate_host","E":1},
+    {"targetType":"device","targetId":"D15","actionId":"recover_from_backup","E":1},
+
+    {"targetType":"device","targetId":"D04","actionId":"lockdown_identity","E":1},
+    {"targetType":"device","targetId":"D06","actionId":"reset_credentials","E":1},
+    {"targetType":"device","targetId":"D28","actionId":"reset_credentials","E":1},
+
+    {"targetType":"device","targetId":"D25","actionId":"increase_monitoring","E":1}
+  ],
+
+  "mandatory": [
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_disconnect","x":1,"rationale":"Stop ransomware spread in Mission_Data tier."},
+    {"targetType":"device","targetId":"D10","actionId":"contain_host","x":1,"rationale":"Impacted file server."},
+    {"targetType":"device","targetId":"D12","actionId":"contain_host","x":1,"rationale":"Impacted DB."},
+    {"targetType":"device","targetId":"D15","actionId":"contain_host","x":1,"rationale":"Impacted logistics app."},
+    {"targetType":"device","targetId":"D04","actionId":"lockdown_identity","x":1,"rationale":"Credential abuse suspected."},
+    {"targetType":"device","targetId":"D06","actionId":"reset_credentials","x":1,"rationale":"Re-key after suspected compromise."},
+    {"targetType":"device","targetId":"D28","actionId":"reset_credentials","x":1,"rationale":"User endpoint suspected."}
+  ],
+
+  "timeWindows": [
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_disconnect","EST":0,"LFT":1},
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_reconnect","EST":10,"LFT":12},
+
+    {"targetType":"device","targetId":"D10","actionId":"contain_host","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D12","actionId":"contain_host","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D15","actionId":"contain_host","EST":0,"LFT":2},
+
+    {"targetType":"device","targetId":"D04","actionId":"lockdown_identity","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D06","actionId":"reset_credentials","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D28","actionId":"reset_credentials","EST":0,"LFT":2},
+
+    {"targetType":"device","targetId":"D10","actionId":"eradicate_host","EST":2,"LFT":12},
+    {"targetType":"device","targetId":"D12","actionId":"eradicate_host","EST":2,"LFT":12},
+    {"targetType":"device","targetId":"D15","actionId":"eradicate_host","EST":2,"LFT":12},
+
+    {"targetType":"device","targetId":"D10","actionId":"recover_from_backup","EST":14,"LFT":36},
+    {"targetType":"device","targetId":"D12","actionId":"recover_from_backup","EST":14,"LFT":36},
+    {"targetType":"device","targetId":"D15","actionId":"recover_from_backup","EST":14,"LFT":36},
+
+    {"targetType":"device","targetId":"D25","actionId":"increase_monitoring","EST":0,"LFT":6}
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId":"S3_DATA",
+      "disconnect": {"fixedFinishBucket": 1, "rationale":"Rapid containment of data tier."},
+      "reconnect":  {"earliestBucket": 10, "latestBucket": 12, "rationale":"Reconnect after verification."},
+      "maxIsolationBuckets": 10
+    }
+  ],
+
+  "deviceUrgency": [
+    {"deviceId":"D10","alpha":1.00},
+    {"deviceId":"D12","alpha":0.95},
+    {"deviceId":"D15","alpha":0.85},
+    {"deviceId":"D04","alpha":0.80},
+    {"deviceId":"D25","alpha":0.60}
+  ],
+
+  "segmentIsolationPenalties": [
+    {"segmentId":"S3_DATA","lambda":7.0},
+    {"segmentId":"S0_C2","lambda":10.0},
+    {"segmentId":"S2_GW","lambda":8.0}
+  ],
+
+  "actionRewards": [
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_disconnect","reward":9.0},
+    {"targetType":"segment","targetId":"S3_DATA","actionId":"segment_reconnect","reward":6.0},
+
+    {"targetType":"device","targetId":"D10","actionId":"contain_host","reward":8.5},
+    {"targetType":"device","targetId":"D12","actionId":"contain_host","reward":8.0},
+    {"targetType":"device","targetId":"D15","actionId":"contain_host","reward":7.5},
+
+    {"targetType":"device","targetId":"D10","actionId":"recover_from_backup","reward":9.0},
+    {"targetType":"device","targetId":"D12","actionId":"recover_from_backup","reward":8.8},
+    {"targetType":"device","targetId":"D15","actionId":"recover_from_backup","reward":8.0},
+
+    {"targetType":"device","targetId":"D04","actionId":"lockdown_identity","reward":8.2},
+    {"targetType":"device","targetId":"D06","actionId":"reset_credentials","reward":7.8},
+    {"targetType":"device","targetId":"D28","actionId":"reset_credentials","reward":7.2},
+
+    {"targetType":"device","targetId":"D25","actionId":"increase_monitoring","reward":6.0}
+  ]
+}

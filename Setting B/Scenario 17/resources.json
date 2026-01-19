@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC17",
+  "resourceTypes": [
+    {"id":"R_RESP", "name":"ResponderTeam"}
+  ],
+  "capacityByBucket": [
+    {"resourceId":"R_RESP", "fromBucket":0, "toBucket":12, "capacity":1},
+    {"resourceId":"R_RESP", "fromBucket":12, "toBucket":72, "capacity":2}
+  ],
+  "notes": "Single on-call team in the first 2 hours, then two teams become available."
+}

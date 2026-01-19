@@ -1,0 +1,69 @@
+{
+  "scenarioId": "SC18",
+  "actions": [
+    {
+      "id": "contain_host",
+      "category": "containment",
+      "durationBuckets": 2,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": false
+    },
+    {
+      "id": "eradicate_host",
+      "category": "eradication",
+      "durationBuckets": 4,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": true
+    },
+    {
+      "id": "recover_from_backup",
+      "category": "recovery",
+      "durationBuckets": 6,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": true
+    },
+    {
+      "id": "lockdown_identity",
+      "category": "identity",
+      "durationBuckets": 2,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": false
+    },
+    {
+      "id": "reset_credentials",
+      "category": "identity",
+      "durationBuckets": 2,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": false
+    },
+    {
+      "id": "segment_disconnect",
+      "category": "segmentation",
+      "durationBuckets": 2,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": true
+    },
+    {
+      "id": "segment_reconnect",
+      "category": "segmentation",
+      "durationBuckets": 2,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": true
+    },
+    {
+      "id": "increase_monitoring",
+      "category": "monitoring",
+      "durationBuckets": 3,
+      "resourceId": "R_RESP",
+      "resourceDemand": 1,
+      "disruptive": false
+    }
+  ]
+}

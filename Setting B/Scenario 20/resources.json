@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SC20",
+  "resourceTypes": [
+    {"id":"R_ANALYST","name":"IR_Responder_Team"}
+  ],
+  "capacity": [
+    {"resourceId":"R_ANALYST","bucket":0,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":1,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":2,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":3,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":4,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":5,"amount":1},
+    {"resourceId":"R_ANALYST","bucket":6,"amount":2},
+    {"resourceId":"R_ANALYST","bucket":7,"amount":2},
+    {"resourceId":"R_ANALYST","bucket":8,"amount":2},
+    {"resourceId":"R_ANALYST","bucket":9,"amount":2}
+  ],
+  "notes": "Constrained early staffing (1 team) to reflect contested operations / limited responder availability."
+}

@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC19",
+  "criticality": [
+    {"serviceId":"SV_C2","criticality":10},
+    {"serviceId":"SV_GW","criticality":9},
+    {"serviceId":"SV_ID","criticality":9},
+    {"serviceId":"SV_DATA","criticality":8},
+    {"serviceId":"SV_LOG","criticality":7},
+    {"serviceId":"SV_SENS","criticality":6}
+  ]
+}

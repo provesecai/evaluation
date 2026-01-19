@@ -1,0 +1,90 @@
+{
+  "scenarioId": "SC19",
+  "setting": "B_repaired",
+  "bucketMinutes": 10,
+  "notes": "Repaired RDS after MIROE diagnostic: relax pinned gateway disconnect finish by +1 bucket and widen LFT for two credential resets to avoid early resource overload.",
+
+  "enabledActions": [
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_disconnect","E":1},
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_reconnect","E":1},
+
+    {"targetType":"device","targetId":"D07","actionId":"contain_host","E":1},
+    {"targetType":"device","targetId":"D07","actionId":"eradicate_host","E":1},
+
+    {"targetType":"device","targetId":"D12","actionId":"lockdown_identity","E":1},
+    {"targetType":"device","targetId":"D11","actionId":"lockdown_identity","E":1},
+    {"targetType":"device","targetId":"D14","actionId":"lockdown_identity","E":1},
+
+    {"targetType":"device","targetId":"D12","actionId":"reset_credentials","E":1},
+    {"targetType":"device","targetId":"D11","actionId":"reset_credentials","E":1},
+    {"targetType":"device","targetId":"D13","actionId":"reset_credentials","E":1},
+    {"targetType":"device","targetId":"D14","actionId":"reset_credentials","E":1},
+
+    {"targetType":"device","targetId":"D60","actionId":"increase_monitoring","E":1}
+  ],
+
+  "mandatory": [
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_disconnect","x":1},
+    {"targetType":"device","targetId":"D12","actionId":"lockdown_identity","x":1},
+    {"targetType":"device","targetId":"D12","actionId":"reset_credentials","x":1},
+    {"targetType":"device","targetId":"D11","actionId":"reset_credentials","x":1},
+    {"targetType":"device","targetId":"D13","actionId":"reset_credentials","x":1},
+    {"targetType":"device","targetId":"D14","actionId":"reset_credentials","x":1}
+  ],
+
+  "timeWindows": [
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_disconnect","EST":0,"LFT":2},
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_reconnect","EST":8,"LFT":18},
+
+    {"targetType":"device","targetId":"D07","actionId":"contain_host","EST":0,"LFT":4},
+    {"targetType":"device","targetId":"D07","actionId":"eradicate_host","EST":1,"LFT":18},
+
+    {"targetType":"device","targetId":"D12","actionId":"lockdown_identity","EST":0,"LFT":2},
+    {"targetType":"device","targetId":"D11","actionId":"lockdown_identity","EST":0,"LFT":3},
+    {"targetType":"device","targetId":"D14","actionId":"lockdown_identity","EST":0,"LFT":3},
+
+    {"targetType":"device","targetId":"D12","actionId":"reset_credentials","EST":0,"LFT":3},
+    {"targetType":"device","targetId":"D11","actionId":"reset_credentials","EST":0,"LFT":5},
+    {"targetType":"device","targetId":"D13","actionId":"reset_credentials","EST":0,"LFT":5},
+    {"targetType":"device","targetId":"D14","actionId":"reset_credentials","EST":0,"LFT":3},
+
+    {"targetType":"device","targetId":"D60","actionId":"increase_monitoring","EST":0,"LFT":6}
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId":"S1_GW",
+      "disconnect": {"fixedFinishBucket": 2, "rationale":"Contain gateway-adjacent foothold quickly (within 20 minutes)."},
+      "reconnect": {"earliestBucket": 8, "latestBucket": 18, "rationale":"Restore connectivity after verification."},
+      "maxIsolationBuckets": 10
+    }
+  ],
+
+  "deviceUrgency": [
+    {"deviceId":"D07","alpha":0.95},
+    {"deviceId":"D12","alpha":1.00},
+    {"deviceId":"D11","alpha":0.85},
+    {"deviceId":"D14","alpha":0.80}
+  ],
+
+  "segmentIsolationPenalties": [
+    {"segmentId":"S1_GW","lambda":9.0},
+    {"segmentId":"S0_C2","lambda":10.0}
+  ],
+
+  "actionRewards": [
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_disconnect","reward":9.5},
+    {"targetType":"segment","targetId":"S1_GW","actionId":"segment_reconnect","reward":4.5},
+
+    {"targetType":"device","targetId":"D07","actionId":"contain_host","reward":8.5},
+    {"targetType":"device","targetId":"D07","actionId":"eradicate_host","reward":7.5},
+
+    {"targetType":"device","targetId":"D12","actionId":"lockdown_identity","reward":9.0},
+    {"targetType":"device","targetId":"D12","actionId":"reset_credentials","reward":8.5},
+    {"targetType":"device","targetId":"D11","actionId":"reset_credentials","reward":7.5},
+    {"targetType":"device","targetId":"D13","actionId":"reset_credentials","reward":7.5},
+    {"targetType":"device","targetId":"D14","actionId":"reset_credentials","reward":7.0},
+
+    {"targetType":"device","targetId":"D60","actionId":"increase_monitoring","reward":6.0}
+  ]
+}

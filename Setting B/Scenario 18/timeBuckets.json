@@ -1,0 +1,5 @@
+{
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+  "notes": "10-minute buckets over a 12-hour planning horizon."
+}

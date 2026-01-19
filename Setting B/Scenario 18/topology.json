@@ -1,0 +1,905 @@
+{
+  "scenarioId": "SC18",
+  "graph": {
+    "devices": [
+      {
+        "id": "D01",
+        "name": "D01",
+        "role": "c2_app",
+        "segmentId": "S0_C2",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D02",
+        "name": "D02",
+        "role": "c2_app",
+        "segmentId": "S0_C2",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D03",
+        "name": "D03",
+        "role": "c2_db",
+        "segmentId": "S0_C2",
+        "os": "Linux",
+        "dataTypes": [
+          "DT_OPORD",
+          "DT_INTEL"
+        ]
+      },
+      {
+        "id": "D04",
+        "name": "D04",
+        "role": "message_bus",
+        "segmentId": "S0_C2",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D05",
+        "name": "D05",
+        "role": "idp",
+        "segmentId": "S1_ID",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D06",
+        "name": "D06",
+        "role": "ad_ds",
+        "segmentId": "S1_ID",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D07",
+        "name": "D07",
+        "role": "pki",
+        "segmentId": "S1_ID",
+        "os": "Linux",
+        "dataTypes": [
+          "DT_KEYS"
+        ]
+      },
+      {
+        "id": "D08",
+        "name": "D08",
+        "role": "data_repo",
+        "segmentId": "S2_DATA",
+        "os": "Linux",
+        "dataTypes": [
+          "DT_OPORD"
+        ]
+      },
+      {
+        "id": "D09",
+        "name": "D09",
+        "role": "data_repo",
+        "segmentId": "S2_DATA",
+        "os": "Linux",
+        "dataTypes": [
+          "DT_OPORD"
+        ]
+      },
+      {
+        "id": "D10",
+        "name": "D10",
+        "role": "file_share",
+        "segmentId": "S2_DATA",
+        "os": "Windows",
+        "dataTypes": [
+          "DT_OPORD"
+        ]
+      },
+      {
+        "id": "D11",
+        "name": "D11",
+        "role": "db",
+        "segmentId": "S2_DATA",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D12",
+        "name": "D12",
+        "role": "sync",
+        "segmentId": "S2_DATA",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D13",
+        "name": "D13",
+        "role": "log_app",
+        "segmentId": "S3_LOG",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D14",
+        "name": "D14",
+        "role": "log_db",
+        "segmentId": "S3_LOG",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D15",
+        "name": "D15",
+        "role": "planner",
+        "segmentId": "S3_LOG",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D16",
+        "name": "D16",
+        "role": "reporting",
+        "segmentId": "S3_LOG",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D17",
+        "name": "D17",
+        "role": "web_portal",
+        "segmentId": "S4_DMZ",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D18",
+        "name": "D18",
+        "role": "reverse_proxy",
+        "segmentId": "S4_DMZ",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D19",
+        "name": "D19",
+        "role": "dmz_jump",
+        "segmentId": "S4_DMZ",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D20",
+        "name": "D20",
+        "role": "update_mirror",
+        "segmentId": "S4_DMZ",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D21",
+        "name": "D21",
+        "role": "guard",
+        "segmentId": "S5_GW",
+        "os": "Appliance",
+        "dataTypes": [
+          "DT_KEYS"
+        ]
+      },
+      {
+        "id": "D22",
+        "name": "D22",
+        "role": "firewall",
+        "segmentId": "S5_GW",
+        "os": "Appliance",
+        "dataTypes": []
+      },
+      {
+        "id": "D23",
+        "name": "D23",
+        "role": "siem",
+        "segmentId": "S6_SOC",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D24",
+        "name": "D24",
+        "role": "edr_mgmt",
+        "segmentId": "S6_SOC",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D25",
+        "name": "D25",
+        "role": "log_collector",
+        "segmentId": "S6_SOC",
+        "os": "Linux",
+        "dataTypes": []
+      },
+      {
+        "id": "D26",
+        "name": "D26",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D27",
+        "name": "D27",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D28",
+        "name": "D28",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D29",
+        "name": "D29",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D30",
+        "name": "D30",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D31",
+        "name": "D31",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D32",
+        "name": "D32",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D33",
+        "name": "D33",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D34",
+        "name": "D34",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D35",
+        "name": "D35",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      },
+      {
+        "id": "D36",
+        "name": "D36",
+        "role": "endpoint",
+        "segmentId": "S7_USER",
+        "os": "Windows",
+        "dataTypes": []
+      }
+    ],
+    "edges": [
+      {
+        "src": "D26",
+        "dst": "D18",
+        "gamma": 0.91
+      },
+      {
+        "src": "D26",
+        "dst": "D19",
+        "gamma": 1.53
+      },
+      {
+        "src": "D27",
+        "dst": "D18",
+        "gamma": 1.0
+      },
+      {
+        "src": "D27",
+        "dst": "D19",
+        "gamma": 1.16
+      },
+      {
+        "src": "D28",
+        "dst": "D18",
+        "gamma": 1.09
+      },
+      {
+        "src": "D28",
+        "dst": "D19",
+        "gamma": 1.4
+      },
+      {
+        "src": "D29",
+        "dst": "D18",
+        "gamma": 1.09
+      },
+      {
+        "src": "D29",
+        "dst": "D19",
+        "gamma": 1.37
+      },
+      {
+        "src": "D30",
+        "dst": "D18",
+        "gamma": 0.96
+      },
+      {
+        "src": "D30",
+        "dst": "D19",
+        "gamma": 1.2
+      },
+      {
+        "src": "D31",
+        "dst": "D18",
+        "gamma": 1.22
+      },
+      {
+        "src": "D31",
+        "dst": "D19",
+        "gamma": 1.26
+      },
+      {
+        "src": "D32",
+        "dst": "D18",
+        "gamma": 1.2
+      },
+      {
+        "src": "D32",
+        "dst": "D19",
+        "gamma": 1.63
+      },
+      {
+        "src": "D33",
+        "dst": "D18",
+        "gamma": 1.32
+      },
+      {
+        "src": "D33",
+        "dst": "D19",
+        "gamma": 1.76
+      },
+      {
+        "src": "D34",
+        "dst": "D18",
+        "gamma": 0.94
+      },
+      {
+        "src": "D34",
+        "dst": "D19",
+        "gamma": 1.19
+      },
+      {
+        "src": "D35",
+        "dst": "D18",
+        "gamma": 1.24
+      },
+      {
+        "src": "D35",
+        "dst": "D19",
+        "gamma": 1.46
+      },
+      {
+        "src": "D36",
+        "dst": "D18",
+        "gamma": 0.92
+      },
+      {
+        "src": "D36",
+        "dst": "D19",
+        "gamma": 1.54
+      },
+      {
+        "src": "D17",
+        "dst": "D21",
+        "gamma": 2.67
+      },
+      {
+        "src": "D17",
+        "dst": "D22",
+        "gamma": 2.64
+      },
+      {
+        "src": "D18",
+        "dst": "D21",
+        "gamma": 2.02
+      },
+      {
+        "src": "D18",
+        "dst": "D22",
+        "gamma": 2.1
+      },
+      {
+        "src": "D19",
+        "dst": "D21",
+        "gamma": 1.81
+      },
+      {
+        "src": "D19",
+        "dst": "D22",
+        "gamma": 2.78
+      },
+      {
+        "src": "D20",
+        "dst": "D21",
+        "gamma": 2.02
+      },
+      {
+        "src": "D20",
+        "dst": "D22",
+        "gamma": 2.53
+      },
+      {
+        "src": "D21",
+        "dst": "D05",
+        "gamma": 3.09
+      },
+      {
+        "src": "D21",
+        "dst": "D06",
+        "gamma": 3.15
+      },
+      {
+        "src": "D21",
+        "dst": "D07",
+        "gamma": 3.08
+      },
+      {
+        "src": "D21",
+        "dst": "D01",
+        "gamma": 3.99
+      },
+      {
+        "src": "D21",
+        "dst": "D02",
+        "gamma": 3.72
+      },
+      {
+        "src": "D21",
+        "dst": "D03",
+        "gamma": 3.36
+      },
+      {
+        "src": "D21",
+        "dst": "D04",
+        "gamma": 3.14
+      },
+      {
+        "src": "D22",
+        "dst": "D05",
+        "gamma": 3.03
+      },
+      {
+        "src": "D22",
+        "dst": "D06",
+        "gamma": 3.52
+      },
+      {
+        "src": "D22",
+        "dst": "D07",
+        "gamma": 2.66
+      },
+      {
+        "src": "D22",
+        "dst": "D01",
+        "gamma": 3.82
+      },
+      {
+        "src": "D22",
+        "dst": "D02",
+        "gamma": 3.76
+      },
+      {
+        "src": "D22",
+        "dst": "D03",
+        "gamma": 3.19
+      },
+      {
+        "src": "D22",
+        "dst": "D04",
+        "gamma": 3.25
+      },
+      {
+        "src": "D05",
+        "dst": "D08",
+        "gamma": 2.19
+      },
+      {
+        "src": "D05",
+        "dst": "D09",
+        "gamma": 1.94
+      },
+      {
+        "src": "D05",
+        "dst": "D10",
+        "gamma": 1.91
+      },
+      {
+        "src": "D05",
+        "dst": "D11",
+        "gamma": 1.98
+      },
+      {
+        "src": "D05",
+        "dst": "D12",
+        "gamma": 1.6
+      },
+      {
+        "src": "D05",
+        "dst": "D13",
+        "gamma": 2.2
+      },
+      {
+        "src": "D05",
+        "dst": "D14",
+        "gamma": 2.09
+      },
+      {
+        "src": "D05",
+        "dst": "D15",
+        "gamma": 2.03
+      },
+      {
+        "src": "D05",
+        "dst": "D16",
+        "gamma": 1.84
+      },
+      {
+        "src": "D06",
+        "dst": "D08",
+        "gamma": 2.31
+      },
+      {
+        "src": "D06",
+        "dst": "D09",
+        "gamma": 2.32
+      },
+      {
+        "src": "D06",
+        "dst": "D10",
+        "gamma": 2.04
+      },
+      {
+        "src": "D06",
+        "dst": "D11",
+        "gamma": 1.59
+      },
+      {
+        "src": "D06",
+        "dst": "D12",
+        "gamma": 1.65
+      },
+      {
+        "src": "D06",
+        "dst": "D13",
+        "gamma": 1.65
+      },
+      {
+        "src": "D06",
+        "dst": "D14",
+        "gamma": 1.58
+      },
+      {
+        "src": "D06",
+        "dst": "D15",
+        "gamma": 2.15
+      },
+      {
+        "src": "D06",
+        "dst": "D16",
+        "gamma": 2.04
+      },
+      {
+        "src": "D07",
+        "dst": "D08",
+        "gamma": 1.7
+      },
+      {
+        "src": "D07",
+        "dst": "D09",
+        "gamma": 2.41
+      },
+      {
+        "src": "D07",
+        "dst": "D10",
+        "gamma": 2.13
+      },
+      {
+        "src": "D07",
+        "dst": "D11",
+        "gamma": 2.29
+      },
+      {
+        "src": "D07",
+        "dst": "D12",
+        "gamma": 2.32
+      },
+      {
+        "src": "D07",
+        "dst": "D13",
+        "gamma": 2.18
+      },
+      {
+        "src": "D07",
+        "dst": "D14",
+        "gamma": 2.03
+      },
+      {
+        "src": "D07",
+        "dst": "D15",
+        "gamma": 2.48
+      },
+      {
+        "src": "D07",
+        "dst": "D16",
+        "gamma": 1.63
+      },
+      {
+        "src": "D23",
+        "dst": "D01",
+        "gamma": 3.03
+      },
+      {
+        "src": "D23",
+        "dst": "D02",
+        "gamma": 3.33
+      },
+      {
+        "src": "D23",
+        "dst": "D03",
+        "gamma": 2.72
+      },
+      {
+        "src": "D23",
+        "dst": "D04",
+        "gamma": 3.23
+      },
+      {
+        "src": "D23",
+        "dst": "D05",
+        "gamma": 2.27
+      },
+      {
+        "src": "D23",
+        "dst": "D06",
+        "gamma": 2.62
+      },
+      {
+        "src": "D23",
+        "dst": "D07",
+        "gamma": 2.41
+      },
+      {
+        "src": "D23",
+        "dst": "D08",
+        "gamma": 2.6
+      },
+      {
+        "src": "D23",
+        "dst": "D09",
+        "gamma": 3.05
+      },
+      {
+        "src": "D23",
+        "dst": "D10",
+        "gamma": 2.22
+      },
+      {
+        "src": "D23",
+        "dst": "D11",
+        "gamma": 2.51
+      },
+      {
+        "src": "D23",
+        "dst": "D12",
+        "gamma": 3.27
+      },
+      {
+        "src": "D23",
+        "dst": "D13",
+        "gamma": 2.45
+      },
+      {
+        "src": "D23",
+        "dst": "D14",
+        "gamma": 2.19
+      },
+      {
+        "src": "D23",
+        "dst": "D15",
+        "gamma": 3.49
+      },
+      {
+        "src": "D23",
+        "dst": "D16",
+        "gamma": 2.81
+      },
+      {
+        "src": "D23",
+        "dst": "D17",
+        "gamma": 2.03
+      },
+      {
+        "src": "D23",
+        "dst": "D18",
+        "gamma": 2.86
+      },
+      {
+        "src": "D23",
+        "dst": "D19",
+        "gamma": 2.22
+      },
+      {
+        "src": "D23",
+        "dst": "D20",
+        "gamma": 2.24
+      },
+      {
+        "src": "D23",
+        "dst": "D21",
+        "gamma": 3.11
+      },
+      {
+        "src": "D23",
+        "dst": "D22",
+        "gamma": 2.98
+      },
+      {
+        "src": "D23",
+        "dst": "D26",
+        "gamma": 2.64
+      },
+      {
+        "src": "D23",
+        "dst": "D27",
+        "gamma": 2.77
+      },
+      {
+        "src": "D23",
+        "dst": "D28",
+        "gamma": 2.84
+      },
+      {
+        "src": "D23",
+        "dst": "D29",
+        "gamma": 2.69
+      },
+      {
+        "src": "D23",
+        "dst": "D30",
+        "gamma": 2.15
+      },
+      {
+        "src": "D23",
+        "dst": "D31",
+        "gamma": 3.15
+      },
+      {
+        "src": "D23",
+        "dst": "D32",
+        "gamma": 3.16
+      },
+      {
+        "src": "D23",
+        "dst": "D33",
+        "gamma": 2.63
+      },
+      {
+        "src": "D23",
+        "dst": "D34",
+        "gamma": 2.61
+      },
+      {
+        "src": "D23",
+        "dst": "D35",
+        "gamma": 2.92
+      },
+      {
+        "src": "D23",
+        "dst": "D36",
+        "gamma": 2.71
+      },
+      {
+        "src": "D01",
+        "dst": "D02",
+        "gamma": 0.85
+      },
+      {
+        "src": "D02",
+        "dst": "D03",
+        "gamma": 1.13
+      },
+      {
+        "src": "D03",
+        "dst": "D04",
+        "gamma": 1.14
+      },
+      {
+        "src": "D05",
+        "dst": "D06",
+        "gamma": 0.69
+      },
+      {
+        "src": "D06",
+        "dst": "D07",
+        "gamma": 0.7
+      },
+      {
+        "src": "D08",
+        "dst": "D09",
+        "gamma": 1.07
+      },
+      {
+        "src": "D09",
+        "dst": "D10",
+        "gamma": 1.17
+      },
+      {
+        "src": "D10",
+        "dst": "D11",
+        "gamma": 1.04
+      },
+      {
+        "src": "D11",
+        "dst": "D12",
+        "gamma": 0.78
+      },
+      {
+        "src": "D13",
+        "dst": "D14",
+        "gamma": 0.64
+      },
+      {
+        "src": "D14",
+        "dst": "D15",
+        "gamma": 1.1
+      },
+      {
+        "src": "D15",
+        "dst": "D16",
+        "gamma": 1.16
+      },
+      {
+        "src": "D17",
+        "dst": "D18",
+        "gamma": 1.06
+      },
+      {
+        "src": "D18",
+        "dst": "D19",
+        "gamma": 1.04
+      },
+      {
+        "src": "D19",
+        "dst": "D20",
+        "gamma": 1.18
+      }
+    ]
+  }
+}

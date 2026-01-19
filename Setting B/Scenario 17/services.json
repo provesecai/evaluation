@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SC17",
+  "services": [
+    {"id": "SV_C2", "name": "CommandAndControl", "devices": ["D01","D02","D03","D04"]},
+    {"id": "SV_ID", "name": "IdentityServices", "devices": ["D05","D06","D07"]},
+    {"id": "SV_GW", "name": "GuardedGateway", "devices": ["D08","D09"]},
+    {"id": "SV_DATA", "name": "MissionDataDissemination", "devices": ["D10","D11","D12","D13"]},
+    {"id": "SV_LOG", "name": "LogisticsPlanning", "devices": ["D14","D15","D16"]},
+    {"id": "SV_MON", "name": "SecurityMonitoring", "devices": ["D17","D18"]}
+  ]
+}

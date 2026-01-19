@@ -1,0 +1,15 @@
+{
+  "scenarioId": "SC11",
+  "segments": [
+    { "id": "S1",  "name": "GW_DMZ",               "type": "gateway_dmz" },
+    { "id": "S2",  "name": "C2_Tier",              "type": "mission_tier" },
+    { "id": "S3",  "name": "Identity_Core",        "type": "identity_tier" },
+    { "id": "S4",  "name": "Intel_Data",           "type": "data_tier" },
+    { "id": "S5",  "name": "Logistics_Planning",   "type": "mission_support" },
+    { "id": "S6",  "name": "SOC_Mgmt",             "type": "security_ops" },
+    { "id": "S7",  "name": "Ops_Workstations",     "type": "user_tier" },
+    { "id": "S8",  "name": "Field_Comms",          "type": "edge_tier" },
+    { "id": "S9",  "name": "External_Services",    "type": "external_tier" },
+    { "id": "S10", "name": "Tactical_Edge",        "type": "tactical_edge" }
+  ]
+}

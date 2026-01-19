@@ -1,0 +1,25 @@
+{
+  "scenarioId": "SC17",
+  "mode": "diagnostic_repair",
+  "status": "infeasible",
+  "summary": "Strict Mode infeasible due to an inconsistent segment isolation specification: maxIsolationBuckets is smaller than the earliest reconnect time, so the segment cannot remain isolated long enough to reach the allowed reconnection window.",
+  "conflictSet": [
+    {"type":"segmentDirective", "segmentId":"S2_DATA", "field":"maxIsolationBuckets", "value":8},
+    {"type":"segmentDirective", "segmentId":"S2_DATA", "field":"reconnect.earliestBucket", "value":10},
+    {"type":"timeWindow", "targetType":"segment", "targetId":"S2_DATA", "actionId":"segment_reconnect", "EST":10}
+  ],
+  "rankedRepairs": [
+    {
+      "rank": 1,
+      "repairType": "relax_maxIsolation",
+      "edit": {"segmentId":"S2_DATA", "maxIsolationBuckets": 12},
+      "rationale": "Smallest mission-safe change that restores consistency without changing mission availability windows or action admissibility."
+    },
+    {
+      "rank": 2,
+      "repairType": "shift_reconnect_earliest",
+      "edit": {"segmentId":"S2_DATA", "reconnect": {"earliestBucket": 8}},
+      "rationale": "Alternative if isolation must be capped at 8 buckets; may increase risk if reconnect happens earlier."
+    }
+  ]
+}

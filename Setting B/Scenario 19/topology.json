@@ -1,0 +1,88 @@
+{
+  "scenarioId": "SC19",
+  "graph": {
+    "devices": [
+      {"id":"D01","name":"C2_Core_1","role":"c2_core","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"]},
+      {"id":"D02","name":"C2_Core_2","role":"c2_core","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"]},
+      {"id":"D03","name":"C2_MessageBus","role":"c2_bus","segmentId":"S6_APP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"]},
+      {"id":"D04","name":"C2_Proxy","role":"c2_proxy","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":["SV_C2"]},
+
+      {"id":"D07","name":"Gateway_FW_1","role":"gateway","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"]},
+      {"id":"D08","name":"Gateway_FW_2","role":"gateway","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"]},
+
+      {"id":"D11","name":"AD_DS_1","role":"identity","segmentId":"S2_ID","os":"Windows","dataTypes":["DT_KEYS"],"services":["SV_ID"]},
+      {"id":"D12","name":"Admin_WS_1","role":"admin_ws","segmentId":"S5_MGMT","os":"Windows","dataTypes":["DT_KEYS"],"services":["SV_ID"]},
+      {"id":"D13","name":"AD_DS_2","role":"identity","segmentId":"S2_ID","os":"Windows","dataTypes":["DT_KEYS"],"services":["SV_ID"]},
+      {"id":"D14","name":"IdP_MFA_Relay","role":"idp","segmentId":"S2_ID","os":"Linux","dataTypes":["DT_KEYS"],"services":["SV_ID"]},
+
+      {"id":"D21","name":"Data_Store_OPORD","role":"db","segmentId":"S3_DATA","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_DATA"]},
+      {"id":"D22","name":"Data_Store_INTEL","role":"db","segmentId":"S3_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_DATA"]},
+      {"id":"D23","name":"Data_API_1","role":"api","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":["SV_DATA"]},
+      {"id":"D24","name":"Data_API_2","role":"api","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":["SV_DATA"]},
+
+      {"id":"D31","name":"Logistics_App","role":"app","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":["SV_LOG"]},
+      {"id":"D32","name":"Logistics_DB","role":"db","segmentId":"S4_LOG","os":"Linux","dataTypes":[],"services":["SV_LOG"]},
+      {"id":"D33","name":"Planning_WS","role":"ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":["SV_LOG"]},
+
+      {"id":"D41","name":"Sensor_Collector_1","role":"sensor","segmentId":"S7_SENS","os":"Linux","dataTypes":[],"services":["SV_SENS"]},
+      {"id":"D42","name":"Sensor_Collector_2","role":"sensor","segmentId":"S7_SENS","os":"Linux","dataTypes":[],"services":["SV_SENS"]},
+
+      {"id":"D50","name":"Backup_Vault","role":"backup","segmentId":"S9_BACK","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":[]},
+      {"id":"D51","name":"Recovery_Server","role":"recovery","segmentId":"S9_BACK","os":"Linux","dataTypes":[],"services":[]},
+
+      {"id":"D60","name":"SOC_Monitor","role":"soc","segmentId":"S5_MGMT","os":"Linux","dataTypes":[],"services":[]},
+
+      {"id":"D61","name":"User_WS_01","role":"user_ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[]},
+      {"id":"D62","name":"User_WS_02","role":"user_ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[]},
+      {"id":"D63","name":"User_WS_03","role":"user_ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[]},
+      {"id":"D64","name":"User_WS_04","role":"user_ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[]},
+      {"id":"D65","name":"User_WS_05","role":"user_ws","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[]},
+
+      {"id":"D66","name":"Mgmt_JumpHost","role":"jump","segmentId":"S5_MGMT","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D67","name":"Mgmt_CMDB","role":"cmdb","segmentId":"S5_MGMT","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D68","name":"App_Server_01","role":"app","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D69","name":"App_Server_02","role":"app","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D70","name":"Data_Replicator","role":"replicator","segmentId":"S3_DATA","os":"Linux","dataTypes":["DT_OPORD"],"services":[]},
+
+      {"id":"D71","name":"IDS_Sensor_1","role":"ids","segmentId":"S7_SENS","os":"Appliance","dataTypes":[],"services":[]},
+      {"id":"D72","name":"IDS_Sensor_2","role":"ids","segmentId":"S7_SENS","os":"Appliance","dataTypes":[],"services":[]},
+
+      {"id":"D73","name":"Time_Server","role":"infra","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D74","name":"DNS_1","role":"infra","segmentId":"S2_ID","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D75","name":"DNS_2","role":"infra","segmentId":"S2_ID","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D76","name":"NTP_Proxy","role":"infra","segmentId":"S1_GW","os":"Linux","dataTypes":[],"services":[]},
+
+      {"id":"D77","name":"Ops_KMS","role":"kms","segmentId":"S2_ID","os":"Linux","dataTypes":["DT_KEYS"],"services":[]},
+      {"id":"D78","name":"Ops_HSM","role":"hsm","segmentId":"S2_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":[]},
+
+      {"id":"D79","name":"Audit_Log_Server","role":"log","segmentId":"S5_MGMT","os":"Linux","dataTypes":[],"services":[]},
+      {"id":"D80","name":"Mission_App_03","role":"app","segmentId":"S6_APP","os":"Linux","dataTypes":[],"services":[]}
+    ],
+    "edges": [
+      {"src":"D07","dst":"D04","gamma":0.6},
+      {"src":"D08","dst":"D04","gamma":0.6},
+      {"src":"D04","dst":"D03","gamma":0.8},
+      {"src":"D03","dst":"D01","gamma":0.9},
+      {"src":"D03","dst":"D02","gamma":0.9},
+
+      {"src":"D07","dst":"D66","gamma":0.7},
+      {"src":"D66","dst":"D12","gamma":0.9},
+      {"src":"D12","dst":"D11","gamma":1.0},
+      {"src":"D12","dst":"D13","gamma":1.0},
+      {"src":"D12","dst":"D14","gamma":0.9},
+
+      {"src":"D14","dst":"D23","gamma":0.8},
+      {"src":"D23","dst":"D21","gamma":0.9},
+      {"src":"D23","dst":"D22","gamma":0.9},
+      {"src":"D31","dst":"D32","gamma":0.8},
+
+      {"src":"D60","dst":"D79","gamma":0.7},
+      {"src":"D71","dst":"D60","gamma":0.8},
+      {"src":"D72","dst":"D60","gamma":0.8},
+
+      {"src":"D50","dst":"D51","gamma":0.9},
+      {"src":"D51","dst":"D21","gamma":1.1},
+      {"src":"D51","dst":"D22","gamma":1.1}
+    ]
+  }
+}

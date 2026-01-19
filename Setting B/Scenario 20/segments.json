@@ -1,0 +1,15 @@
+{
+  "scenarioId": "SC20",
+  "segments": [
+    {"id":"S0_C2","name":"C2_Tier","type":"mission","notes":"Command-and-control applications"},
+    {"id":"S1_ID","name":"Identity_Tier","type":"identity","notes":"AD/IdP, PKI, IAM"},
+    {"id":"S2_GW","name":"Gateway_Tier","type":"perimeter","notes":"Guarded gateway / cross-domain access"},
+    {"id":"S3_DATA","name":"Mission_Data_Tier","type":"data","notes":"Mission data dissemination, file/DB"},
+    {"id":"S4_LOG","name":"Logistics_Tier","type":"mission","notes":"Logistics planning services"},
+    {"id":"S5_OPS","name":"Ops_Tier","type":"mission","notes":"Operations support tools"},
+    {"id":"S6_SENS","name":"Sensor_Tier","type":"mission","notes":"Sensor collectors / feeds"},
+    {"id":"S7_MGMT","name":"Mgmt_Tier","type":"mgmt","notes":"Management and monitoring"},
+    {"id":"S8_USER","name":"User_Tier","type":"user","notes":"Operator workstations"},
+    {"id":"S9_DMZ","name":"DMZ","type":"dmz","notes":"DMZ services"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SC11",
+  "actions": [
+    { "actionId": "contain_host",        "targetType": "device",  "durationBuckets": 2, "resources": { "RESPONDER_TEAM": 1 }, "disruptive": true },
+    { "actionId": "eradicate_host",      "targetType": "device",  "durationBuckets": 3, "resources": { "RESPONDER_TEAM": 1 }, "disruptive": true },
+    { "actionId": "recover_from_backup", "targetType": "device",  "durationBuckets": 4, "resources": { "RESPONDER_TEAM": 1 }, "disruptive": true },
+
+    { "actionId": "lockdown_identity",   "targetType": "device",  "durationBuckets": 2, "resources": { "ID_ADMIN": 1 }, "disruptive": false },
+    { "actionId": "reset_credentials",   "targetType": "device",  "durationBuckets": 2, "resources": { "ID_ADMIN": 1 }, "disruptive": false },
+
+    { "actionId": "increase_monitoring", "targetType": "device",  "durationBuckets": 2, "resources": { "SOC_ANALYST": 1 }, "disruptive": false },
+
+    { "actionId": "segment_disconnect",  "targetType": "segment", "durationBuckets": 2, "resources": { "NETOPS": 1 }, "disruptive": true },
+    { "actionId": "segment_reconnect",   "targetType": "segment", "durationBuckets": 2, "resources": { "NETOPS": 1 }, "disruptive": true }
+  ]
+}

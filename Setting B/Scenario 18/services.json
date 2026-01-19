@@ -1,0 +1,72 @@
+{
+  "scenarioId": "SC18",
+  "services": [
+    {
+      "id": "SV_C2",
+      "name": "CommandAndControl",
+      "devices": [
+        "D01",
+        "D02",
+        "D03",
+        "D04"
+      ]
+    },
+    {
+      "id": "SV_ID",
+      "name": "IdentityServices",
+      "devices": [
+        "D05",
+        "D06",
+        "D07"
+      ]
+    },
+    {
+      "id": "SV_DATA",
+      "name": "MissionDataDissemination",
+      "devices": [
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12"
+      ]
+    },
+    {
+      "id": "SV_LOG",
+      "name": "LogisticsPlanning",
+      "devices": [
+        "D13",
+        "D14",
+        "D15",
+        "D16"
+      ]
+    },
+    {
+      "id": "SV_GW",
+      "name": "GuardedGateway",
+      "devices": [
+        "D21",
+        "D22"
+      ]
+    },
+    {
+      "id": "SV_MON",
+      "name": "SecurityMonitoring",
+      "devices": [
+        "D23",
+        "D24",
+        "D25"
+      ]
+    },
+    {
+      "id": "SV_DMZ",
+      "name": "ExternalAccess",
+      "devices": [
+        "D17",
+        "D18",
+        "D19",
+        "D20"
+      ]
+    }
+  ]
+}
