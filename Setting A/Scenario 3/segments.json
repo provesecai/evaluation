@@ -1,0 +1,21 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "segments": [
+    { "segmentId":"S1_GW",    "name":"Gateway Tier",              "type":"gateway",  "deviceIds":["D07","D08"] },
+    { "segmentId":"S2_C2",    "name":"C2 Tier",                   "type":"mission",  "deviceIds":["D01","D02","D03"] },
+    { "segmentId":"S3_ID",    "name":"Identity Tier",             "type":"identity", "deviceIds":["D04","D05","D06"] },
+    { "segmentId":"S4_ADMIN", "name":"Admin / Jump Tier",         "type":"admin",    "deviceIds":["D09","D10"] },
+    { "segmentId":"S5_SEC",   "name":"Security Tooling Tier",     "type":"security", "deviceIds":["D11","D12","D38"] },
+
+    { "segmentId":"S6_MSN",   "name":"Mission Applications",      "type":"mission",  "deviceIds":["D13","D14","D15","D16","D17"] },
+    { "segmentId":"S7_DATA",  "name":"Mission Data Services",     "type":"mission",  "deviceIds":["D18","D19","D20"] },
+    { "segmentId":"S8_LOG",   "name":"Logistics Planning",        "type":"mission",  "deviceIds":["D21","D22","D23","D24"] },
+    { "segmentId":"S9_RAD",   "name":"Radio / Tactical Link Tier","type":"mission",  "deviceIds":["D25","D26","D27","D28"] },
+
+    { "segmentId":"S10_USER", "name":"User / Endpoint Tier",      "type":"user",
+      "deviceIds":["D29","D30","D31","D32","D34","D35","D36","D37"] },
+
+    { "segmentId":"S11_DMZ",  "name":"DMZ / Exposed Services",    "type":"dmz",
+      "deviceIds":["D33","D39","D40"] }
+  ]
+}

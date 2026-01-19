@@ -1,0 +1,55 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "devices": [
+    { "deviceId":"D01","name":"C2-App-1","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2-App-2","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2-DB","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D04","name":"AD-DC-1","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D05","name":"AD-DC-2","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"PKI-HSM","segmentId":"S3_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D07","name":"Guarded-Gateway-1","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D08","name":"Guarded-Gateway-2","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D09","name":"Admin-Jump-1","segmentId":"S4_ADMIN","os":"Windows","dataTypes":["DT_KEYS"],"services":[] },
+    { "deviceId":"D10","name":"Admin-Jump-2","segmentId":"S4_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D11","name":"SIEM","segmentId":"S5_SEC","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_SECOPS"] },
+    { "deviceId":"D12","name":"EDR-Manager","segmentId":"S5_SEC","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D38","name":"Patch-Mgmt","segmentId":"S5_SEC","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+
+    { "deviceId":"D13","name":"Mission-App-1","segmentId":"S6_MSN","os":"Linux","dataTypes":[],"services":["SV_MSN_APP"] },
+    { "deviceId":"D14","name":"Mission-App-2","segmentId":"S6_MSN","os":"Linux","dataTypes":[],"services":["SV_MSN_APP"] },
+    { "deviceId":"D15","name":"Mission-API","segmentId":"S6_MSN","os":"Linux","dataTypes":["DT_ISR_FEEDS"],"services":["SV_MSN_APP"] },
+    { "deviceId":"D16","name":"Mission-Worker-1","segmentId":"S6_MSN","os":"Linux","dataTypes":[],"services":["SV_MSN_APP"] },
+    { "deviceId":"D17","name":"Mission-Worker-2","segmentId":"S6_MSN","os":"Linux","dataTypes":[],"services":["SV_MSN_APP"] },
+
+    { "deviceId":"D18","name":"Mission-Data-Relay","segmentId":"S7_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D19","name":"Mission-File-Share","segmentId":"S7_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D20","name":"Telemetry-Relay","segmentId":"S7_DATA","os":"Linux","dataTypes":["DT_ISR_FEEDS"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D21","name":"Logistics-Planner-1","segmentId":"S8_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D22","name":"Logistics-Planner-2","segmentId":"S8_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D23","name":"Logistics-DB","segmentId":"S8_LOG","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_LOG"] },
+    { "deviceId":"D24","name":"Logistics-Share","segmentId":"S8_LOG","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+
+    { "deviceId":"D25","name":"Radio-GW-1","segmentId":"S9_RAD","os":"Appliance","dataTypes":["DT_ISR_FEEDS"],"services":["SV_RADIO"] },
+    { "deviceId":"D26","name":"Radio-GW-2","segmentId":"S9_RAD","os":"Appliance","dataTypes":[],"services":["SV_RADIO"] },
+    { "deviceId":"D27","name":"Tactical-Link-1","segmentId":"S9_RAD","os":"Appliance","dataTypes":[],"services":["SV_RADIO"] },
+    { "deviceId":"D28","name":"Tactical-Link-2","segmentId":"S9_RAD","os":"Appliance","dataTypes":[],"services":["SV_RADIO"] },
+
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Endpoint-31","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Endpoint-32","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D34","name":"Endpoint-34","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D35","name":"Endpoint-35","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D36","name":"Endpoint-36","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D37","name":"Endpoint-37","segmentId":"S10_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D33","name":"DMZ-App-1","segmentId":"S11_DMZ","os":"Linux","dataTypes":[],"services":["SV_DMZ"] },
+    { "deviceId":"D39","name":"DMZ-Web-1","segmentId":"S11_DMZ","os":"Linux","dataTypes":[],"services":["SV_DMZ"] },
+    { "deviceId":"D40","name":"DMZ-Web-2","segmentId":"S11_DMZ","os":"Linux","dataTypes":[],"services":["SV_DMZ"] }
+  ]
+}

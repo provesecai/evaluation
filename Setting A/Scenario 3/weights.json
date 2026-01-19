@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "objectiveWeights": {
+    "untreatedRiskWeight": 1.0,
+    "isolationPenaltyWeight": 1.0,
+    "actionRewardWeight": 1.0
+  }
+}

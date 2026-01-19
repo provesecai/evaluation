@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "mandatoryActions": [
+    { "targetType":"segment","targetId":"S11_DMZ","actionId":"segment_disconnect" },
+    { "targetType":"device","targetId":"D39","actionId":"contain_host" },
+    { "targetType":"device","targetId":"D04","actionId":"lockdown_identity" }
+  ],
+  "notes": "Mandatory reflects immediate playbook/operator decisions; MIROE enforces x=1 for these."
+}

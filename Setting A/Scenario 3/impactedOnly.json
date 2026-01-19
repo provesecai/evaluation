@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "impactedOnly": false,
+  "notes": "Allow preventive actions on gateway/identity tier due to gateway-adjacent risk."
+}

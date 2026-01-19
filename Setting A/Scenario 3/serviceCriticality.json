@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "criticality": [
+    { "serviceId":"SV_C2","c":10.0 },
+    { "serviceId":"SV_GW","c":8.5 },
+    { "serviceId":"SV_RADIO","c":8.0 },
+    { "serviceId":"SV_LOG","c":7.0 },
+    { "serviceId":"SV_ID","c":7.5 },
+    { "serviceId":"SV_MSN_APP","c":6.5 },
+    { "serviceId":"SV_MSN_DATA","c":6.5 },
+    { "serviceId":"SV_SECOPS","c":4.0 },
+    { "serviceId":"SV_DMZ","c":3.5 }
+  ]
+}

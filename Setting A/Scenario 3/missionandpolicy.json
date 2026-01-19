@@ -1,0 +1,29 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "setting": "B",
+  "incidentType": "lateral_movement_gateway_adjacent",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_RADIO", "SV_LOG"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 30 },
+      { "serviceId": "SV_LOG", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_RADIO", "minAvailabilityUntilBucket": 36 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D07", "D08"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D01", "D02", "D03"] },
+      { "serviceId": "SV_LOG", "deviceIds": ["D21", "D22", "D23", "D24"] },
+      { "serviceId": "SV_RADIO", "deviceIds": ["D25", "D26", "D27", "D28"] }
+    ],
+    "interpretation": "Disruptive actions affecting required-service devices are forbidden or delayed until after the service's min-availability time unless explicitly authorised."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS", "DT_ISR_FEEDS"],
+    "notes": "Avoid disruptive/destructive actions on devices hosting protected data types unless needed for containment."
+  }
+}

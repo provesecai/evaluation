@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "services": [
+    { "serviceId":"SV_C2","name":"Command and Control" },
+    { "serviceId":"SV_GW","name":"Guarded Gateway Connectivity" },
+    { "serviceId":"SV_ID","name":"Identity and Authentication" },
+    { "serviceId":"SV_RADIO","name":"Radio / Tactical Link" },
+    { "serviceId":"SV_LOG","name":"Logistics Planning" },
+    { "serviceId":"SV_MSN_APP","name":"Mission Applications" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+    { "serviceId":"SV_SECOPS","name":"Security Operations Tooling" },
+    { "serviceId":"SV_DMZ","name":"DMZ Services" }
+  ]
+}

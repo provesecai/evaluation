@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "resourceTypes": ["responder_team"],
+  "capacity": [
+    { "resourceType":"responder_team", "fromBucket":0, "toBucket":12, "R": 1 },
+    { "resourceType":"responder_team", "fromBucket":12, "toBucket":72, "R": 2 }
+  ],
+  "notes": "One responder team for the first 2 hours (travel / access constraints), then two teams."
+}

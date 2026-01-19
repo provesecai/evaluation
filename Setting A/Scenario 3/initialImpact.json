@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN3_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "I0": ["D39", "D32"],
+  "deviceHealth": [
+    { "deviceId":"D39", "health":0.40, "notes":"DMZ web foothold (public-facing compromise)" },
+    { "deviceId":"D32", "health":0.55, "notes":"User endpoint with suspicious lateral probes toward admin paths" }
+  ]
+}
