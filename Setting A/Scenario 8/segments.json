@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "segments": [
+    { "segmentId": "S1_DMZ",        "name": "DMZ / External-Facing",     "type": "dmz",       "deviceIds": ["D02","D08","D09"] },
+    { "segmentId": "S2_GW",         "name": "Guarded Gateway Tier",      "type": "gateway",   "deviceIds": ["D01","D03"] },
+    { "segmentId": "S3_TRANSIT",    "name": "Gateway Transit / Edge",    "type": "transit",   "deviceIds": ["D15","D16"] },
+    { "segmentId": "S4_C2",         "name": "C2 Tier",                   "type": "mission",   "deviceIds": ["D04","D05","D06","D07"] },
+    { "segmentId": "S5_ID",         "name": "Identity Tier",             "type": "identity",  "deviceIds": ["D10","D11"] },
+    { "segmentId": "S6_MSN_DATA",   "name": "Mission Data Tier",         "type": "mission",   "deviceIds": ["D12","D13","D14"] },
+    { "segmentId": "S7_APPS",       "name": "Mission Support Apps",      "type": "apps",      "deviceIds": ["D17","D18","D19","D20","D21","D22"] },
+    { "segmentId": "S8_USERS",      "name": "User / Endpoints",          "type": "user",      "deviceIds": ["D23","D24","D25","D26","D27","D28","D29","D30","D31","D32","D33","D34","D35","D36"] },
+    { "segmentId": "S9_TOOLING",    "name": "Security Tooling / Logs",   "type": "security",  "deviceIds": ["D37","D38","D39","D40","D41"] },
+    { "segmentId": "S10_BACKUP",    "name": "Backup / Restore",          "type": "backup",    "deviceIds": ["D42","D43","D44"] },
+    { "segmentId": "S11_SENSORS",   "name": "Sensors / Network TAPs",    "type": "sensors",   "deviceIds": ["D45","D46","D47","D48"] }
+  ]
+}

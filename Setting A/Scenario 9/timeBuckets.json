@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72
+}

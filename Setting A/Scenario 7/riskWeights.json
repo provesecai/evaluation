@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "beta": {
+    "beta_pol": 0.25,
+    "beta_mission": 0.55,
+    "beta_threat": 0.20
+  },
+  "dataSensitivity": [
+    { "dataType":"DT_OPORD", "s":10.0 },
+    { "dataType":"DT_INTEL", "s":9.0 },
+    { "dataType":"DT_KEYS", "s":10.0 }
+  ]
+}

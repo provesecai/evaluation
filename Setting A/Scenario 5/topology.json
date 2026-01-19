@@ -1,0 +1,28 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "graph": {
+    "nodes": [
+      "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D12","D13","D14",
+      "D15","D16","D17","D18","D19","D20","D21","D22","D23","D24","D25","D26","D27","D28",
+      "D29","D30","D31","D32","D33","D34","D35","D36","D37","D38","D39","D40"
+    ],
+    "edges": [
+      { "u":"D22","w":"D05","gamma":0.9, "notes":"Endpoint -> DC via stolen creds (moderate controls)" },
+      { "u":"D22","w":"D15","gamma":1.1, "notes":"Endpoint -> JumpHost (MFA/jump controls)" },
+      { "u":"D15","w":"D03","gamma":1.5, "notes":"JumpHost -> C2 (restricted)" },
+      { "u":"D05","w":"D17","gamma":1.0, "notes":"DC -> Admin WS (admin tooling path)" },
+
+      { "u":"D25","w":"D05","gamma":0.8, "notes":"Privileged WS -> DC (high-value target)" },
+      { "u":"D26","w":"D05","gamma":0.8, "notes":"Privileged WS -> DC" },
+
+      { "u":"D05","w":"D10","gamma":1.2, "notes":"Identity -> SITREP services (auth path)" },
+      { "u":"D05","w":"D08","gamma":1.2, "notes":"Identity -> Mission share (auth path)" },
+
+      { "u":"D33","w":"D22","gamma":0.7, "notes":"EDR visibility enables faster containment" },
+      { "u":"D39","w":"D05","gamma":0.8, "notes":"Auth monitoring provides detection / policy signals" },
+
+      { "u":"D01","w":"D05","gamma":1.6, "notes":"Gateway -> Identity (strong boundary controls)" },
+      { "u":"D02","w":"D01","gamma":1.4, "notes":"DMZ proxy -> Gateway (segmented)" }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "segments": [
+    { "segmentId": "S1_DMZ",     "name": "DMZ / External-facing",      "type": "dmz",      "deviceIds": ["D02","D12","D13","D14"] },
+    { "segmentId": "S2_GW",      "name": "Guarded Gateway Tier",       "type": "gateway",  "deviceIds": ["D01"] },
+    { "segmentId": "S3_C2",      "name": "C2 Tier",                    "type": "mission",  "deviceIds": ["D03","D04"] },
+    { "segmentId": "S4_ID",      "name": "Identity Tier",              "type": "identity", "deviceIds": ["D05","D06"] },
+    { "segmentId": "S5_SITREP",  "name": "Ops / SITREP Services",       "type": "mission",  "deviceIds": ["D10","D11"] },
+    { "segmentId": "S6_MSN",     "name": "Mission Data Tier",          "type": "mission",  "deviceIds": ["D07","D08","D09"] },
+    { "segmentId": "S7_ADMIN",   "name": "Admin / Jump Hosts",         "type": "admin",    "deviceIds": ["D15","D16","D17","D18"] },
+    { "segmentId": "S8_USER",    "name": "User / Endpoints",           "type": "user",     "deviceIds": ["D19","D20","D21","D22","D23","D24","D25","D26","D27","D28","D29","D30","D31","D32"] },
+    { "segmentId": "S9_TOOLING", "name": "Security Tooling / Logging", "type": "security", "deviceIds": ["D33","D34","D35","D36","D37","D38","D39","D40"] }
+  ]
+}

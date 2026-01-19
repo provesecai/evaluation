@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "I0": ["D20"],
+  "deviceHealth": [
+    { "deviceId":"D20", "health":0.50, "notes":"Initial foothold on DMZ web node; lateral movement likely." }
+  ],
+  "notes": "This scenario models a gateway-adjacent foothold driving urgent isolation and staged reconnection."
+}

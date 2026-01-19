@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "resourceTypes": ["responder_team"],
+  "capacity": [
+    { "resourceType":"responder_team", "fromBucket":0,  "toBucket":18, "R": 1 },
+    { "resourceType":"responder_team", "fromBucket":18, "toBucket":72, "R": 2 }
+  ],
+  "notes": "Setting A: limited early response team availability, then reinforcement."
+}

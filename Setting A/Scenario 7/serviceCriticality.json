@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "criticality": [
+    { "serviceId":"SV_C2","c":10.0 },
+    { "serviceId":"SV_GW","c":9.5 },
+    { "serviceId":"SV_ID","c":9.0 },
+    { "serviceId":"SV_SITREP","c":8.5 },
+    { "serviceId":"SV_MSN_DATA","c":7.5 },
+    { "serviceId":"SV_SEC_LOG","c":6.0 },
+    { "serviceId":"SV_BACKUP","c":6.0 }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "I0": ["D14", "D06"],
+  "deviceHealth": [
+    { "deviceId":"D14", "health":0.60, "notes":"Suspected credential compromise on endpoint; possible token theft." },
+    { "deviceId":"D06", "health":0.80, "notes":"Identity tier shows suspicious admin logons; treat as at-risk/partially impacted." }
+  ],
+  "notes": "Credential-compromise incident represented via impacted/at-risk endpoint and identity tier, driving identity lockdown actions."
+}

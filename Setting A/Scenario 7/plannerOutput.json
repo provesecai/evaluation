@@ -1,0 +1,89 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "bucketMinutes": 10,
+
+  "enabledActions": [
+    { "targetType":"device", "targetId":"D14", "actionId":"contain_host", "E": 1 },
+    { "targetType":"device", "targetId":"D14", "actionId":"eradicate_host", "E": 1 },
+
+    { "targetType":"device", "targetId":"D06", "actionId":"lockdown_identity", "E": 1 },
+    { "targetType":"device", "targetId":"D07", "actionId":"lockdown_identity", "E": 1 },
+
+    { "targetType":"device", "targetId":"D06", "actionId":"reset_credentials", "E": 1 },
+    { "targetType":"device", "targetId":"D07", "actionId":"reset_credentials", "E": 1 },
+
+    { "targetType":"device", "targetId":"D26", "actionId":"increase_monitoring", "E": 1 },
+    { "targetType":"device", "targetId":"D11", "actionId":"increase_monitoring", "E": 1 },
+
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_disconnect", "E": 1 },
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_reconnect", "E": 1 }
+  ],
+
+  "timeWindows": [
+    { "targetType":"device", "targetId":"D14", "actionId":"contain_host", "EST": 0, "LFT": 6 },
+    { "targetType":"device", "targetId":"D14", "actionId":"eradicate_host", "EST": 2, "LFT": 18 },
+
+    { "targetType":"device", "targetId":"D06", "actionId":"lockdown_identity", "EST": 0, "LFT": 6 },
+    { "targetType":"device", "targetId":"D07", "actionId":"lockdown_identity", "EST": 0, "LFT": 6 },
+
+    { "targetType":"device", "targetId":"D06", "actionId":"reset_credentials", "EST": 1, "LFT": 12 },
+    { "targetType":"device", "targetId":"D07", "actionId":"reset_credentials", "EST": 1, "LFT": 12 },
+
+    { "targetType":"device", "targetId":"D26", "actionId":"increase_monitoring", "EST": 0, "LFT": 12 },
+    { "targetType":"device", "targetId":"D11", "actionId":"increase_monitoring", "EST": 0, "LFT": 12 },
+
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_disconnect", "EST": 0, "LFT": 3 },
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_reconnect",  "EST": 9, "LFT": 30 }
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId": "S6_USER",
+      "disconnect": {
+        "fixedFinishBucket": 3,
+        "rationale": "Limit credential-based spread from user tier while preserving mission tiers."
+      },
+      "reconnect": {
+        "earliestBucket": 9,
+        "latestBucket": 30,
+        "rationale": "Re-enable user access after identity hardening and verification."
+      },
+      "maxIsolationBuckets": 30
+    }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId":"S3_C2", "lambda": 10.0 },
+    { "segmentId":"S2_GW", "lambda": 9.5 },
+    { "segmentId":"S4_ID", "lambda": 9.0 },
+    { "segmentId":"S7_TOOLING", "lambda": 5.0 },
+    { "segmentId":"S6_USER", "lambda": 4.0 },
+    { "segmentId":"S1_DMZ", "lambda": 3.5 },
+    { "segmentId":"S5_MSN_DATA", "lambda": 7.5 }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId":"D06", "alpha": 0.95 },
+    { "deviceId":"D07", "alpha": 0.92 },
+    { "deviceId":"D14", "alpha": 0.85 },
+    { "deviceId":"D03", "alpha": 0.80 },
+    { "deviceId":"D01", "alpha": 0.78 }
+  ],
+
+  "actionRewards": [
+    { "targetType":"device", "targetId":"D06", "actionId":"lockdown_identity", "reward": 9.0 },
+    { "targetType":"device", "targetId":"D07", "actionId":"lockdown_identity", "reward": 8.5 },
+
+    { "targetType":"device", "targetId":"D06", "actionId":"reset_credentials", "reward": 8.0 },
+    { "targetType":"device", "targetId":"D07", "actionId":"reset_credentials", "reward": 8.0 },
+
+    { "targetType":"device", "targetId":"D14", "actionId":"contain_host", "reward": 7.5 },
+    { "targetType":"device", "targetId":"D14", "actionId":"eradicate_host", "reward": 7.0 },
+
+    { "targetType":"device", "targetId":"D26", "actionId":"increase_monitoring", "reward": 6.0 },
+    { "targetType":"device", "targetId":"D11", "actionId":"increase_monitoring", "reward": 6.0 },
+
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_disconnect", "reward": 6.5 },
+    { "targetType":"segment", "targetId":"S6_USER", "actionId":"segment_reconnect",  "reward": 3.5 }
+  ]
+}

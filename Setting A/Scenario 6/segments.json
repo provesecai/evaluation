@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "segments": [
+    { "segmentId": "S1_DMZ",        "name": "DMZ / External-facing",        "type": "dmz",      "deviceIds": ["D02","D20","D21","D22","D23"] },
+    { "segmentId": "S2_GW",         "name": "Guarded Gateway Tier",         "type": "gateway",  "deviceIds": ["D01"] },
+    { "segmentId": "S3_C2",         "name": "C2 Tier",                      "type": "mission",  "deviceIds": ["D03","D04","D05"] },
+    { "segmentId": "S4_ID",         "name": "Identity Tier",                "type": "identity", "deviceIds": ["D06","D07"] },
+    { "segmentId": "S5_SITREP",     "name": "Ops / SITREP Services",         "type": "mission",  "deviceIds": ["D12","D13"] },
+    { "segmentId": "S6_RADIO",      "name": "Radio / Tactical Mgmt",        "type": "mission",  "deviceIds": ["D10","D11"] },
+    { "segmentId": "S7_MSN_DATA",   "name": "Mission Data Tier",            "type": "mission",  "deviceIds": ["D08","D09","D14","D15"] },
+    { "segmentId": "S8_ADMIN",      "name": "Admin / Jump Hosts",           "type": "admin",    "deviceIds": ["D16","D17","D18","D19"] },
+    { "segmentId": "S9_USER",       "name": "User / Endpoints",             "type": "user",     "deviceIds": ["D24","D25","D26","D27","D28","D29","D30","D31","D32","D33","D34","D35"] },
+    { "segmentId": "S10_TOOLING",   "name": "Security Tooling / Logging",   "type": "security", "deviceIds": ["D36","D37","D38","D39"] },
+    { "segmentId": "S11_BACKUP",    "name": "Backup / Restore Infrastructure","type":"backup",  "deviceIds": ["D40","D41","D42","D43","D44","D45","D46","D47","D48"] }
+  ]
+}

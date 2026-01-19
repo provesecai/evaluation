@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "beta": {
+    "beta_pol": 0.30,
+    "beta_mission": 0.50,
+    "beta_threat": 0.20
+  },
+  "dataSensitivity": [
+    { "dataType":"DT_OPORD", "s":10.0 },
+    { "dataType":"DT_INTEL", "s":9.0 },
+    { "dataType":"DT_KEYS", "s":10.0 }
+  ]
+}

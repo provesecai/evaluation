@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "precedence": [
+    { "before": { "targetType":"device","actionId":"contain_host" }, "after": { "targetType":"device","actionId":"eradicate_host" } },
+    { "before": { "targetType":"device","actionId":"eradicate_host" }, "after": { "targetType":"device","actionId":"recover_host" } },
+    { "before": { "targetType":"segment","actionId":"segment_disconnect" }, "after": { "targetType":"segment","actionId":"segment_reconnect" } }
+  ]
+}

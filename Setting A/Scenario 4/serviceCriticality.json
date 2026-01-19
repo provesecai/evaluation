@@ -1,0 +1,10 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "criticality": [
+    { "serviceId":"SV_C2","c":10.0 },
+    { "serviceId":"SV_GW","c":8.5 },
+    { "serviceId":"SV_MSN_DATA","c":8.0 },
+    { "serviceId":"SV_LOG","c":7.0 },
+    { "serviceId":"SV_ID","c":7.5 }
+  ]
+}

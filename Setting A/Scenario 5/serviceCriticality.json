@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "criticality": [
+    { "serviceId":"SV_C2","c":10.0 },
+    { "serviceId":"SV_GW","c":9.0 },
+    { "serviceId":"SV_SITREP","c":8.0 },
+    { "serviceId":"SV_ID","c":8.5 },
+    { "serviceId":"SV_MSN_DATA","c":7.5 },
+    { "serviceId":"SV_SEC_LOG","c":6.5 },
+    { "serviceId":"SV_BACKUP","c":6.0 }
+  ]
+}

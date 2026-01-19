@@ -1,0 +1,39 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "devices": [
+    { "deviceId":"D01","name":"C2-App","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2-DB","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D03","name":"AD-DC-1","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D04","name":"AD-DC-2","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D07","name":"Guarded-Gateway","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D12","name":"Mission-Data-Relay","segmentId":"S4_MSN","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D13","name":"Mission-File-Share","segmentId":"S4_MSN","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D14","name":"Mission-DB","segmentId":"S4_MSN","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D15","name":"Logistics-App-1","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D16","name":"Logistics-App-2","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D17","name":"Logistics-DB","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_LOG"] },
+
+    { "deviceId":"D05","name":"Endpoint-05","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D06","name":"Endpoint-06","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D08","name":"Endpoint-08","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D09","name":"Endpoint-09","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D10","name":"Endpoint-10","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D11","name":"Endpoint-11","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D18","name":"Endpoint-18","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D19","name":"Endpoint-19","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D20","name":"Endpoint-20","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"Endpoint-21","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"Endpoint-22","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"Endpoint-23","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Endpoint-26","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Endpoint-27","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Endpoint-28","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "setting": "B",
+  "incidentType": "lateral_movement_gateway_adjacent",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID", "SV_MSN_DATA"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 30 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_MSN_DATA", "minAvailabilityUntilBucket": 24 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D01", "D02", "D03"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D04", "D05", "D06", "D07"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D10", "D11"] },
+      { "serviceId": "SV_MSN_DATA", "deviceIds": ["D12", "D13", "D14"] }
+    ],
+    "interpretation": "Disruptive actions on devices supporting required services are delayed until after the service's min-availability time unless explicitly authorised. Containment actions that isolate adjacent segments are allowed if they do not directly take required service devices offline."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Avoid destructive/disruptive recovery on protected-data hosts unless required for containment. Prefer segmentation/identity hardening first."
+  }
+}

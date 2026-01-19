@@ -1,0 +1,56 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "devices": [
+    { "deviceId":"D01","name":"Guarded-Gateway","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"DMZ-Reverse-Proxy","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D03","name":"C2-App","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"C2-DB","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D05","name":"AD-DC-1","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"AD-DC-2","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D07","name":"Intel-Repo","segmentId":"S6_MSN","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D08","name":"Mission-Share","segmentId":"S6_MSN","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D09","name":"Mission-DB","segmentId":"S6_MSN","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D10","name":"SITREP-App","segmentId":"S5_SITREP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+    { "deviceId":"D11","name":"SITREP-DB","segmentId":"S5_SITREP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+
+    { "deviceId":"D12","name":"DMZ-Web-1","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D13","name":"DMZ-Web-2","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D14","name":"DMZ-MailGW","segmentId":"S1_DMZ","os":"Appliance","dataTypes":[],"services":[] },
+
+    { "deviceId":"D15","name":"JumpHost-1","segmentId":"S7_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D16","name":"JumpHost-2","segmentId":"S7_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D17","name":"Admin-Workstation-1","segmentId":"S7_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D18","name":"Admin-Workstation-2","segmentId":"S7_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D19","name":"Endpoint-19","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D20","name":"Endpoint-20","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"Endpoint-21","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"Endpoint-22","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"Endpoint-23","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D25","name":"Priv-User-WS-25","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Priv-User-WS-26","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Priv-User-WS-27","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Priv-User-WS-28","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Endpoint-31","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Endpoint-32","segmentId":"S8_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D33","name":"EDR-Manager","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D34","name":"SIEM","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D35","name":"Log-Collector-1","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D36","name":"Log-Collector-2","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+
+    { "deviceId":"D37","name":"Backup-Server","segmentId":"S9_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D38","name":"Patch-Repo","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D39","name":"Auth-Monitor","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D40","name":"NetFlow-Sensor","segmentId":"S9_TOOLING","os":"Appliance","dataTypes":[],"services":[] }
+  ]
+}

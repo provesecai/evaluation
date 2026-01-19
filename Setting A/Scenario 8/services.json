@@ -1,0 +1,20 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "services": [
+    { "serviceId":"SV_GW","name":"Guarded Gateway Connectivity" },
+    { "serviceId":"SV_C2","name":"Command and Control" },
+    { "serviceId":"SV_ID","name":"Identity and Authentication" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+    { "serviceId":"SV_SEC_LOG","name":"Security Logging" },
+    { "serviceId":"SV_BACKUP","name":"Backup and Restore" },
+
+    { "serviceId":"SV_LOGISTICS","name":"Logistics Planning Support" },
+    { "serviceId":"SV_PLANNING","name":"Mission Planning Support" },
+    { "serviceId":"SV_PORTAL","name":"Ops Portal" },
+    { "serviceId":"SV_RELAY","name":"Messaging Relay" },
+    { "serviceId":"SV_NTP","name":"Time Synchronisation" },
+    { "serviceId":"SV_UPDATES","name":"Update Server" },
+    { "serviceId":"SV_SEC_AUTOMATION","name":"Security Automation Bridge" },
+    { "serviceId":"SV_TI","name":"Threat Intel Cache" }
+  ]
+}

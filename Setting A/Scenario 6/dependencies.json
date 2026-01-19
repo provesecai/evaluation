@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "precedence": [
+    { "before": { "targetType":"segment","actionId":"segment_disconnect" }, "after": { "targetType":"segment","actionId":"segment_reconnect" } },
+    { "before": { "targetType":"device","actionId":"contain_host" }, "after": { "targetType":"device","actionId":"eradicate_host" } },
+    { "before": { "targetType":"device","actionId":"eradicate_host" }, "after": { "targetType":"device","actionId":"recover_host" } }
+  ]
+}

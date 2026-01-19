@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "precedence": [
+    { "before": { "targetType":"device","actionId":"contain_host" }, "after": { "targetType":"device","actionId":"eradicate_host" } },
+    { "before": { "targetType":"device","actionId":"eradicate_host" }, "after": { "targetType":"device","actionId":"recover_host" } },
+    { "before": { "targetType":"segment","actionId":"segment_disconnect" }, "after": { "targetType":"segment","actionId":"segment_reconnect" } }
+  ]
+}

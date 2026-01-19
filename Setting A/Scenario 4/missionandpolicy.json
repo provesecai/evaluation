@@ -1,0 +1,29 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "setting": "A",
+  "incidentType": "disruptive_malware_ransomware_like",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_LOG", "SV_MSN_DATA"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 36 },
+      { "serviceId": "SV_LOG", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_MSN_DATA", "minAvailabilityUntilBucket": 30 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D07"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D01", "D02"] },
+      { "serviceId": "SV_LOG", "deviceIds": ["D15", "D16", "D17"] },
+      { "serviceId": "SV_MSN_DATA", "deviceIds": ["D12", "D13", "D14"] }
+    ],
+    "interpretation": "Disruptive actions on devices supporting required services are delayed until after that service's minimum availability time unless explicitly authorised."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Avoid destructive/disruptive actions on devices hosting protected data unless required for containment."
+  }
+}

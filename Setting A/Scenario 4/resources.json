@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "resourceTypes": ["responder_team"],
+  "capacity": [
+    { "resourceType":"responder_team", "fromBucket":0, "toBucket":72, "R": 2 }
+  ],
+  "notes": "Two responder teams available throughout the horizon."
+}

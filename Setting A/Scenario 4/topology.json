@@ -1,0 +1,27 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "graph": {
+    "nodes": [
+      "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11",
+      "D12","D13","D14","D15","D16","D17","D18","D19","D20","D21","D22","D23","D24","D25","D26","D27","D28"
+    ],
+    "edges": [
+      { "u":"D05","w":"D15","gamma":0.7, "notes":"User endpoint -> Logistics app (phished cred reuse)" },
+      { "u":"D06","w":"D15","gamma":0.8, "notes":"User endpoint -> Logistics app" },
+      { "u":"D08","w":"D13","gamma":0.9, "notes":"User endpoint -> Mission file share (mapped drive)" },
+
+      { "u":"D15","w":"D17","gamma":0.8, "notes":"Logistics app -> Logistics DB" },
+      { "u":"D16","w":"D17","gamma":0.8, "notes":"Logistics app -> Logistics DB" },
+
+      { "u":"D13","w":"D14","gamma":0.9, "notes":"File share -> Mission DB (service tier)" },
+      { "u":"D03","w":"D15","gamma":1.2, "notes":"Identity -> Logistics (auth path)" },
+      { "u":"D03","w":"D13","gamma":1.2, "notes":"Identity -> Mission data (auth path)" },
+
+      { "u":"D07","w":"D03","gamma":1.5, "notes":"Gateway -> Identity (strong controls)" },
+      { "u":"D03","w":"D01","gamma":1.6, "notes":"Identity -> C2 (restricted)" },
+
+      { "u":"D10","w":"D03","gamma":0.9, "notes":"Endpoint -> Identity (credential theft risk)" },
+      { "u":"D11","w":"D03","gamma":1.0, "notes":"Endpoint -> Identity" }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72
+}

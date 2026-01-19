@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72
+}

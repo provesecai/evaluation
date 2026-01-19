@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "objectiveWeights": {
+    "untreatedRiskWeight": 1.0,
+    "isolationPenaltyWeight": 1.0,
+    "actionRewardWeight": 1.0
+  }
+}

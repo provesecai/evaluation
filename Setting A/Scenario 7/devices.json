@@ -1,0 +1,46 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "devices": [
+    { "deviceId":"D01","name":"Guarded-Gateway","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"DMZ-Reverse-Proxy","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D03","name":"C2-App-1","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"C2-App-2","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D05","name":"C2-DB","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D06","name":"AD-DC-1","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D07","name":"AD-DC-2","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D08","name":"Intel-Repo","segmentId":"S5_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D09","name":"Mission-Share","segmentId":"S5_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D10","name":"Mission-DB","segmentId":"S5_MSN_DATA","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D11","name":"EDR-Manager","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D12","name":"SITREP-App","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+    { "deviceId":"D13","name":"SITREP-DB","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+
+    { "deviceId":"D14","name":"Endpoint-14","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D15","name":"Endpoint-15","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D16","name":"Endpoint-16","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D17","name":"Endpoint-17","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D18","name":"Endpoint-18","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D19","name":"Endpoint-19","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D20","name":"DMZ-Web-1","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"DMZ-API-GW","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+
+    { "deviceId":"D22","name":"Endpoint-22","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"Endpoint-23","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D26","name":"SIEM","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D27","name":"Log-Collector","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D28","name":"NetFlow-Sensor","segmentId":"S7_TOOLING","os":"Appliance","dataTypes":[],"services":[] },
+
+    { "deviceId":"D29","name":"Backup-Orchestrator","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D30","name":"Backup-Repo","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D31","name":"Restore-Staging","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D32","name":"Backup-Monitor","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] }
+  ]
+}

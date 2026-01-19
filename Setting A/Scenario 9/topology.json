@@ -1,0 +1,27 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "graph": {
+    "nodes": [
+      "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D12","D13","D14","D15",
+      "D16","D17","D18","D19","D20","D21","D22","D23","D24",
+      "D25","D26","D27","D28","D29","D30","D31","D32"
+    ],
+    "edges": [
+      { "u":"D16","w":"D12","gamma":0.7, "notes":"Endpoint -> portal" },
+      { "u":"D12","w":"D10","gamma":0.9, "notes":"Portal -> logistics app" },
+      { "u":"D10","w":"D08","gamma":1.0, "notes":"Apps -> mission share (auth)" },
+
+      { "u":"D17","w":"D11","gamma":0.8, "notes":"Endpoint -> planning app" },
+      { "u":"D11","w":"D09","gamma":1.0, "notes":"Apps -> intel repo (auth)" },
+
+      { "u":"D18","w":"D06","gamma":0.9, "notes":"Endpoint credential path -> AD" },
+      { "u":"D06","w":"D03","gamma":1.2, "notes":"AD -> C2 app" },
+
+      { "u":"D25","w":"D16","gamma":0.8, "notes":"EDR helps contain endpoints quickly" },
+      { "u":"D26","w":"D10","gamma":0.9, "notes":"SIEM evidence informs recovery prioritisation" },
+
+      { "u":"D29","w":"D08","gamma":1.1, "notes":"Backup repo restores mission share" },
+      { "u":"D29","w":"D09","gamma":1.1, "notes":"Backup repo restores intel repo" }
+    ]
+  }
+}

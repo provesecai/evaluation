@@ -1,0 +1,25 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "graph": {
+    "nodes": [
+      "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D12","D13","D14",
+      "D15","D16","D17","D18","D19","D20","D21","D22","D23","D24","D25","D26","D27","D28","D29","D30","D31","D32","D33","D34","D35","D36",
+      "D37","D38","D39","D40","D41","D42","D43","D44","D45","D46","D47","D48"
+    ],
+    "edges": [
+      { "u":"D08","w":"D15","gamma":0.7, "notes":"DMZ foothold -> transit (weakly controlled)" },
+      { "u":"D15","w":"D01","gamma":1.2, "notes":"Transit -> guarded gateway (enforced)" },
+      { "u":"D01","w":"D04","gamma":1.6, "notes":"Gateway -> C2 (restricted)" },
+
+      { "u":"D15","w":"D10","gamma":0.9, "notes":"Transit -> AD (credential route)" },
+      { "u":"D10","w":"D12","gamma":1.1, "notes":"AD -> mission data (auth path)" },
+      { "u":"D10","w":"D04","gamma":1.2, "notes":"AD -> C2 tier (auth path)" },
+
+      { "u":"D08","w":"D09","gamma":0.4, "notes":"DMZ pivot (same segment)" },
+      { "u":"D09","w":"D16","gamma":0.8, "notes":"DMZ -> transit alt path" },
+
+      { "u":"D37","w":"D08","gamma":0.8, "notes":"EDR can help contain DMZ host quickly" },
+      { "u":"D38","w":"D10","gamma":0.9, "notes":"SIEM evidence supports identity lockdown" }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "services": [
+    { "serviceId":"SV_GW","name":"Guarded Gateway Connectivity" },
+    { "serviceId":"SV_C2","name":"Command and Control" },
+    { "serviceId":"SV_ID","name":"Identity and Authentication" },
+    { "serviceId":"SV_SITREP","name":"Operations / SITREP Updates" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+    { "serviceId":"SV_SEC_LOG","name":"Security Logging" },
+    { "serviceId":"SV_BACKUP","name":"Backup and Restore" }
+  ]
+}

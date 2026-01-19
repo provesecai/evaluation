@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "services": [
+    { "serviceId":"SV_GW","name":"Guarded Gateway Connectivity" },
+    { "serviceId":"SV_C2","name":"Command and Control" },
+    { "serviceId":"SV_ID","name":"Identity and Authentication" },
+    { "serviceId":"SV_SITREP","name":"SITREP Updates" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+    { "serviceId":"SV_SEC_LOG","name":"Security Logging" },
+    { "serviceId":"SV_BACKUP","name":"Backup and Restore" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "setting": "A",
+  "incidentType": "credential_compromise_privilege_escalation",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID", "SV_SITREP"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 42 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_SITREP", "minAvailabilityUntilBucket": 36 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D01", "D02"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D03", "D04", "D05"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D06", "D07"] },
+      { "serviceId": "SV_SITREP", "deviceIds": ["D12", "D13"] }
+    ],
+    "interpretation": "Disruptive actions on devices supporting required services are delayed until after the service's min-availability time unless explicitly authorised."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Prefer non-destructive containment and identity hardening first; avoid disruptive recovery on protected-data hosts unless required for containment."
+  }
+}

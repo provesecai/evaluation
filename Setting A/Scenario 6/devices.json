@@ -1,0 +1,64 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "devices": [
+    { "deviceId":"D01","name":"Guarded-Gateway","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"DMZ-Reverse-Proxy","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D03","name":"C2-App-1","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"C2-App-2","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D05","name":"C2-DB","segmentId":"S3_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D06","name":"AD-DC-1","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS","DT_CRYPTO_MAT"],"services":["SV_ID"] },
+    { "deviceId":"D07","name":"AD-DC-2","segmentId":"S4_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D08","name":"Intel-Repo","segmentId":"S7_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D09","name":"Mission-Share","segmentId":"S7_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D10","name":"Radio-Mgmt-App","segmentId":"S6_RADIO","os":"Linux","dataTypes":[],"services":["SV_RADIO_MGMT"] },
+    { "deviceId":"D11","name":"Radio-Mgmt-DB","segmentId":"S6_RADIO","os":"Linux","dataTypes":[],"services":["SV_RADIO_MGMT"] },
+
+    { "deviceId":"D12","name":"SITREP-App","segmentId":"S5_SITREP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+    { "deviceId":"D13","name":"SITREP-DB","segmentId":"S5_SITREP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_SITREP"] },
+
+    { "deviceId":"D14","name":"Mission-DB","segmentId":"S7_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D15","name":"Mission-Cache","segmentId":"S7_MSN_DATA","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D16","name":"JumpHost-1","segmentId":"S8_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D17","name":"JumpHost-2","segmentId":"S8_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D18","name":"Admin-WS-1","segmentId":"S8_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D19","name":"Admin-WS-2","segmentId":"S8_ADMIN","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D20","name":"DMZ-Web-1","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"DMZ-Web-2","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"DMZ-MailGW","segmentId":"S1_DMZ","os":"Appliance","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"DMZ-API-GW","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Endpoint-26","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Endpoint-27","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Endpoint-28","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Endpoint-31","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Endpoint-32","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D33","name":"Endpoint-33","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D34","name":"Endpoint-34","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D35","name":"Endpoint-35","segmentId":"S9_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D36","name":"EDR-Manager","segmentId":"S10_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D37","name":"SIEM","segmentId":"S10_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D38","name":"Log-Collector-1","segmentId":"S10_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D39","name":"NetFlow-Sensor","segmentId":"S10_TOOLING","os":"Appliance","dataTypes":[],"services":[] },
+
+    { "deviceId":"D40","name":"Backup-Orchestrator","segmentId":"S11_BACKUP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D41","name":"Backup-Repo-1","segmentId":"S11_BACKUP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D42","name":"Backup-Repo-2","segmentId":"S11_BACKUP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D43","name":"Snapshot-Node-1","segmentId":"S11_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D44","name":"Snapshot-Node-2","segmentId":"S11_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D45","name":"Restore-Staging-1","segmentId":"S11_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D46","name":"Restore-Staging-2","segmentId":"S11_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D47","name":"Immutable-Vault","segmentId":"S11_BACKUP","os":"Appliance","dataTypes":["DT_CRYPTO_MAT"],"services":["SV_BACKUP"] },
+    { "deviceId":"D48","name":"Backup-Monitor","segmentId":"S11_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] }
+  ]
+}

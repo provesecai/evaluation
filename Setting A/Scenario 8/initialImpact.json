@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "I0": ["D08", "D15"],
+  "deviceHealth": [
+    { "deviceId":"D08", "health":0.45, "notes":"DMZ host shows clear compromise; likely initial foothold." },
+    { "deviceId":"D15", "health":0.70, "notes":"Transit device shows anomalous lateral movement attempts." }
+  ],
+  "notes": "Gateway-adjacent foothold represented as impacted DMZ host plus at-risk transit tier."
+}

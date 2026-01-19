@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "I0": ["D22"],
+  "deviceHealth": [
+    { "deviceId":"D22", "health":0.60, "notes":"Initial compromised endpoint; stolen credentials suspected." }
+  ],
+  "notes": "This scenario represents credential theft with risk of privilege escalation toward identity services."
+}

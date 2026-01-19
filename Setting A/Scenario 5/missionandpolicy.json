@@ -1,0 +1,27 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "setting": "B",
+  "incidentType": "credential_compromise_privilege_escalation",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_SITREP", "SV_ID"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 36 },
+      { "serviceId": "SV_SITREP", "minAvailabilityUntilBucket": 30 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 18 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D01", "D02"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D03", "D04"] },
+      { "serviceId": "SV_SITREP", "deviceIds": ["D10", "D11"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D05", "D06"] }
+    ],
+    "interpretation": "Disruptive actions on devices supporting required services are delayed until after that service's min-availability time unless explicitly authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Avoid destructive/disruptive actions on devices hosting protected data unless required for containment."
+  }
+}

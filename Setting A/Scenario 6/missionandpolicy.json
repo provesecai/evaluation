@@ -1,0 +1,31 @@
+{
+  "scenarioId": "SCN6_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "setting": "B",
+  "incidentType": "lateral_movement_gateway_adjacent",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID", "SV_SITREP", "SV_RADIO_MGMT"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 36 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_SITREP", "minAvailabilityUntilBucket": 30 },
+      { "serviceId": "SV_RADIO_MGMT", "minAvailabilityUntilBucket": 24 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D01", "D02"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D03", "D04", "D05"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D06", "D07"] },
+      { "serviceId": "SV_SITREP", "deviceIds": ["D12", "D13"] },
+      { "serviceId": "SV_RADIO_MGMT", "deviceIds": ["D10", "D11"] }
+    ],
+    "interpretation": "Disruptive actions affecting required-service devices are delayed until after the service's min-availability time unless explicitly authorised."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS", "DT_CRYPTO_MAT"],
+    "notes": "Avoid destructive/disruptive actions on protected-data hosts unless required for containment; prefer isolation/identity hardening first."
+  }
+}

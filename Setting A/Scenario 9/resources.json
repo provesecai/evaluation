@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "resourceTypes": ["responder_team"],
+  "capacity": [
+    { "resourceType":"responder_team", "fromBucket":0,  "toBucket":72, "R": 2 }
+  ],
+  "notes": "Setting A: balanced containment/recovery with steady staffing."
+}

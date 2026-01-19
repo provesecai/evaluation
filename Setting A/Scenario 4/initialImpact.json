@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "I0": ["D15", "D13", "D05"],
+  "deviceHealth": [
+    { "deviceId":"D05", "health":0.35, "notes":"Initial user endpoint hit by ransomware dropper." },
+    { "deviceId":"D15", "health":0.30, "notes":"Logistics app degraded (encryption / service disruption)." },
+    { "deviceId":"D13", "health":0.25, "notes":"Mission file share degraded (encrypted shares / access loss)." }
+  ]
+}

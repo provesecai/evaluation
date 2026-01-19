@@ -1,0 +1,18 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "actions": [
+    { "actionId":"contain_host","type":"containment","durationBuckets":2,"resources":{"responder_team":1},"disruptive":false,"coverage":["containment","lateral_movement"] },
+    { "actionId":"eradicate_host","type":"eradication","durationBuckets":4,"resources":{"responder_team":1},"disruptive":true,"coverage":["malware_cleanup"] },
+    { "actionId":"recover_host","type":"recovery","durationBuckets":6,"resources":{"responder_team":1},"disruptive":true,"coverage":["restore_service"] },
+
+    { "actionId":"lockdown_identity","type":"containment","durationBuckets":2,"resources":{"responder_team":1},"disruptive":false,"coverage":["credential_theft","privilege_escalation"] },
+    { "actionId":"reset_credentials","type":"eradication","durationBuckets":3,"resources":{"responder_team":1},"disruptive":false,"coverage":["credential_theft"] },
+
+    { "actionId":"segment_disconnect","type":"containment","durationBuckets":1,"resources":{"responder_team":1},"disruptive":true,"coverage":["containment"] },
+    { "actionId":"segment_reconnect","type":"recovery","durationBuckets":1,"resources":{"responder_team":1},"disruptive":true,"coverage":["restore_connectivity"] },
+
+    { "actionId":"increase_monitoring","type":"containment","durationBuckets":2,"resources":{"responder_team":1},"disruptive":false,"coverage":["situational_awareness"] },
+
+    { "actionId":"restore_from_backup","type":"recovery","durationBuckets":5,"resources":{"responder_team":1},"disruptive":true,"coverage":["restore_service","data_recovery"] }
+  ]
+}

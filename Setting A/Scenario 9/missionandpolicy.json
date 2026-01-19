@@ -1,0 +1,29 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "setting": "A",
+  "incidentType": "disruptive_malware_ransomware_like",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW", "SV_ID", "SV_MSN_DATA"],
+    "T_avail": [
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 12 },
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_ID", "minAvailabilityUntilBucket": 18 },
+      { "serviceId": "SV_MSN_DATA", "minAvailabilityUntilBucket": 18 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_GW", "deviceIds": ["D01", "D02"] },
+      { "serviceId": "SV_C2", "deviceIds": ["D03", "D04", "D05"] },
+      { "serviceId": "SV_ID", "deviceIds": ["D06", "D07"] },
+      { "serviceId": "SV_MSN_DATA", "deviceIds": ["D08", "D09"] }
+    ],
+    "interpretation": "For required services, disruptive recovery actions on supporting devices must not start before minAvailabilityUntilBucket unless explicitly authorised. Containment actions are permitted earlier if they reduce spread without directly taking required-service devices offline."
+  },
+
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Avoid destructive recovery on protected-data hosts unless required to stop spread. Prefer staged containment, identity hardening, and restoration from trusted backups."
+  }
+}

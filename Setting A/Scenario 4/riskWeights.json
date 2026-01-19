@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SCN4_SETTING_A_RANSOMWARE_MISSION_SUPPORT_RECOVERY",
+  "beta": {
+    "beta_pol": 0.35,
+    "beta_mission": 0.45,
+    "beta_threat": 0.20
+  },
+  "dataSensitivity": [
+    { "dataType":"DT_OPORD", "s":10.0 },
+    { "dataType":"DT_INTEL", "s":9.0 },
+    { "dataType":"DT_KEYS", "s":10.0 }
+  ]
+}

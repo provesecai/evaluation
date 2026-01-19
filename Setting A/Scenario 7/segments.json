@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN7_SETTING_A_CRED_COMPROMISE_IDENTITY_FOCUSED",
+  "segments": [
+    { "segmentId": "S1_DMZ",      "name": "DMZ",                     "type": "dmz",      "deviceIds": ["D02","D20","D21"] },
+    { "segmentId": "S2_GW",       "name": "Guarded Gateway Tier",    "type": "gateway",  "deviceIds": ["D01"] },
+    { "segmentId": "S3_C2",       "name": "C2 Tier",                 "type": "mission",  "deviceIds": ["D03","D04","D05"] },
+    { "segmentId": "S4_ID",       "name": "Identity Tier",           "type": "identity", "deviceIds": ["D06","D07"] },
+    { "segmentId": "S5_MSN_DATA", "name": "Mission Data Tier",       "type": "mission",  "deviceIds": ["D08","D09","D10"] },
+    { "segmentId": "S6_USER",     "name": "User / Endpoints",        "type": "user",     "deviceIds": ["D14","D15","D16","D17","D18","D19","D22","D23","D24","D25"] },
+    { "segmentId": "S7_TOOLING",  "name": "Security Tooling/Logs",   "type": "security", "deviceIds": ["D11","D12","D13","D26","D27","D28","D29","D30","D31","D32"] }
+  ]
+}

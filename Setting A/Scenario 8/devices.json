@@ -1,0 +1,63 @@
+{
+  "scenarioId": "SCN8_SETTING_B_GATEWAY_ADJACENT_LATERAL_MOVEMENT",
+  "devices": [
+    { "deviceId":"D01","name":"Guarded-Gateway-Appliance","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"DMZ-Reverse-Proxy","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D03","name":"Gateway-Policy-Enforcer","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D04","name":"C2-App-1","segmentId":"S4_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D05","name":"C2-App-2","segmentId":"S4_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D06","name":"C2-DB","segmentId":"S4_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D07","name":"C2-Message-Bus","segmentId":"S4_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+
+    { "deviceId":"D08","name":"DMZ-Web-Node","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+    { "deviceId":"D09","name":"DMZ-API-Gateway","segmentId":"S1_DMZ","os":"Linux","dataTypes":[],"services":[] },
+
+    { "deviceId":"D10","name":"AD-DC-1","segmentId":"S5_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D11","name":"AD-DC-2","segmentId":"S5_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D12","name":"Intel-Repo","segmentId":"S6_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D13","name":"Mission-Share","segmentId":"S6_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D14","name":"Mission-DB","segmentId":"S6_MSN_DATA","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D15","name":"Edge-Transit-Switch-1","segmentId":"S3_TRANSIT","os":"Appliance","dataTypes":[],"services":[] },
+    { "deviceId":"D16","name":"Edge-Transit-Switch-2","segmentId":"S3_TRANSIT","os":"Appliance","dataTypes":[],"services":[] },
+
+    { "deviceId":"D17","name":"Logistics-App","segmentId":"S7_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D18","name":"Planning-App","segmentId":"S7_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_PLANNING"] },
+    { "deviceId":"D19","name":"Ops-Portal","segmentId":"S7_APPS","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+    { "deviceId":"D20","name":"Messaging-Relay","segmentId":"S7_APPS","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D21","name":"Time-Sync","segmentId":"S7_APPS","os":"Linux","dataTypes":[],"services":["SV_NTP"] },
+    { "deviceId":"D22","name":"Update-Server","segmentId":"S7_APPS","os":"Linux","dataTypes":[],"services":["SV_UPDATES"] },
+
+    { "deviceId":"D23","name":"Endpoint-23","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Endpoint-26","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Endpoint-27","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Endpoint-28","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Endpoint-31","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Endpoint-32","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D33","name":"Endpoint-33","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D34","name":"Endpoint-34","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D35","name":"Endpoint-35","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D36","name":"Endpoint-36","segmentId":"S8_USERS","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D37","name":"EDR-Manager","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D38","name":"SIEM","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D39","name":"Log-Collector","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D40","name":"SOAR-Bridge","segmentId":"S9_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_AUTOMATION"] },
+    { "deviceId":"D41","name":"Threat-Intel-Cache","segmentId":"S9_TOOLING","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_TI"] },
+
+    { "deviceId":"D42","name":"Backup-Orchestrator","segmentId":"S10_BACKUP","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D43","name":"Backup-Repo","segmentId":"S10_BACKUP","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_BACKUP"] },
+    { "deviceId":"D44","name":"Restore-Staging","segmentId":"S10_BACKUP","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+
+    { "deviceId":"D45","name":"NetFlow-Sensor","segmentId":"S11_SENSORS","os":"Appliance","dataTypes":[],"services":[] },
+    { "deviceId":"D46","name":"IDS-Sensor-1","segmentId":"S11_SENSORS","os":"Appliance","dataTypes":[],"services":[] },
+    { "deviceId":"D47","name":"IDS-Sensor-2","segmentId":"S11_SENSORS","os":"Appliance","dataTypes":[],"services":[] },
+    { "deviceId":"D48","name":"TAP-Aggregator","segmentId":"S11_SENSORS","os":"Appliance","dataTypes":[],"services":[] }
+  ]
+}

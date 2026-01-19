@@ -1,0 +1,43 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "devices": [
+    { "deviceId":"D01","name":"Gateway-Appliance","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"Edge-Proxy","segmentId":"S1_GW","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D03","name":"C2-App-1","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"C2-App-2","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D05","name":"C2-DB","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D06","name":"AD-DC-1","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D07","name":"AD-DC-2","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D08","name":"Mission-Share","segmentId":"S4_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D09","name":"Intel-Repo","segmentId":"S4_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D10","name":"Logistics-App","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D11","name":"Planning-App","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_PLANNING"] },
+    { "deviceId":"D12","name":"Ops-Portal","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+    { "deviceId":"D13","name":"Messaging-Relay","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D14","name":"Time-Sync","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_NTP"] },
+    { "deviceId":"D15","name":"Update-Server","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_UPDATES"] },
+
+    { "deviceId":"D16","name":"Endpoint-16","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D17","name":"Endpoint-17","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D18","name":"Endpoint-18","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D19","name":"Endpoint-19","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D20","name":"Endpoint-20","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"Endpoint-21","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"Endpoint-22","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"Endpoint-23","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Endpoint-24","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D25","name":"EDR-Manager","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D26","name":"SIEM","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D27","name":"Log-Collector","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D28","name":"Backup-Orchestrator","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D29","name":"Backup-Repo","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_BACKUP"] },
+    { "deviceId":"D30","name":"Restore-Staging","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+    { "deviceId":"D31","name":"SOAR-Bridge","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_AUTOMATION"] },
+    { "deviceId":"D32","name":"Threat-Intel-Cache","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_TI"] }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "services": [
+    { "serviceId":"SV_GW","name":"Gateway Connectivity" },
+    { "serviceId":"SV_C2","name":"Command and Control" },
+    { "serviceId":"SV_ID","name":"Identity and Authentication" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+
+    { "serviceId":"SV_LOGISTICS","name":"Logistics Support" },
+    { "serviceId":"SV_PLANNING","name":"Mission Planning Support" },
+    { "serviceId":"SV_PORTAL","name":"Ops Portal" },
+    { "serviceId":"SV_RELAY","name":"Messaging Relay" },
+    { "serviceId":"SV_NTP","name":"Time Synchronisation" },
+    { "serviceId":"SV_UPDATES","name":"Update Server" },
+
+    { "serviceId":"SV_SEC_LOG","name":"Security Logging" },
+    { "serviceId":"SV_BACKUP","name":"Backup and Restore" },
+    { "serviceId":"SV_SEC_AUTOMATION","name":"Security Automation Bridge" },
+    { "serviceId":"SV_TI","name":"Threat Intel Cache" }
+  ]
+}

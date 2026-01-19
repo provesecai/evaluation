@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "I0": ["D16", "D12", "D10", "D08"],
+  "deviceHealth": [
+    { "deviceId":"D16", "health":0.30, "notes":"User endpoint encrypted; suspected initial infection." },
+    { "deviceId":"D12", "health":0.45, "notes":"Ops portal degraded; likely impacted via endpoint." },
+    { "deviceId":"D10", "health":0.55, "notes":"Logistics app partially degraded." },
+    { "deviceId":"D08", "health":0.40, "notes":"Mission share degraded; availability impacted." }
+  ],
+  "notes": "Disruptive malware effect represented via low health on mission-support services and upstream infection path."
+}

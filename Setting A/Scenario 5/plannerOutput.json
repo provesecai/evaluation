@@ -1,0 +1,78 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "bucketMinutes": 10,
+
+  "enabledActions": [
+    { "targetType":"device",  "targetId":"D22", "actionId":"contain_host",        "E":1 },
+    { "targetType":"device",  "targetId":"D22", "actionId":"eradicate_host",      "E":1 },
+
+    { "targetType":"device",  "targetId":"D05", "actionId":"lockdown_identity",  "E":1 },
+    { "targetType":"device",  "targetId":"D06", "actionId":"lockdown_identity",  "E":1 },
+
+    { "targetType":"device",  "targetId":"D25", "actionId":"reset_credentials",  "E":1 },
+    { "targetType":"device",  "targetId":"D26", "actionId":"reset_credentials",  "E":1 },
+    { "targetType":"device",  "targetId":"D27", "actionId":"reset_credentials",  "E":1 },
+
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_disconnect", "E":1 },
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_reconnect",  "E":1 },
+
+    { "targetType":"device",  "targetId":"D39", "actionId":"increase_monitoring", "E":1 },
+    { "targetType":"device",  "targetId":"D33", "actionId":"increase_monitoring", "E":1 },
+    { "targetType":"device",  "targetId":"D01", "actionId":"increase_monitoring", "E":1 }
+  ],
+
+  "timeWindows": [
+    { "targetType":"device",  "targetId":"D22", "actionId":"contain_host",        "EST":0,  "LFT":6  },
+    { "targetType":"device",  "targetId":"D22", "actionId":"eradicate_host",      "EST":2,  "LFT":18 },
+
+    { "targetType":"device",  "targetId":"D05", "actionId":"lockdown_identity",  "EST":0,  "LFT":6  },
+    { "targetType":"device",  "targetId":"D06", "actionId":"lockdown_identity",  "EST":0,  "LFT":6  },
+
+    { "targetType":"device",  "targetId":"D25", "actionId":"reset_credentials",  "EST":0,  "LFT":9  },
+    { "targetType":"device",  "targetId":"D26", "actionId":"reset_credentials",  "EST":0,  "LFT":9  },
+    { "targetType":"device",  "targetId":"D27", "actionId":"reset_credentials",  "EST":0,  "LFT":12 },
+
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_disconnect", "EST":0,  "LFT":3  },
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_reconnect",  "EST":12, "LFT":30 },
+
+    { "targetType":"device",  "targetId":"D39", "actionId":"increase_monitoring", "EST":0,  "LFT":12 },
+    { "targetType":"device",  "targetId":"D33", "actionId":"increase_monitoring", "EST":0,  "LFT":12 },
+    { "targetType":"device",  "targetId":"D01", "actionId":"increase_monitoring", "EST":0,  "LFT":18 }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId":"S3_C2",     "lambda":10.0 },
+    { "segmentId":"S2_GW",     "lambda":9.0 },
+    { "segmentId":"S4_ID",     "lambda":8.5 },
+    { "segmentId":"S5_SITREP", "lambda":8.0 },
+    { "segmentId":"S8_USER",   "lambda":4.0 }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId":"D05", "alpha":1.00 },
+    { "deviceId":"D06", "alpha":0.95 },
+    { "deviceId":"D22", "alpha":0.80 },
+    { "deviceId":"D25", "alpha":0.75 },
+    { "deviceId":"D26", "alpha":0.70 },
+    { "deviceId":"D01", "alpha":0.65 }
+  ],
+
+  "actionRewards": [
+    { "targetType":"device",  "targetId":"D05", "actionId":"lockdown_identity", "reward":9.0 },
+    { "targetType":"device",  "targetId":"D06", "actionId":"lockdown_identity", "reward":8.5 },
+
+    { "targetType":"device",  "targetId":"D22", "actionId":"contain_host",      "reward":7.5 },
+    { "targetType":"device",  "targetId":"D22", "actionId":"eradicate_host",    "reward":7.0 },
+
+    { "targetType":"device",  "targetId":"D25", "actionId":"reset_credentials", "reward":8.0 },
+    { "targetType":"device",  "targetId":"D26", "actionId":"reset_credentials", "reward":7.8 },
+    { "targetType":"device",  "targetId":"D27", "actionId":"reset_credentials", "reward":7.2 },
+
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_disconnect", "reward":6.8 },
+    { "targetType":"segment", "targetId":"S8_USER", "actionId":"segment_reconnect",  "reward":4.2 },
+
+    { "targetType":"device",  "targetId":"D39", "actionId":"increase_monitoring", "reward":6.0 },
+    { "targetType":"device",  "targetId":"D33", "actionId":"increase_monitoring", "reward":5.8 },
+    { "targetType":"device",  "targetId":"D01", "actionId":"increase_monitoring", "reward":5.5 }
+  ]
+}

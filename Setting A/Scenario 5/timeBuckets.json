@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN5_SETTING_B_CREDENTIAL_COMPROMISE_IDENTITY_LOCKDOWN",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72
+}

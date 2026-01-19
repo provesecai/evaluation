@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN9_SETTING_A_RANSOMWARE_LIKE_DEGRADATION",
+  "segments": [
+    { "segmentId": "S1_GW",       "name": "Gateway / Edge",              "type": "gateway",  "deviceIds": ["D01","D02"] },
+    { "segmentId": "S2_C2",       "name": "C2 Tier",                     "type": "mission",  "deviceIds": ["D03","D04","D05"] },
+    { "segmentId": "S3_ID",       "name": "Identity Tier",               "type": "identity", "deviceIds": ["D06","D07"] },
+    { "segmentId": "S4_MSN_DATA", "name": "Mission Data Tier",           "type": "mission",  "deviceIds": ["D08","D09"] },
+    { "segmentId": "S5_APPS",     "name": "Mission Support Apps",        "type": "apps",     "deviceIds": ["D10","D11","D12","D13","D14","D15"] },
+    { "segmentId": "S6_USERS",    "name": "User / Endpoints",            "type": "user",     "deviceIds": ["D16","D17","D18","D19","D20","D21","D22","D23","D24"] },
+    { "segmentId": "S7_TOOLING",  "name": "Security Tooling + Backup",   "type": "security", "deviceIds": ["D25","D26","D27","D28","D29","D30","D31","D32"] }
+  ]
+}
