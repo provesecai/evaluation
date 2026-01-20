@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "precedence": [
+    { "before": { "targetType":"device","actionId":"contain_host" }, "after": { "targetType":"device","actionId":"eradicate_host" } },
+    { "before": { "targetType":"device","actionId":"eradicate_host" }, "after": { "targetType":"device","actionId":"recover_host" } },
+
+    { "before": { "targetType":"device","actionId":"lockdown_identity" }, "after": { "targetType":"device","actionId":"reset_credentials" } },
+
+    { "before": { "targetType":"segment","actionId":"segment_disconnect" }, "after": { "targetType":"segment","actionId":"segment_reconnect" } }
+  ]
+}

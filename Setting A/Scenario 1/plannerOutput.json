@@ -1,0 +1,95 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "bucketMinutes": 10,
+
+  "enabledActions": [
+    { "targetType":"device","targetId":"D22","actionId":"contain_host","E":1 },
+    { "targetType":"device","targetId":"D22","actionId":"eradicate_host","E":1 },
+    { "targetType":"device","targetId":"D22","actionId":"recover_host","E":1 },
+
+    { "targetType":"device","targetId":"D04","actionId":"lockdown_identity","E":1 },
+    { "targetType":"device","targetId":"D05","actionId":"lockdown_identity","E":1 },
+    { "targetType":"device","targetId":"D06","actionId":"lockdown_identity","E":1 },
+
+    { "targetType":"device","targetId":"D04","actionId":"reset_credentials","E":1 },
+    { "targetType":"device","targetId":"D05","actionId":"reset_credentials","E":1 },
+
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_disconnect","E":1 },
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_reconnect","E":1 },
+
+    { "targetType":"device","targetId":"D10","actionId":"increase_monitoring","E":1 },
+
+    { "targetType":"device","targetId":"D02","actionId":"recover_host","E":1 }
+  ],
+
+  "timeWindows": [
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_disconnect","EST":0,"LFT":3 },
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_reconnect","EST":6,"LFT":24 },
+
+    { "targetType":"device","targetId":"D22","actionId":"contain_host","EST":0,"LFT":3 },
+    { "targetType":"device","targetId":"D22","actionId":"eradicate_host","EST":2,"LFT":12 },
+    { "targetType":"device","targetId":"D22","actionId":"recover_host","EST":6,"LFT":30 },
+
+    { "targetType":"device","targetId":"D04","actionId":"lockdown_identity","EST":0,"LFT":6 },
+    { "targetType":"device","targetId":"D05","actionId":"lockdown_identity","EST":0,"LFT":6 },
+    { "targetType":"device","targetId":"D06","actionId":"lockdown_identity","EST":0,"LFT":6 },
+
+    { "targetType":"device","targetId":"D04","actionId":"reset_credentials","EST":2,"LFT":12 },
+    { "targetType":"device","targetId":"D05","actionId":"reset_credentials","EST":2,"LFT":12 },
+
+    { "targetType":"device","targetId":"D10","actionId":"increase_monitoring","EST":0,"LFT":12 },
+
+    { "targetType":"device","targetId":"D02","actionId":"recover_host","EST":24,"LFT":60 }
+  ],
+
+  "segmentDirectives": [
+    {
+      "segmentId": "S7_USER",
+      "disconnect": {
+        "fixedFinishBucket": 3,
+        "rationale": "Credential-theft foothold on endpoints; limit lateral movement from user tier."
+      },
+      "reconnect": {
+        "earliestBucket": 6,
+        "latestBucket": 24,
+        "rationale": "Restore user connectivity after credential reset + verification."
+      },
+      "maxIsolationBuckets": 24
+    }
+  ],
+
+  "deviceUrgency": [
+    { "deviceId":"D22","alpha":1.00 },
+    { "deviceId":"D04","alpha":0.85 },
+    { "deviceId":"D05","alpha":0.80 },
+    { "deviceId":"D02","alpha":0.90 },
+    { "deviceId":"D10","alpha":0.55 }
+  ],
+
+  "segmentIsolationPenalties": [
+    { "segmentId":"S2_C2","lambda":10.0 },
+    { "segmentId":"S1_GW","lambda":9.0 },
+    { "segmentId":"S3_ID","lambda":8.0 },
+    { "segmentId":"S7_USER","lambda":4.0 }
+  ],
+
+  "actionRewards": [
+    { "targetType":"device","targetId":"D22","actionId":"contain_host","reward":8.5 },
+    { "targetType":"device","targetId":"D22","actionId":"eradicate_host","reward":8.0 },
+    { "targetType":"device","targetId":"D22","actionId":"recover_host","reward":5.5 },
+
+    { "targetType":"device","targetId":"D04","actionId":"lockdown_identity","reward":9.0 },
+    { "targetType":"device","targetId":"D05","actionId":"lockdown_identity","reward":8.5 },
+    { "targetType":"device","targetId":"D06","actionId":"lockdown_identity","reward":7.5 },
+
+    { "targetType":"device","targetId":"D04","actionId":"reset_credentials","reward":8.0 },
+    { "targetType":"device","targetId":"D05","actionId":"reset_credentials","reward":7.8 },
+
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_disconnect","reward":7.0 },
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_reconnect","reward":4.5 },
+
+    { "targetType":"device","targetId":"D10","actionId":"increase_monitoring","reward":6.5 },
+
+    { "targetType":"device","targetId":"D02","actionId":"recover_host","reward":3.0 }
+  ]
+}

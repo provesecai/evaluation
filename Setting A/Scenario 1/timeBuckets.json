@@ -1,0 +1,14 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+  "labels": {
+    "0": "t0",
+    "12": "2h",
+    "24": "4h",
+    "36": "6h",
+    "48": "8h",
+    "60": "10h",
+    "72": "12h"
+  }
+}

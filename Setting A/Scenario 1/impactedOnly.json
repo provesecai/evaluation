@@ -1,0 +1,5 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "impactedOnly": false,
+  "notes": "Allow preventive actions (e.g., identity lockdown or monitoring) beyond I0 when admissible."
+}

@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "resourceTypes": ["responder_team"],
+  "capacity": [
+    { "resourceType": "responder_team", "fromBucket": 0,  "toBucket": 12, "R": 2 },
+    { "resourceType": "responder_team", "fromBucket": 12, "toBucket": 72, "R": 1 }
+  ],
+  "notes": "Two teams available for the first 2 hours (surge), then one team sustained."
+}

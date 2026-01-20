@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "services": [
+    { "serviceId":"SV_C2",      "name":"Command and Control" },
+    { "serviceId":"SV_GW",      "name":"Guarded Gateway Connectivity" },
+    { "serviceId":"SV_ID",      "name":"Identity and Authentication" },
+    { "serviceId":"SV_MSN_APP", "name":"Mission Applications" },
+    { "serviceId":"SV_MSN_DATA","name":"Mission Data Dissemination" },
+    { "serviceId":"SV_LOG",     "name":"Logistics Planning" },
+    { "serviceId":"SV_SECOPS",  "name":"Security Operations Tooling" }
+  ]
+}

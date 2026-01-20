@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "I0": ["D22", "D04"],
+  "deviceHealth": [
+    { "deviceId": "D22", "health": 0.35, "notes": "User endpoint compromised (credential theft foothold)" },
+    { "deviceId": "D04", "health": 0.55, "notes": "Suspicious auth events / partial compromise on identity DC" }
+  ]
+}

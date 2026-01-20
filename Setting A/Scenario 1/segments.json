@@ -1,0 +1,47 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "segments": [
+    {
+      "segmentId": "S1_GW",
+      "name": "Gateway Tier",
+      "type": "gateway",
+      "deviceIds": ["D07","D08"]
+    },
+    {
+      "segmentId": "S2_C2",
+      "name": "C2 Tier",
+      "type": "mission",
+      "deviceIds": ["D01","D02","D03"]
+    },
+    {
+      "segmentId": "S3_ID",
+      "name": "Identity Tier",
+      "type": "identity",
+      "deviceIds": ["D04","D05","D06"]
+    },
+    {
+      "segmentId": "S4_ADMIN",
+      "name": "Admin / Jump Tier",
+      "type": "admin",
+      "deviceIds": ["D09"]
+    },
+    {
+      "segmentId": "S5_SEC",
+      "name": "Security Operations Tier",
+      "type": "security",
+      "deviceIds": ["D10","D11","D12"]
+    },
+    {
+      "segmentId": "S6_MSN",
+      "name": "Mission Support Services",
+      "type": "mission",
+      "deviceIds": ["D13","D14","D15","D16","D17","D18","D19","D20"]
+    },
+    {
+      "segmentId": "S7_USER",
+      "name": "User / Endpoint Tier",
+      "type": "user",
+      "deviceIds": ["D21","D22","D23","D24","D25","D26","D27","D28","D29","D30","D31","D32"]
+    }
+  ]
+}

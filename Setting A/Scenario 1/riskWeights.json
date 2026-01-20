@@ -1,0 +1,13 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "beta": {
+    "beta_pol": 0.35,
+    "beta_mission": 0.40,
+    "beta_threat": 0.25
+  },
+  "dataSensitivity": [
+    { "dataType":"DT_OPORD", "s": 10.0 },
+    { "dataType":"DT_INTEL", "s": 9.0 },
+    { "dataType":"DT_KEYS",  "s": 10.0 }
+  ]
+}

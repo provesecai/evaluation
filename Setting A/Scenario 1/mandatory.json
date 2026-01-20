@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "mandatoryActions": [
+    { "targetType":"device","targetId":"D22","actionId":"contain_host" },
+    { "targetType":"device","targetId":"D04","actionId":"lockdown_identity" },
+    { "targetType":"segment","targetId":"S7_USER","actionId":"segment_disconnect" }
+  ],
+  "notes": "Mandatory reflects the playbook/operator decision; MIROE enforces these as x=1."
+}

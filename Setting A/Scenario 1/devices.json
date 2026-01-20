@@ -1,0 +1,43 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "devices": [
+    { "deviceId":"D01", "name":"C2-App-1", "segmentId":"S2_C2", "os":"Linux", "dataTypes":["DT_OPORD","DT_INTEL"], "services":["SV_C2"] },
+    { "deviceId":"D02", "name":"C2-App-2", "segmentId":"S2_C2", "os":"Linux", "dataTypes":["DT_OPORD"], "services":["SV_C2"] },
+    { "deviceId":"D03", "name":"C2-DB",    "segmentId":"S2_C2", "os":"Linux", "dataTypes":["DT_OPORD","DT_INTEL"], "services":["SV_C2"] },
+
+    { "deviceId":"D04", "name":"AD-DC-1",  "segmentId":"S3_ID", "os":"WindowsServer", "dataTypes":["DT_KEYS"], "services":["SV_ID"] },
+    { "deviceId":"D05", "name":"AD-DC-2",  "segmentId":"S3_ID", "os":"WindowsServer", "dataTypes":["DT_KEYS"], "services":["SV_ID"] },
+    { "deviceId":"D06", "name":"PKI-HSM",  "segmentId":"S3_ID", "os":"Appliance",     "dataTypes":["DT_KEYS"], "services":["SV_ID"] },
+
+    { "deviceId":"D07", "name":"Guarded-Gateway-1", "segmentId":"S1_GW", "os":"Appliance", "dataTypes":[], "services":["SV_GW"] },
+    { "deviceId":"D08", "name":"Guarded-Gateway-2", "segmentId":"S1_GW", "os":"Appliance", "dataTypes":[], "services":["SV_GW"] },
+
+    { "deviceId":"D09", "name":"Admin-Jump", "segmentId":"S4_ADMIN", "os":"Windows", "dataTypes":["DT_KEYS"], "services":[] },
+
+    { "deviceId":"D10", "name":"SIEM",        "segmentId":"S5_SEC", "os":"Linux", "dataTypes":["DT_INTEL"], "services":["SV_SECOPS"] },
+    { "deviceId":"D11", "name":"EDR-Manager", "segmentId":"S5_SEC", "os":"Linux", "dataTypes":[], "services":["SV_SECOPS"] },
+    { "deviceId":"D12", "name":"Patch-Mgmt",  "segmentId":"S5_SEC", "os":"Linux", "dataTypes":[], "services":["SV_SECOPS"] },
+
+    { "deviceId":"D13", "name":"Mission-Data-Dissemination", "segmentId":"S6_MSN", "os":"Linux", "dataTypes":["DT_OPORD"], "services":["SV_MSN_DATA"] },
+    { "deviceId":"D14", "name":"Logistics-Planner",          "segmentId":"S6_MSN", "os":"Linux", "dataTypes":["DT_OPORD"], "services":["SV_LOG"] },
+    { "deviceId":"D15", "name":"File-Share",                 "segmentId":"S6_MSN", "os":"WindowsServer", "dataTypes":["DT_OPORD"], "services":["SV_MSN_DATA"] },
+    { "deviceId":"D16", "name":"Mission-App-1",              "segmentId":"S6_MSN", "os":"Linux", "dataTypes":[], "services":["SV_MSN_APP"] },
+    { "deviceId":"D17", "name":"Mission-App-2",              "segmentId":"S6_MSN", "os":"Linux", "dataTypes":[], "services":["SV_MSN_APP"] },
+    { "deviceId":"D18", "name":"Auth-Proxy",                 "segmentId":"S6_MSN", "os":"Linux", "dataTypes":[], "services":["SV_MSN_APP"] },
+    { "deviceId":"D19", "name":"API-Gateway",                "segmentId":"S6_MSN", "os":"Linux", "dataTypes":[], "services":["SV_MSN_APP"] },
+    { "deviceId":"D20", "name":"Telemetry-Relay",            "segmentId":"S6_MSN", "os":"Linux", "dataTypes":["DT_INTEL"], "services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D21", "name":"Workstation-21", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D22", "name":"Workstation-22", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D23", "name":"Workstation-23", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D24", "name":"Workstation-24", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D25", "name":"Workstation-25", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D26", "name":"Workstation-26", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D27", "name":"Workstation-27", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D28", "name":"Workstation-28", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D29", "name":"Workstation-29", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D30", "name":"Workstation-30", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D31", "name":"Workstation-31", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] },
+    { "deviceId":"D32", "name":"Workstation-32", "segmentId":"S7_USER", "os":"Windows", "dataTypes":[], "services":[] }
+  ]
+}

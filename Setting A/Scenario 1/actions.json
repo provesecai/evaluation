@@ -1,0 +1,69 @@
+{
+  "scenarioId": "SCN1_SETTING_A_CRED_THEFT_IDENTITY_TIER",
+  "actions": [
+    {
+      "actionId": "contain_host",
+      "type": "containment",
+      "durationBuckets": 2,
+      "resources": { "responder_team": 1 },
+      "disruptive": false,
+      "coverage": ["credential_theft", "lateral_movement"]
+    },
+    {
+      "actionId": "eradicate_host",
+      "type": "eradication",
+      "durationBuckets": 4,
+      "resources": { "responder_team": 1 },
+      "disruptive": true,
+      "coverage": ["malware_cleanup", "persistence"]
+    },
+    {
+      "actionId": "recover_host",
+      "type": "recovery",
+      "durationBuckets": 6,
+      "resources": { "responder_team": 1 },
+      "disruptive": true,
+      "coverage": ["restore_service"]
+    },
+    {
+      "actionId": "lockdown_identity",
+      "type": "containment",
+      "durationBuckets": 2,
+      "resources": { "responder_team": 1 },
+      "disruptive": false,
+      "coverage": ["credential_theft", "privilege_escalation"]
+    },
+    {
+      "actionId": "reset_credentials",
+      "type": "eradication",
+      "durationBuckets": 3,
+      "resources": { "responder_team": 1 },
+      "disruptive": false,
+      "coverage": ["credential_theft", "privilege_escalation"]
+    },
+    {
+      "actionId": "segment_disconnect",
+      "type": "containment",
+      "durationBuckets": 1,
+      "resources": { "responder_team": 1 },
+      "disruptive": true,
+      "coverage": ["lateral_movement"]
+    },
+    {
+      "actionId": "segment_reconnect",
+      "type": "recovery",
+      "durationBuckets": 1,
+      "resources": { "responder_team": 1 },
+      "disruptive": true,
+      "coverage": ["restore_connectivity"]
+    },
+    {
+      "actionId": "increase_monitoring",
+      "type": "containment",
+      "durationBuckets": 2,
+      "resources": { "responder_team": 1 },
+      "disruptive": false,
+      "coverage": ["situational_awareness"]
+    }
+  ]
+}
