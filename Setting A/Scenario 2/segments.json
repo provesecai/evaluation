@@ -1,0 +1,12 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "segments": [
+    { "segmentId": "S1_GW",   "name": "Gateway VLAN",         "deviceIds": ["D07","D08"] },
+    { "segmentId": "S2_C2",   "name": "C2 VLAN",              "deviceIds": ["D01","D02","D03","D04"] },
+    { "segmentId": "S3_IDM",  "name": "Identity VLAN",        "deviceIds": ["D05","D06","D09"] },
+    { "segmentId": "S4_DATA", "name": "Mission Data VLAN",    "deviceIds": ["D10","D11","D12","D13","D20","D21"] },
+    { "segmentId": "S5_LOG",  "name": "Logistics VLAN",       "deviceIds": ["D14","D15","D16","D22","D23"] },
+    { "segmentId": "S6_USER", "name": "User/Workstation VLAN", "deviceIds": ["D17","D18","D19","D24","D25","D26","D27","D28","D29"] },
+    { "segmentId": "S7_MON",  "name": "Monitoring VLAN",      "deviceIds": ["D30","D31","D32"] }
+  ]
+}

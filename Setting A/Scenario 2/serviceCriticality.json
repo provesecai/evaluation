@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "criticality": [
+    { "serviceId": "SV_C2",  "c": 10.0, "T_avail": 24, "notes": "C2 must remain up for first 4h unless explicitly authorised." },
+    { "serviceId": "SV_GW",  "c": 9.0,  "T_avail": 18, "notes": "Gateway connectivity required for first 3h; containment must be surgical." },
+    { "serviceId": "SV_IDM", "c": 8.0,  "T_avail": 0,  "notes": "IdM actions allowed immediately; identity abuse likely." },
+    { "serviceId": "SV_MDP", "c": 7.0,  "T_avail": 12, "notes": "Mission data must be available for first 2h." },
+    { "serviceId": "SV_LOG", "c": 6.0,  "T_avail": 12, "notes": "Logistics planning required for first 2h." },
+    { "serviceId": "SV_MON", "c": 5.0,  "T_avail": 0,  "notes": "Monitoring can be increased immediately." }
+  ]
+}

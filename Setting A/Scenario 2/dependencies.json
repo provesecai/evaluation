@@ -1,0 +1,9 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "precedence": [
+    { "before": { "targetId":"D07","actionId":"contain_host" }, "after": { "targetId":"D07","actionId":"eradicate_host" } },
+    { "before": { "targetId":"D07","actionId":"eradicate_host" }, "after": { "targetId":"D07","actionId":"recover_host" } },
+
+    { "before": { "targetId":"S1_GW","actionId":"segment_disconnect" }, "after": { "targetId":"S1_GW","actionId":"segment_reconnect" } }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "actions": [
+    { "actionId":"segment_disconnect", "targetType":"segment", "duration":2, "resourceDemands":{"R_NET":1}, "disruptive":true },
+    { "actionId":"segment_reconnect",  "targetType":"segment", "duration":2, "resourceDemands":{"R_NET":1}, "disruptive":true },
+
+    { "actionId":"contain_host",       "targetType":"device",  "duration":2, "resourceDemands":{"R_HOST":1}, "disruptive":true },
+    { "actionId":"eradicate_host",     "targetType":"device",  "duration":4, "resourceDemands":{"R_HOST":1}, "disruptive":true },
+    { "actionId":"recover_host",       "targetType":"device",  "duration":6, "resourceDemands":{"R_HOST":1}, "disruptive":true },
+
+    { "actionId":"lockdown_identity",  "targetType":"device",  "duration":2, "resourceDemands":{"R_ID":1}, "disruptive":false },
+    { "actionId":"reset_credentials",  "targetType":"device",  "duration":2, "resourceDemands":{"R_ID":1}, "disruptive":false },
+
+    { "actionId":"increase_monitoring", "targetType":"device", "duration":2, "resourceDemands":{"R_HOST":1}, "disruptive":false }
+  ]
+}

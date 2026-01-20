@@ -1,0 +1,6 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "bucketMinutes": 10,
+  "horizonBuckets": 72,
+  "t0": 0
+}

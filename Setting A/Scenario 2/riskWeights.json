@@ -1,0 +1,17 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "beta": {
+    "beta_pol": 0.35,
+    "beta_mission": 0.40,
+    "beta_threat": 0.25
+  },
+  "dataSensitivity": [
+    { "dataType":"DT_OPORD",        "s": 10.0 },
+    { "dataType":"DT_INTEL",        "s": 9.0 },
+    { "dataType":"DT_KEYS",         "s": 9.0 },
+    { "dataType":"DT_ID",           "s": 7.0 },
+    { "dataType":"DT_MISSION_DATA", "s": 7.5 },
+    { "dataType":"DT_LOG",          "s": 5.0 },
+    { "dataType":"DT_LOGS",         "s": 4.0 }
+  ]
+}

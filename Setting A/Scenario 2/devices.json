@@ -1,0 +1,46 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "devices": [
+    { "deviceId":"D01","name":"C2 App Server 1","segments":["S2_C2"],"services":["SV_C2"],"dataTypes":["DT_OPORD"],"inventory":{"os":"Linux","controls":["EDR","FW"]},"health":90 },
+    { "deviceId":"D02","name":"C2 App Server 2","segments":["S2_C2"],"services":["SV_C2"],"dataTypes":["DT_OPORD"],"inventory":{"os":"Linux","controls":["EDR","FW"]},"health":92 },
+    { "deviceId":"D03","name":"C2 DB","segments":["S2_C2"],"services":["SV_C2"],"dataTypes":["DT_OPORD","DT_INTEL"],"inventory":{"os":"Linux","controls":["DB_AUDIT","FW"]},"health":88 },
+    { "deviceId":"D04","name":"C2 Jump Host","segments":["S2_C2"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["MFA","EDR"]},"health":85 },
+
+    { "deviceId":"D05","name":"Primary Domain Controller","segments":["S3_IDM"],"services":["SV_IDM"],"dataTypes":["DT_ID","DT_KEYS"],"inventory":{"os":"Windows","controls":["EDR","MFA"]},"health":75 },
+    { "deviceId":"D06","name":"Secondary Domain Controller","segments":["S3_IDM"],"services":["SV_IDM"],"dataTypes":["DT_ID"],"inventory":{"os":"Windows","controls":["EDR"]},"health":80 },
+    { "deviceId":"D09","name":"Privileged Access Mgmt","segments":["S3_IDM"],"services":["SV_IDM"],"dataTypes":["DT_ID","DT_KEYS"],"inventory":{"os":"Linux","controls":["MFA","EDR"]},"health":78 },
+
+    { "deviceId":"D07","name":"Guarded Gateway FW/Proxy 1","segments":["S1_GW"],"services":["SV_GW"],"dataTypes":[],"inventory":{"os":"Appliance","controls":["FW","IDS"]},"health":35 },
+    { "deviceId":"D08","name":"Guarded Gateway FW/Proxy 2","segments":["S1_GW"],"services":["SV_GW"],"dataTypes":[],"inventory":{"os":"Appliance","controls":["FW","IDS"]},"health":70 },
+
+    { "deviceId":"D10","name":"Mission Data Broker","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":["DT_MISSION_DATA"],"inventory":{"os":"Linux","controls":["EDR"]},"health":82 },
+    { "deviceId":"D11","name":"File Share","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":["DT_MISSION_DATA"],"inventory":{"os":"Windows","controls":["EDR"]},"health":77 },
+    { "deviceId":"D12","name":"Replication Node","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":["DT_MISSION_DATA"],"inventory":{"os":"Linux","controls":["EDR"]},"health":84 },
+    { "deviceId":"D13","name":"API Gateway (internal)","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":[],"inventory":{"os":"Linux","controls":["WAF"]},"health":86 },
+
+    { "deviceId":"D14","name":"Logistics App 1","segments":["S5_LOG"],"services":["SV_LOG"],"dataTypes":["DT_LOG"],"inventory":{"os":"Windows","controls":["EDR"]},"health":83 },
+    { "deviceId":"D15","name":"Logistics App 2","segments":["S5_LOG"],"services":["SV_LOG"],"dataTypes":["DT_LOG"],"inventory":{"os":"Windows","controls":["EDR"]},"health":81 },
+    { "deviceId":"D16","name":"Logistics DB","segments":["S5_LOG"],"services":["SV_LOG"],"dataTypes":["DT_LOG"],"inventory":{"os":"Linux","controls":["DB_AUDIT"]},"health":80 },
+
+    { "deviceId":"D17","name":"Operator WS 1","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":72 },
+    { "deviceId":"D18","name":"Operator WS 2","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":60 },
+    { "deviceId":"D19","name":"Operator WS 3","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":65 },
+
+    { "deviceId":"D20","name":"Data Node 1","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":["DT_MISSION_DATA"],"inventory":{"os":"Linux","controls":["EDR"]},"health":84 },
+    { "deviceId":"D21","name":"Data Node 2","segments":["S4_DATA"],"services":["SV_MDP"],"dataTypes":["DT_MISSION_DATA"],"inventory":{"os":"Linux","controls":["EDR"]},"health":85 },
+
+    { "deviceId":"D22","name":"Logistics Workstation","segments":["S5_LOG"],"services":[],"dataTypes":["DT_LOG"],"inventory":{"os":"Windows","controls":["EDR"]},"health":78 },
+    { "deviceId":"D23","name":"Planner Workstation","segments":["S5_LOG"],"services":[],"dataTypes":["DT_LOG"],"inventory":{"os":"Windows","controls":["EDR"]},"health":76 },
+
+    { "deviceId":"D24","name":"User WS 4","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":82 },
+    { "deviceId":"D25","name":"User WS 5","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":80 },
+    { "deviceId":"D26","name":"User WS 6","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":79 },
+    { "deviceId":"D27","name":"User WS 7","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":77 },
+    { "deviceId":"D28","name":"User WS 8","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":81 },
+    { "deviceId":"D29","name":"User WS 9","segments":["S6_USER"],"services":[],"dataTypes":[],"inventory":{"os":"Windows","controls":["EDR"]},"health":83 },
+
+    { "deviceId":"D30","name":"SIEM","segments":["S7_MON"],"services":["SV_MON"],"dataTypes":["DT_LOGS"],"inventory":{"os":"Linux","controls":["EDR"]},"health":90 },
+    { "deviceId":"D31","name":"EDR Manager","segments":["S7_MON"],"services":["SV_MON"],"dataTypes":["DT_LOGS"],"inventory":{"os":"Linux","controls":["EDR"]},"health":88 },
+    { "deviceId":"D32","name":"NetFlow Collector","segments":["S7_MON"],"services":["SV_MON"],"dataTypes":["DT_LOGS"],"inventory":{"os":"Linux","controls":["EDR"]},"health":91 }
+  ]
+}

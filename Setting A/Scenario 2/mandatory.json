@@ -1,0 +1,7 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "mandatory": [
+    { "targetType":"segment", "targetId":"S1_GW", "actionId":"segment_disconnect" },
+    { "targetType":"device",  "targetId":"D07",   "actionId":"contain_host" }
+  ]
+}

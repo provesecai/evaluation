@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "missionGoal": {
+    "requiredServices": ["SV_C2", "SV_GW"],
+    "T_avail": [
+      { "serviceId": "SV_C2", "minAvailabilityUntilBucket": 24 },
+      { "serviceId": "SV_GW", "minAvailabilityUntilBucket": 18 }
+    ],
+    "deviceSupportSets": [
+      { "serviceId": "SV_C2", "deviceIds": ["D01", "D02", "D03"] },
+      { "serviceId": "SV_GW", "deviceIds": ["D07", "D08"] }
+    ],
+    "interpretation": "Disruptive actions that would reduce availability of a required service are forbidden or delayed until after that service's minimum availability time, unless explicitly authorised."
+  },
+  "policyGoal": {
+    "protectDataTypes": ["DT_OPORD", "DT_INTEL", "DT_KEYS"],
+    "notes": "Prefer non-disruptive mitigations on devices storing protected data types unless containment requires disruptive measures."
+  }
+}

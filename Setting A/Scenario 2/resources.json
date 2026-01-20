@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "resources": [
+    { "resourceId":"R_NET", "name":"Network Team",  "capacityByBucket": { "default": 1 } },
+    { "resourceId":"R_ID",  "name":"Identity Team", "capacityByBucket": { "default": 1 } },
+    { "resourceId":"R_HOST","name":"Host Response", "capacityByBucket": { "default": 1 } }
+  ]
+}

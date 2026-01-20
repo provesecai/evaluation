@@ -1,0 +1,11 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "services": [
+    { "serviceId": "SV_C2", "name": "Command-and-Control (C2)", "deviceIds": ["D01","D02","D03"] },
+    { "serviceId": "SV_GW", "name": "Guarded Gateway / Boundary Access", "deviceIds": ["D07","D08"] },
+    { "serviceId": "SV_IDM", "name": "Identity & Directory (IdM)", "deviceIds": ["D05","D06","D09"] },
+    { "serviceId": "SV_MDP", "name": "Mission Data Dissemination", "deviceIds": ["D10","D11","D12","D13"] },
+    { "serviceId": "SV_LOG", "name": "Logistics Planning", "deviceIds": ["D14","D15","D16"] },
+    { "serviceId": "SV_MON", "name": "Monitoring / SIEM / EDR Mgmt", "deviceIds": ["D30","D31"] }
+  ]
+}

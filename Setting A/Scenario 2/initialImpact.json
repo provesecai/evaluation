@@ -1,0 +1,8 @@
+{
+  "scenarioId": "SCN2_SETTING_B_GATEWAY_FOOTHOLD",
+  "I0": [
+    { "deviceId": "D07", "compromiseType": "gateway_foothold", "observedHealth": 35 },
+    { "deviceId": "D18", "compromiseType": "suspected_credential_abuse", "observedHealth": 60 }
+  ],
+  "notes": "Foothold near gateway; suspected credential abuse in user VLAN."
+}
