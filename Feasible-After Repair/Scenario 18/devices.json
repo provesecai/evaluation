@@ -1,0 +1,293 @@
+{
+  "scenarioId": "SC18",
+  "devices": [
+    {
+      "deviceId": "D01",
+      "name": "C2-App-D01",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D02",
+      "name": "C2-App-D02",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D03",
+      "name": "C2-DB-D03",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD", "DT_INTEL"],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D04",
+      "name": "Messaging-Relay-D04",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_RELAY"]
+    },
+    {
+      "deviceId": "D05",
+      "name": "IdP-D05",
+      "segmentId": "S1_ID",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_ID"]
+    },
+    {
+      "deviceId": "D06",
+      "name": "AD-DS-D06",
+      "segmentId": "S1_ID",
+      "os": "WindowsServer",
+      "dataTypes": ["DT_KEYS"],
+      "services": ["SV_ID"]
+    },
+    {
+      "deviceId": "D07",
+      "name": "PKI-CA-D07",
+      "segmentId": "S1_ID",
+      "os": "Linux",
+      "dataTypes": ["DT_KEYS"],
+      "services": ["SV_PKI"]
+    },
+    {
+      "deviceId": "D08",
+      "name": "Time-Sync-D08",
+      "segmentId": "S1_ID",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_ID"]
+    },
+    {
+      "deviceId": "D09",
+      "name": "Gateway-Firewall-D09",
+      "segmentId": "S2_GW",
+      "os": "Appliance",
+      "dataTypes": [],
+      "services": ["SV_GW"]
+    },
+    {
+      "deviceId": "D10",
+      "name": "Gateway-Guard-D10",
+      "segmentId": "S2_GW",
+      "os": "Appliance",
+      "dataTypes": [],
+      "services": ["SV_GW"]
+    },
+    {
+      "deviceId": "D11",
+      "name": "Edge-Proxy-D11",
+      "segmentId": "S2_GW",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_GW"]
+    },
+    {
+      "deviceId": "D12",
+      "name": "Update-Server-D12",
+      "segmentId": "S2_GW",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_UPDATES"]
+    },
+    {
+      "deviceId": "D13",
+      "name": "Intel-Repo-D13",
+      "segmentId": "S3_MSN_DATA",
+      "os": "Linux",
+      "dataTypes": ["DT_INTEL"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D14",
+      "name": "Mission-Share-D14",
+      "segmentId": "S3_MSN_DATA",
+      "os": "WindowsServer",
+      "dataTypes": ["DT_OPORD", "DT_INTEL"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D15",
+      "name": "MissionData-DB-D15",
+      "segmentId": "S3_MSN_DATA",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD", "DT_INTEL"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D16",
+      "name": "Logistics-App-D16",
+      "segmentId": "S4_APPS",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_LOGISTICS"]
+    },
+    {
+      "deviceId": "D17",
+      "name": "Logistics-DB-D17",
+      "segmentId": "S4_APPS",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_LOGISTICS"]
+    },
+    {
+      "deviceId": "D18",
+      "name": "Planning-App-D18",
+      "segmentId": "S4_APPS",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D19",
+      "name": "Ops-Portal-D19",
+      "segmentId": "S4_APPS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D20",
+      "name": "Web-Portal-D20",
+      "segmentId": "S5_DMZ",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_PORTAL"]
+    },
+    {
+      "deviceId": "D21",
+      "name": "JumpHost-D21",
+      "segmentId": "S5_DMZ",
+      "os": "WindowsServer",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D22",
+      "name": "SIEM-D22",
+      "segmentId": "S6_TOOLING",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D23",
+      "name": "EDR-Manager-D23",
+      "segmentId": "S6_TOOLING",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D24",
+      "name": "Log-Collector-D24",
+      "segmentId": "S6_TOOLING",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D25",
+      "name": "Endpoint-D25",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D26",
+      "name": "Endpoint-D26",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D27",
+      "name": "Endpoint-D27",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D28",
+      "name": "Endpoint-D28",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D29",
+      "name": "Endpoint-D29",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D30",
+      "name": "Endpoint-D30",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D31",
+      "name": "Endpoint-D31",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D32",
+      "name": "Endpoint-D32",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D33",
+      "name": "Endpoint-D33",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D34",
+      "name": "Endpoint-D34",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D35",
+      "name": "Endpoint-D35",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D36",
+      "name": "Endpoint-D36",
+      "segmentId": "S7_USERS",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    }
+  ]
+}
