@@ -1,0 +1,373 @@
+{
+  "scenarioId": "SC20",
+  "devices": [
+    {
+      "deviceId": "D01",
+      "name": "C2_App_1",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D02",
+      "name": "C2_App_2",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D03",
+      "name": "C2_DB",
+      "segmentId": "S0_C2",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD", "DT_KEYS"],
+      "services": ["SV_C2"]
+    },
+    {
+      "deviceId": "D04",
+      "name": "IdP_1",
+      "segmentId": "S1_ID",
+      "os": "Windows",
+      "dataTypes": ["DT_KEYS"],
+      "services": ["SV_ID"]
+    },
+    {
+      "deviceId": "D05",
+      "name": "IdP_2",
+      "segmentId": "S1_ID",
+      "os": "Windows",
+      "dataTypes": ["DT_KEYS"],
+      "services": ["SV_ID"]
+    },
+    {
+      "deviceId": "D06",
+      "name": "PKI_CA",
+      "segmentId": "S1_ID",
+      "os": "Windows",
+      "dataTypes": ["DT_KEYS"],
+      "services": ["SV_PKI"]
+    },
+    {
+      "deviceId": "D07",
+      "name": "Gateway_A",
+      "segmentId": "S2_GW",
+      "os": "Appliance",
+      "dataTypes": [],
+      "services": ["SV_GW"]
+    },
+    {
+      "deviceId": "D08",
+      "name": "Gateway_B",
+      "segmentId": "S2_GW",
+      "os": "Appliance",
+      "dataTypes": [],
+      "services": ["SV_GW"]
+    },
+    {
+      "deviceId": "D09",
+      "name": "JumpHost",
+      "segmentId": "S2_GW",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D10",
+      "name": "Mission_File_1",
+      "segmentId": "S3_DATA",
+      "os": "Windows",
+      "dataTypes": ["DT_INTEL", "DT_OPORD"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D11",
+      "name": "Mission_File_2",
+      "segmentId": "S3_DATA",
+      "os": "Windows",
+      "dataTypes": ["DT_INTEL"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D12",
+      "name": "Mission_DB_1",
+      "segmentId": "S3_DATA",
+      "os": "Linux",
+      "dataTypes": ["DT_INTEL", "DT_OPORD"],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D13",
+      "name": "Data_API_1",
+      "segmentId": "S3_DATA",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_MSN_DATA"]
+    },
+    {
+      "deviceId": "D14",
+      "name": "Backup_Repo",
+      "segmentId": "S3_DATA",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_BACKUP"]
+    },
+    {
+      "deviceId": "D15",
+      "name": "Logistics_App_1",
+      "segmentId": "S4_LOG",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": ["SV_LOGISTICS"]
+    },
+    {
+      "deviceId": "D16",
+      "name": "Logistics_DB",
+      "segmentId": "S4_LOG",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_LOGISTICS"]
+    },
+    {
+      "deviceId": "D17",
+      "name": "Supply_Adapter",
+      "segmentId": "S4_LOG",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_LOGISTICS"]
+    },
+    {
+      "deviceId": "D18",
+      "name": "Ops_Planner",
+      "segmentId": "S5_OPS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_PLANNING"]
+    },
+    {
+      "deviceId": "D19",
+      "name": "Ops_DB",
+      "segmentId": "S5_OPS",
+      "os": "Linux",
+      "dataTypes": ["DT_OPORD"],
+      "services": ["SV_PLANNING"]
+    },
+    {
+      "deviceId": "D20",
+      "name": "Ops_Web",
+      "segmentId": "S5_OPS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_PORTAL"]
+    },
+    {
+      "deviceId": "D21",
+      "name": "Sensor_Collector_1",
+      "segmentId": "S6_SENS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_TELEMETRY"]
+    },
+    {
+      "deviceId": "D22",
+      "name": "Sensor_Collector_2",
+      "segmentId": "S6_SENS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_TELEMETRY"]
+    },
+    {
+      "deviceId": "D23",
+      "name": "Sensor_Broker",
+      "segmentId": "S6_SENS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_TELEMETRY"]
+    },
+    {
+      "deviceId": "D24",
+      "name": "SIEM",
+      "segmentId": "S7_MGMT",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D25",
+      "name": "EDR_Manager",
+      "segmentId": "S7_MGMT",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D26",
+      "name": "NMS",
+      "segmentId": "S7_MGMT",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_SEC_LOG"]
+    },
+    {
+      "deviceId": "D27",
+      "name": "Mgmt_Jump",
+      "segmentId": "S7_MGMT",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D28",
+      "name": "WS_01",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D29",
+      "name": "WS_02",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D30",
+      "name": "WS_03",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D31",
+      "name": "WS_04",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D32",
+      "name": "WS_05",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D33",
+      "name": "WS_06",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D34",
+      "name": "WS_07",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D35",
+      "name": "WS_08",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D36",
+      "name": "DMZ_Web",
+      "segmentId": "S9_DMZ",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_PORTAL"]
+    },
+    {
+      "deviceId": "D37",
+      "name": "DMZ_API",
+      "segmentId": "S9_DMZ",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_PORTAL"]
+    },
+    {
+      "deviceId": "D38",
+      "name": "Mail_Relay",
+      "segmentId": "S9_DMZ",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": ["SV_RELAY"]
+    },
+    {
+      "deviceId": "D39",
+      "name": "Aux_App_1",
+      "segmentId": "S5_OPS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D40",
+      "name": "Aux_App_2",
+      "segmentId": "S4_LOG",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D41",
+      "name": "Aux_App_3",
+      "segmentId": "S3_DATA",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D42",
+      "name": "Aux_App_4",
+      "segmentId": "S6_SENS",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D43",
+      "name": "Aux_App_5",
+      "segmentId": "S7_MGMT",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D44",
+      "name": "Aux_App_6",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D45",
+      "name": "WS_09",
+      "segmentId": "S8_USER",
+      "os": "Windows",
+      "dataTypes": [],
+      "services": []
+    },
+    {
+      "deviceId": "D46",
+      "name": "Aux_App_8",
+      "segmentId": "S9_DMZ",
+      "os": "Linux",
+      "dataTypes": [],
+      "services": []
+    }
+  ]
+}
