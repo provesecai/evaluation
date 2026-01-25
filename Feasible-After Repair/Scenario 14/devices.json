@@ -1,0 +1,36 @@
+{
+  "scenarioId": "SC14_SETTING_B_IDADMIN_OVERLOAD",
+  "devices": [
+    { "deviceId":"D01","name":"C2_App_1","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2_App_2","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2_DB","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"OpsDashboard","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D25","name":"C2_Operator_Terminal","segmentId":"S0_C2","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D05","name":"IdP_1","segmentId":"S1_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"IdP_2","segmentId":"S1_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D07","name":"AD_DC","segmentId":"S1_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D08","name":"DNS_DHCP","segmentId":"S1_ID","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+    { "deviceId":"D09","name":"KeyVault","segmentId":"S1_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D24","name":"PKI_CA","segmentId":"S1_ID","os":"Linux","dataTypes":["DT_KEYS"],"services":["SV_PKI"] },
+
+    { "deviceId":"D10","name":"Gateway_1","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D11","name":"Gateway_2","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D12","name":"JumpHost","segmentId":"S2_GW","os":"WindowsServer","dataTypes":[],"services":[] },
+    { "deviceId":"D13","name":"VPN_Concentrator","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D14","name":"MissionData_API","segmentId":"S3_MDAT","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D15","name":"MissionData_DB","segmentId":"S3_MDAT","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D16","name":"FileShare_1","segmentId":"S3_MDAT","os":"WindowsServer","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D17","name":"SIEM","segmentId":"S4_SOC","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D18","name":"EDR_Manager","segmentId":"S4_SOC","os":"WindowsServer","dataTypes":[],"services":["SV_SEC_LOG"] },
+
+    { "deviceId":"D19","name":"Workstation_01","segmentId":"S4_SOC","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D20","name":"Workstation_02","segmentId":"S4_SOC","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"Workstation_03","segmentId":"S4_SOC","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"Workstation_04","segmentId":"S4_SOC","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D23","name":"Admin_Laptop","segmentId":"S4_SOC","os":"Windows","dataTypes":[],"services":[] }
+  ]
+}
