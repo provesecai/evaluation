@@ -1,0 +1,46 @@
+{
+  "scenarioId": "SC13_SETTING_B_PRECEDENCE_TIGHT_WINDOW_CONFLICT",
+  "devices": [
+    { "deviceId":"D01","name":"C2_App_1","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2_App_2","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2_DB","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"OpsDashboard","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+
+    { "deviceId":"D05","name":"IdP_1","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"IdP_2","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D07","name":"AD_DC","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D08","name":"DNS_DHCP","segmentId":"S3_ID","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+
+    { "deviceId":"D09","name":"Gateway_1","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D10","name":"Gateway_2","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D11","name":"JumpHost","segmentId":"S1_GW","os":"WindowsServer","dataTypes":[],"services":[] },
+    { "deviceId":"D12","name":"VPN_Concentrator","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D13","name":"Telemetry_Broker","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_TELEMETRY"] },
+    { "deviceId":"D14","name":"Telemetry_DB","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_TELEMETRY"] },
+
+    { "deviceId":"D15","name":"MissionData_DB","segmentId":"S4_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D16","name":"MissionData_API","segmentId":"S4_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D17","name":"FileShare_1","segmentId":"S4_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D18","name":"Logistics_App","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D19","name":"Logistics_DB","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D20","name":"Patch_Server","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_UPDATES"] },
+
+    { "deviceId":"D21","name":"SIEM","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D22","name":"EDR_Manager","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+
+    { "deviceId":"D23","name":"Mail_Server","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D24","name":"Web_Portal","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+
+    { "deviceId":"D25","name":"Workstation_01","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Workstation_02","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Workstation_03","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Workstation_04","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D29","name":"Workstation_05","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Admin_Laptop","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D31","name":"PKI_CA","segmentId":"S3_ID","os":"Linux","dataTypes":["DT_KEYS"],"services":["SV_PKI"] },
+    { "deviceId":"D32","name":"KeyVault","segmentId":"S3_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] }
+  ]
+}
