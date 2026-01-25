@@ -1,0 +1,46 @@
+{
+  "scenarioId": "SC10_SETTING_B_GATEWAY_FOOTHOLD",
+  "devices": [
+    { "deviceId":"D01","name":"C2_App_1","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2_App_2","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2_DB","segmentId":"S2_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+
+    { "deviceId":"D04","name":"IdP_1","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D05","name":"IdP_2","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"AD_DC","segmentId":"S3_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D07","name":"Gateway_1","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D08","name":"Gateway_2","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D09","name":"JumpHost","segmentId":"S1_GW","os":"WindowsServer","dataTypes":[],"services":[] },
+
+    { "deviceId":"D10","name":"MissionData_API","segmentId":"S4_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D11","name":"MissionData_DB","segmentId":"S4_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D12","name":"Logistics_App","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D13","name":"Logistics_DB","segmentId":"S5_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+
+    { "deviceId":"D14","name":"SIEM","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D15","name":"EDR_Manager","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+
+    { "deviceId":"D16","name":"Mail_Server","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D17","name":"Web_Portal","segmentId":"S5_APPS","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+
+    { "deviceId":"D18","name":"Workstation_01","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D19","name":"Workstation_02","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D20","name":"Workstation_03","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D21","name":"Workstation_04","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D22","name":"Workstation_05","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D23","name":"Workstation_06","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D24","name":"Workstation_07","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D25","name":"Workstation_08","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D26","name":"FileShare_1","segmentId":"S4_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D27","name":"Backup_Server","segmentId":"S7_TOOLING","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_BACKUP"] },
+    { "deviceId":"D28","name":"Patch_Server","segmentId":"S7_TOOLING","os":"Linux","dataTypes":[],"services":["SV_UPDATES"] },
+
+    { "deviceId":"D29","name":"Admin_Laptop","segmentId":"S6_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"VPN_Concentrator","segmentId":"S1_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D31","name":"DNS_DHCP","segmentId":"S3_ID","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+    { "deviceId":"D32","name":"NTP","segmentId":"S3_ID","os":"Linux","dataTypes":[],"services":["SV_ID"] }
+  ]
+}
