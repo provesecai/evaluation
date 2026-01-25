@@ -1,0 +1,53 @@
+{
+  "scenarioId": "SC19",
+  "devices": [
+    { "deviceId": "D01", "name": "C2_Core_1", "segmentId": "S0_C2", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_C2"] },
+    { "deviceId": "D02", "name": "C2_Core_2", "segmentId": "S0_C2", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_C2"] },
+    { "deviceId": "D03", "name": "C2_MessageBus", "segmentId": "S6_APP", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_C2"] },
+    { "deviceId": "D04", "name": "C2_Proxy", "segmentId": "S6_APP", "os": "Linux", "dataTypes": [], "services": ["SV_C2"] },
+    { "deviceId": "D07", "name": "Gateway_FW_1", "segmentId": "S1_GW", "os": "Appliance", "dataTypes": [], "services": ["SV_GW"] },
+    { "deviceId": "D08", "name": "Gateway_FW_2", "segmentId": "S1_GW", "os": "Appliance", "dataTypes": [], "services": ["SV_GW"] },
+    { "deviceId": "D09", "name": "VPN_Concentrator", "segmentId": "S1_GW", "os": "Appliance", "dataTypes": [], "services": ["SV_GW"] },
+    { "deviceId": "D10", "name": "Edge_Proxy_1", "segmentId": "S1_GW", "os": "Linux", "dataTypes": [], "services": ["SV_GW"] },
+    { "deviceId": "D11", "name": "Edge_Proxy_2", "segmentId": "S1_GW", "os": "Linux", "dataTypes": [], "services": ["SV_GW"] },
+    { "deviceId": "D12", "name": "JumpHost_Admin", "segmentId": "S1_GW", "os": "WindowsServer", "dataTypes": [], "services": [] },
+
+    { "deviceId": "D13", "name": "AD_DC_1", "segmentId": "S2_ID", "os": "WindowsServer", "dataTypes": ["DT_KEYS"], "services": ["SV_ID"] },
+    { "deviceId": "D14", "name": "AD_DC_2", "segmentId": "S2_ID", "os": "WindowsServer", "dataTypes": ["DT_KEYS"], "services": ["SV_ID"] },
+    { "deviceId": "D15", "name": "IdM_Server", "segmentId": "S2_ID", "os": "WindowsServer", "dataTypes": ["DT_KEYS"], "services": ["SV_ID"] },
+    { "deviceId": "D16", "name": "MFA_Server", "segmentId": "S2_ID", "os": "Linux", "dataTypes": ["DT_KEYS"], "services": ["SV_ID"] },
+    { "deviceId": "D17", "name": "KeyVault", "segmentId": "S2_ID", "os": "Appliance", "dataTypes": ["DT_KEYS"], "services": ["SV_ID"] },
+    { "deviceId": "D18", "name": "DNS_DHCP", "segmentId": "S2_ID", "os": "Linux", "dataTypes": [], "services": ["SV_ID"] },
+
+    { "deviceId": "D19", "name": "Intel_Repo", "segmentId": "S3_DATA", "os": "Linux", "dataTypes": ["DT_INTEL"], "services": ["SV_MSN_DATA"] },
+    { "deviceId": "D20", "name": "Intel_DB", "segmentId": "S3_DATA", "os": "Linux", "dataTypes": ["DT_INTEL"], "services": ["SV_MSN_DATA"] },
+    { "deviceId": "D21", "name": "Mission_FileShare", "segmentId": "S3_DATA", "os": "WindowsServer", "dataTypes": ["DT_OPORD", "DT_INTEL"], "services": ["SV_MSN_DATA"] },
+    { "deviceId": "D22", "name": "Data_API", "segmentId": "S3_DATA", "os": "Linux", "dataTypes": ["DT_INTEL"], "services": ["SV_MSN_DATA"] },
+
+    { "deviceId": "D23", "name": "Logistics_App", "segmentId": "S6_APP", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_LOG"] },
+    { "deviceId": "D24", "name": "Logistics_DB", "segmentId": "S6_APP", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_LOG"] },
+    { "deviceId": "D25", "name": "Ops_Planning_App", "segmentId": "S6_APP", "os": "Linux", "dataTypes": ["DT_OPORD"], "services": ["SV_LOG"] },
+
+    { "deviceId": "D26", "name": "SOC_SIEM", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": [], "services": ["SV_SECOPS"] },
+    { "deviceId": "D27", "name": "EDR_Manager", "segmentId": "S5_MGMT", "os": "WindowsServer", "dataTypes": [], "services": ["SV_SECOPS"] },
+    { "deviceId": "D28", "name": "NetMgmt", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": [], "services": ["SV_SECOPS"] },
+    { "deviceId": "D29", "name": "IR_Ticketing", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": [], "services": ["SV_SECOPS"] },
+    { "deviceId": "D30", "name": "Backup_Server", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": ["DT_INTEL"], "services": ["SV_BACKUP"] },
+    { "deviceId": "D31", "name": "Recovery_Staging", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": [], "services": ["SV_BACKUP"] },
+
+    { "deviceId": "D40", "name": "Mail_Gateway", "segmentId": "S4_DMZ", "os": "Linux", "dataTypes": [], "services": ["SV_MAIL"] },
+    { "deviceId": "D41", "name": "Web_Portal", "segmentId": "S4_DMZ", "os": "Linux", "dataTypes": [], "services": ["SV_PORTAL"] },
+    { "deviceId": "D42", "name": "DMZ_JumpHost", "segmentId": "S4_DMZ", "os": "WindowsServer", "dataTypes": [], "services": [] },
+
+    { "deviceId": "D50", "name": "Ops_WS_1", "segmentId": "S7_USER", "os": "Windows", "dataTypes": [], "services": [] },
+    { "deviceId": "D51", "name": "Ops_WS_2", "segmentId": "S7_USER", "os": "Windows", "dataTypes": [], "services": [] },
+    { "deviceId": "D52", "name": "Analyst_WS_1", "segmentId": "S7_USER", "os": "Windows", "dataTypes": [], "services": [] },
+    { "deviceId": "D53", "name": "Analyst_WS_2", "segmentId": "S7_USER", "os": "Windows", "dataTypes": [], "services": [] },
+
+    { "deviceId": "D76", "name": "NTP_Proxy", "segmentId": "S1_GW", "os": "Linux", "dataTypes": [], "services": [] },
+    { "deviceId": "D77", "name": "Ops_KMS", "segmentId": "S2_ID", "os": "Linux", "dataTypes": ["DT_KEYS"], "services": [] },
+    { "deviceId": "D78", "name": "Ops_HSM", "segmentId": "S2_ID", "os": "Appliance", "dataTypes": ["DT_KEYS"], "services": [] },
+    { "deviceId": "D79", "name": "Audit_Log_Server", "segmentId": "S5_MGMT", "os": "Linux", "dataTypes": [], "services": [] },
+    { "deviceId": "D80", "name": "Mission_App_03", "segmentId": "S6_APP", "os": "Linux", "dataTypes": [], "services": [] }
+  ]
+}
