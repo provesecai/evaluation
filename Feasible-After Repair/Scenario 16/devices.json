@@ -1,0 +1,51 @@
+{
+  "scenarioId": "SC15",
+  "devices": [
+    { "deviceId":"D01","name":"Gateway-Firewall","segmentId":"S_GW_DMZ","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D02","name":"VPN-Concentrator","segmentId":"S_GW_DMZ","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D03","name":"Edge-Proxy","segmentId":"S_GW_DMZ","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D04","name":"Admin-JumpHost","segmentId":"S_GW_DMZ","os":"WindowsServer","dataTypes":[],"services":[] },
+
+    { "deviceId":"D05","name":"C2-App-1","segmentId":"S_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D06","name":"C2-App-2","segmentId":"S_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D07","name":"C2-DB","segmentId":"S_C2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D08","name":"C2-Comms-Relay","segmentId":"S_C2","os":"Linux","dataTypes":[],"services":["SV_C2"] },
+    { "deviceId":"D09","name":"C2-API","segmentId":"S_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+
+    { "deviceId":"D10","name":"AD-DC-1","segmentId":"S_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D11","name":"AD-DC-2","segmentId":"S_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D12","name":"IdM-Server","segmentId":"S_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D13","name":"PKI-CA","segmentId":"S_ID","os":"Linux","dataTypes":["DT_KEYS"],"services":["SV_PKI"] },
+
+    { "deviceId":"D14","name":"Mission-Share","segmentId":"S_MSN_DATA","os":"WindowsServer","dataTypes":["DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D15","name":"Intel-Repo","segmentId":"S_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D16","name":"MissionData-DB","segmentId":"S_MSN_DATA","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D17","name":"MissionData-API","segmentId":"S_MSN_DATA","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D18","name":"Logistics-App","segmentId":"S_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOGISTICS"] },
+    { "deviceId":"D19","name":"Planning-App","segmentId":"S_APPS","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_PLANNING"] },
+    { "deviceId":"D20","name":"Ops-Portal","segmentId":"S_APPS","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+    { "deviceId":"D21","name":"Messaging-Relay","segmentId":"S_APPS","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D22","name":"Time-Sync","segmentId":"S_APPS","os":"Linux","dataTypes":[],"services":["SV_NTP"] },
+    { "deviceId":"D23","name":"Update-Server","segmentId":"S_APPS","os":"Linux","dataTypes":[],"services":["SV_UPDATES"] },
+    { "deviceId":"D24","name":"Telemetry-Broker","segmentId":"S_APPS","os":"Linux","dataTypes":[],"services":["SV_TELEMETRY"] },
+
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Endpoint-26","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Endpoint-27","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Endpoint-28","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Endpoint-31","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Endpoint-32","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D33","name":"Endpoint-33","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D34","name":"Endpoint-34","segmentId":"S_USERS","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D35","name":"EDR-Manager","segmentId":"S_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D36","name":"SIEM","segmentId":"S_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D37","name":"Log-Collector","segmentId":"S_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_LOG"] },
+    { "deviceId":"D38","name":"Backup-Orchestrator","segmentId":"S_TOOLING","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_BACKUP"] },
+    { "deviceId":"D39","name":"Backup-Repo","segmentId":"S_TOOLING","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_BACKUP"] },
+    { "deviceId":"D40","name":"SOAR-Bridge","segmentId":"S_TOOLING","os":"Linux","dataTypes":[],"services":["SV_SEC_AUTOMATION"] }
+  ]
+}
