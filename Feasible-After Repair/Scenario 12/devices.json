@@ -1,0 +1,51 @@
+{
+  "scenarioId": "SC12_SETTING_B_DUAL_NETENG_DEADLINE_CONFLICT",
+  "devices": [
+    { "deviceId":"D01","name":"C2-App-1","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2-App-2","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2-DB","segmentId":"S0_C2","os":"Linux","dataTypes":["DT_OPORD","DT_KEYS"],"services":["SV_C2"] },
+
+    { "deviceId":"D04","name":"AD-DC-1","segmentId":"S1_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D05","name":"AD-DC-2","segmentId":"S1_ID","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D06","name":"PKI-HSM","segmentId":"S1_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+
+    { "deviceId":"D07","name":"Gateway-Appliance-1","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D08","name":"Gateway-Appliance-2","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D09","name":"VPN-Concentrator","segmentId":"S2_GW","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+
+    { "deviceId":"D10","name":"MissionData-API","segmentId":"S3_MDAT","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D11","name":"MissionData-DB","segmentId":"S3_MDAT","os":"Linux","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D12","name":"Intel-Repo","segmentId":"S3_MDAT","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D13","name":"UAV-Telemetry-Broker","segmentId":"S4_UAV","os":"Linux","dataTypes":[],"services":["SV_UAVTEL"] },
+    { "deviceId":"D14","name":"UAV-Telemetry-DB","segmentId":"S4_UAV","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_UAVTEL"] },
+
+    { "deviceId":"D15","name":"Logistics-App","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D16","name":"Logistics-DB","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D17","name":"Planning-App","segmentId":"S5_LOG","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+
+    { "deviceId":"D18","name":"SIEM","segmentId":"S7_SOC","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_SECOPS"] },
+    { "deviceId":"D19","name":"EDR-Manager","segmentId":"S7_SOC","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D20","name":"Patch-Mgmt","segmentId":"S7_SOC","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D21","name":"SOAR-Bridge","segmentId":"S7_SOC","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+
+    { "deviceId":"D22","name":"Mail-Relay","segmentId":"S5_LOG","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D23","name":"Ops-Portal","segmentId":"S5_LOG","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+    { "deviceId":"D24","name":"Time-Sync","segmentId":"S1_ID","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+
+    { "deviceId":"D25","name":"Endpoint-25","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D26","name":"Endpoint-26","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D27","name":"Endpoint-27","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D28","name":"Endpoint-28","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D29","name":"Endpoint-29","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Endpoint-30","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Admin-Jump","segmentId":"S2_GW","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":[] },
+    { "deviceId":"D32","name":"Ops-Workstation","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D33","name":"Analyst-Workstation","segmentId":"S6_USER","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D34","name":"KeyVault","segmentId":"S1_ID","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D35","name":"UAV-Telemetry-Gateway","segmentId":"S4_UAV","os":"Linux","dataTypes":[],"services":["SV_UAVTEL"] },
+
+    { "deviceId":"D36","name":"C2-Comms-Relay","segmentId":"S0_C2","os":"Linux","dataTypes":[],"services":["SV_C2"] }
+  ]
+}
