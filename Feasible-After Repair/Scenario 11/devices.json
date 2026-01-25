@@ -1,0 +1,59 @@
+{
+  "scenarioId": "SC11",
+  "devices": [
+    { "deviceId":"D01","name":"C2_App_1","segmentId":"S2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D02","name":"C2_App_2","segmentId":"S2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D03","name":"C2_DB","segmentId":"S2","os":"Linux","dataTypes":["DT_OPORD","DT_INTEL"],"services":["SV_C2"] },
+    { "deviceId":"D04","name":"C2_API","segmentId":"S2","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_C2"] },
+    { "deviceId":"D05","name":"C2_Comms_Relay","segmentId":"S2","os":"Linux","dataTypes":[],"services":["SV_C2"] },
+
+    { "deviceId":"D06","name":"Gateway_FW","segmentId":"S1","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D07","name":"VPN_Concentrator","segmentId":"S1","os":"Appliance","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D08","name":"AppProxy_1","segmentId":"S1","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D09","name":"AppProxy_2","segmentId":"S1","os":"Linux","dataTypes":[],"services":["SV_GW"] },
+    { "deviceId":"D10","name":"JumpHost_Admin","segmentId":"S1","os":"WindowsServer","dataTypes":[],"services":[] },
+
+    { "deviceId":"D11","name":"IdP_AD_1","segmentId":"S3","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D12","name":"IdP_AD_2","segmentId":"S3","os":"WindowsServer","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D13","name":"KeyVault_HSM","segmentId":"S3","os":"Appliance","dataTypes":["DT_KEYS"],"services":["SV_ID"] },
+    { "deviceId":"D14","name":"DNS_DHCP","segmentId":"S3","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+    { "deviceId":"D15","name":"NTP_Time","segmentId":"S3","os":"Linux","dataTypes":[],"services":["SV_ID"] },
+
+    { "deviceId":"D16","name":"Intel_Repo","segmentId":"S4","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D17","name":"Intel_DB","segmentId":"S4","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D18","name":"Secure_FileShare","segmentId":"S4","os":"WindowsServer","dataTypes":["DT_INTEL","DT_OPORD"],"services":["SV_MSN_DATA"] },
+    { "deviceId":"D19","name":"Data_API","segmentId":"S4","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_MSN_DATA"] },
+
+    { "deviceId":"D20","name":"Logistics_App","segmentId":"S5","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D21","name":"Logistics_DB","segmentId":"S5","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+    { "deviceId":"D22","name":"Ops_Planning_App","segmentId":"S5","os":"Linux","dataTypes":["DT_OPORD"],"services":["SV_LOG"] },
+
+    { "deviceId":"D23","name":"SOC_SIEM","segmentId":"S6","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D24","name":"EDR_Manager","segmentId":"S6","os":"WindowsServer","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D25","name":"NetMgmt","segmentId":"S6","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D26","name":"IR_Ticketing","segmentId":"S6","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+    { "deviceId":"D27","name":"Backup_Server","segmentId":"S6","os":"Linux","dataTypes":["DT_INTEL"],"services":["SV_BACKUP"] },
+    { "deviceId":"D28","name":"Recovery_Staging","segmentId":"S6","os":"Linux","dataTypes":[],"services":["SV_BACKUP"] },
+
+    { "deviceId":"D29","name":"Ops_WS_1","segmentId":"S7","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D30","name":"Ops_WS_2","segmentId":"S7","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D31","name":"Analyst_WS_1","segmentId":"S7","os":"Windows","dataTypes":[],"services":[] },
+    { "deviceId":"D32","name":"Analyst_WS_2","segmentId":"S7","os":"Windows","dataTypes":[],"services":[] },
+
+    { "deviceId":"D33","name":"Field_Relay_1","segmentId":"S8","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D34","name":"Field_Relay_2","segmentId":"S8","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D35","name":"Field_Node_1","segmentId":"S8","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+    { "deviceId":"D36","name":"Field_Node_2","segmentId":"S8","os":"Linux","dataTypes":[],"services":["SV_RELAY"] },
+
+    { "deviceId":"D37","name":"Mail_Gateway","segmentId":"S9","os":"Linux","dataTypes":[],"services":["SV_MAIL"] },
+    { "deviceId":"D38","name":"Web_Portal","segmentId":"S9","os":"Linux","dataTypes":[],"services":["SV_PORTAL"] },
+
+    { "deviceId":"D39","name":"Sensor_Collector","segmentId":"S6","os":"Linux","dataTypes":[],"services":["SV_SECOPS"] },
+
+    { "deviceId":"D40","name":"Remote_Mgmt_Node","segmentId":"S10","os":"Linux","dataTypes":[],"services":["SV_EDGE"] },
+    { "deviceId":"D41","name":"Satellite_Link","segmentId":"S10","os":"Appliance","dataTypes":[],"services":["SV_EDGE"] },
+    { "deviceId":"D42","name":"Tactical_Router","segmentId":"S10","os":"Appliance","dataTypes":[],"services":["SV_EDGE"] },
+    { "deviceId":"D43","name":"Edge_Cache","segmentId":"S10","os":"Linux","dataTypes":[],"services":["SV_EDGE"] },
+    { "deviceId":"D44","name":"Edge_Sensor_GW","segmentId":"S10","os":"Linux","dataTypes":[],"services":["SV_EDGE"] }
+  ]
+}
